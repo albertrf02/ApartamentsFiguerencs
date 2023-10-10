@@ -1,1 +1,36 @@
+.imgcar{
+    height: 600px;
+};
 
+.carousel-dark {
+    margin-bottom: 50px;
+};
+.card{
+    border-top: 10px;
+    display: inline;
+};
+.titol{
+    margin-bottom: 20px;
+    background-color: bisque;
+};
+.navbar{
+    grid-row: navbar;
+};
+.hr{
+    grid-row: hr;
+};
+.carousel{
+    grid-row: carousel;
+};
+.Hotels{
+    grid-row: hotels;
+    display: inline;
+};
+
+body{
+    display: grid;
+    grid-template-areas:'navbar navbar',
+                        'hr hr',
+                        'carousel carousel',
+                        'hotels hotels';
+};
