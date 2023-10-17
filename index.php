@@ -7,7 +7,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href='proves.css' rel='stylesheet' />
+    <link href='CSS/proves.css' rel='stylesheet' />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Kalewi</title>
   </head>
@@ -19,6 +19,8 @@
       ?>
       
       </div>
+      <h2 class="p">Top vendes</h2>
+      <hr class="hr2" />
       <div id="carouselExampleDark" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -181,7 +183,7 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23621.343034727826!2d2.94464425078716!3d42.26426456678038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8de7daf77b2d%3A0x2f451468ac1a35cb!2s17600%20Figueres%2C%20Girona!5e0!3m2!1ses!2ses!4v1697462333869!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div> -->
 </div>
-<script src="head.js"></script>
+<script src="JS/head.js"></script>
   </body>
-  <script src="Apartaments.js"></script>
+  <script src="JS/Apartaments.js"></script>
 </html>

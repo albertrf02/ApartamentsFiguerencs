@@ -27,6 +27,18 @@
     border: none;
     height: 1px;
 }
+.hr2{
+    margin: 0;
+    background-color: black;
+    border: none;
+    height: 1px;
+    width: 95%;
+    margin-left: 2%;
+    margin-bottom: 20px;
+}
+.p{
+    margin-left: 2%;
+}
 #carouselExampleDark{
     border-radius: 15px;
     margin-left: 20px;
@@ -72,4 +84,7 @@ padding: 15px;
         margin-top: 10px;
     }
   }
-  /* Do a media screen to 375px */
+  .col:hover {
+    transform: scale(1.05); /* Escala un 5% más grande */
+    transition: 0.5s;
+}
