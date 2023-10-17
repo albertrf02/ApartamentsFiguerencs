@@ -11,6 +11,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
+include "../src/controllers/apartament.php";
 $r = $_REQUEST["r"];
 
 // /* Creem els diferents models */
@@ -21,9 +22,9 @@ if ($r === "login") {
     ctrlLogin();
 } elseif ($r === "registre") {
     ctrlRegistre();
-} elseif ($r == "about") {
-    ctrlAbout();
-} elseif ($r == "exemple") {
+} elseif ($r == "apartament") {
+    ctrlApartament();
+} elseif ($r == "s") {
     ctrlExemple($images);
 } elseif ($r == "") {
     ctrlIndex();
