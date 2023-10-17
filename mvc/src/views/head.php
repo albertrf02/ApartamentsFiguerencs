@@ -7,7 +7,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href='CSS/proves.css' rel='stylesheet' />
+    <link href='src/CSS/proves.css' rel='stylesheet' />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Kalewi</title>
   </head>
@@ -24,8 +24,8 @@
             aria-label="Search"
           />
           <button class="btn btn-outline-success search" type="submit">Ss</button>
-          <a class="btn btn-outline-success" href="login.php">Entrar</a>
-          <a class="btn btn-outline-success" href="registre.php">Crear</a>
+          <a class="btn btn-outline-success" href="index.php?r=login">Entrar</a>
+          <a class="btn btn-outline-success" href="index.php?r=registre">Crear</a>
           <a onclick="agregarClaseDark()" class="btn btn-outline-success" >Canviar</a>
         </form>
       </div>
