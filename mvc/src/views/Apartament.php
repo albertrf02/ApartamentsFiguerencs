@@ -11,6 +11,7 @@
         <?php
         include 'head.php';
         ?>
+
     </div>
 </body>
 </html>
