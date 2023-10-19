@@ -187,5 +187,5 @@
 </div>
 <script src="src/JS/head.js"></script>
   </body>
-  <script src="src/JS/Apartaments.js"></script>
+  
 </html>

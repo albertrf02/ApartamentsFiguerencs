@@ -37,7 +37,7 @@
         </div>
         <div class="text-center redirectButton">
             <p>Ets un usuari nou?</p>
-            <a href="registre.php"><button class="button1">Registra't</button></a>
+            <a href="index.php?r=registre"><button class="button1">Registra't</button></a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
