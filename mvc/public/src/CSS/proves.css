@@ -55,6 +55,9 @@
     padding: 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+.container-fluid{
+/* Hacer que el buscador del nav este ne le centro */
+}
 .row {
 margin: 0 auto;
 justify-content: center;
@@ -96,4 +99,7 @@ padding: 15px;
   .col:hover {
     transform: scale(1.05); /* Escala un 5% más grande */
     transition: 0.5s;
+}
+img {
+    max-width: 100%;
 }
