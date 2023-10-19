@@ -45,7 +45,7 @@
         </div>
         <div class="text-center redirectButton">
             <p>Ja tens un compte?</p>
-            <a href="login.php"><button class="button1">Inicia Sessió</button></a>
+            <a href="index.php?r=login"><button class="button1">Inicia Sessió</button></a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
