@@ -12,6 +12,7 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/apartament.php";
+include "../src/controllers/ctrlLogin.php";
 $r = $_REQUEST["r"];
 
 // /* Creem els diferents models */
