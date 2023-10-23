@@ -1,4 +1,5 @@
 <?php
-function ctrlApartament(){
-    include "../src/views/Apartament.php";
+function ctrlApartament($request, $response, $container){
+    $response->setTemplate("Apartament.php");
+    return $response;
 }
