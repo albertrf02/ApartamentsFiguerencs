@@ -18,11 +18,3 @@ try {
 // print_r($sql);
 
 // die();
-
-// Exemple de consulta
-$apartaments = array();
-$query = "select Nom from usuari;";
-foreach ($sql->query($query, PDO::FETCH_ASSOC) as $apartament) {
-    $apartaments[] = $apartament["Nom"];
-}
-echo implode(", ", $apartaments);

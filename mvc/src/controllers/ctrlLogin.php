@@ -17,6 +17,6 @@ function ctrlLogin($request, $response, $container)
     $response->set("surname", $surname);
 
     $response->SetTemplate("login.php");
-    
+
     return $response;
 }

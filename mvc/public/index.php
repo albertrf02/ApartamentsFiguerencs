@@ -18,7 +18,6 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/apartament.php";
-
 $r = $_REQUEST["r"];
 
 

@@ -20,22 +20,22 @@
                 </div>
                 <h2 class="text-center">Registre</h2>
                 <hr>
-                <form>
+                <form method=POST action="index.php?r=registre">
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group">
                         <label for="surname">Cognom</label>
-                        <input type="text" class="form-control" id="surname">
+                        <input type="text" class="form-control" id="surname" name="surname">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" name="email">
                     </div>
                     <div class="form-group">
                         <label for="password">Contrasenya</label>
-                        <input type="password" class="form-control" id="password">
+                        <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="text-center">
                         <button type="submit" class="button1">Submit</button>

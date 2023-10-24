@@ -2,11 +2,13 @@
 
 namespace Daw;
 
-class Db {
+class Db
+{
 
     public $sql;
 
-    public function __construct($user, $pass, $db, $host){
+    public function __construct($user, $pass, $db, $host)
+    {
 
         $dsn = "mysql:dbname={apartaments_figuerencs};host={localhost}";
         try {
@@ -16,7 +18,8 @@ class Db {
         }
     }
 
-    public function getConnection(){
+    public function getConnection()
+    {
         return $this->sql;
     }
 }
