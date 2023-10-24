@@ -19,6 +19,8 @@ include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/apartament.php";
 
+include "../src/middleware/middleAdmin.php";
+
 $r = $_REQUEST["r"];
 
 
@@ -38,7 +40,9 @@ $request = new Emeset\Request();
 
 
 if ($r === "login") {
-    $response = ctrlLogin($request, $response, $container);
+    if(middleAdmin($request, $response, $container, $next)){
+        $response = ctrlLogin($request, $response, $container);
+    }
 } elseif ($r === "registre") {
     $response = ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {

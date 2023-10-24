@@ -7,7 +7,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href='CSS/proves.css' rel='stylesheet' />
+    <link href='src/CSS/index.css' rel='stylesheet' />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Kalewi</title>
   </head>
@@ -61,7 +61,6 @@
 </div>
 <h3 class="p">Tots els apartaments</h3>
 <hr class="hr3" />
-
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card">
@@ -185,6 +184,23 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23621.343034727826!2d2.94464425078716!3d42.26426456678038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8de7daf77b2d%3A0x2f451468ac1a35cb!2s17600%20Figueres%2C%20Girona!5e0!3m2!1ses!2ses!4v1697462333869!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div> -->
 </div>
+<div id="myModal" class="modal">
+  <div class="modal-content small-modal">
+    <!-- Contenido del modal -->
+    <span class="close" id="closeModal">&times;</span>
+    <div id="carouselExampleModal" class="carousel carousel-dark slide">
+      <!-- Contenido de tu slider -->
+    </div>
+    <h3>Información de la tarjeta</h3>
+    <!-- Agrega la información que deseas mostrar en el modal -->
+    <div class="modal-buttons">
+      <button id="backButton">Volver Atrás</button>
+      <a href="index.php?r=apartament" id="showMoreButton">Mostrar Más</a>
+    </div>
+  </div>
+</div>
+
+
 <script src="src/JS/head.js"></script>
   </body>
   

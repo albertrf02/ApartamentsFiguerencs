@@ -55,9 +55,7 @@
     padding: 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.container-fluid{
-/* Hacer que el buscador del nav este ne le centro */
-}
+
 .row {
 margin: 0 auto;
 justify-content: center;
@@ -103,3 +101,48 @@ padding: 15px;
 img {
     max-width: 100%;
 }
+
+/* Modal */
+  /* Estilo para el fondo borroso del modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  /* Estilo para el contenido del modal */
+  .modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  /* Estilo para el botón de cerrar el modal */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Estilo para el contenido del modal */
+  .small-modal {
+    width: 60%; /* Ajusta el tamaño según tus preferencias */
+    max-width: 600px;
+  }
+
+  /* Estilo para los botones dentro del modal */
+  .modal-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
