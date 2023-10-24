@@ -16,7 +16,8 @@ class Db {
         }
     }
 
-    public function getConnection(){
+    public function getConnection()
+    {
         return $this->sql;
     }
 }
