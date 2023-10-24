@@ -1,7 +1,8 @@
 <?php
-function ctrlRegistre()
+function ctrlRegistre($request, $response, $container)
 {
-    include "../src/views/registre.php";
+    $response->setTemplate("registre.php");
+    return $response;
 }
 
 // Include error reporting and init.php for database connection
