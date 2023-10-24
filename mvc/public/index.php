@@ -25,9 +25,6 @@ include "../src/middleware/middleAdmin.php";
 $r = $_REQUEST["r"];
 
 
-
-
-
 /* Creem els diferents models */
 $container = new Emeset\Container($config);
 $response = new Emeset\Response();
