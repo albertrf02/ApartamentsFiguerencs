@@ -20,7 +20,7 @@
                 </div>
                 <h2 class="text-center">Registre</h2>
                 <hr>
-                <form method=POST action="index.php?r=registre">
+                <form method="POST" action="index.php?r=registre">
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input type="text" class="form-control" id="name" name="name">

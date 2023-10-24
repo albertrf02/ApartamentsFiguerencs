@@ -10,7 +10,7 @@ class Db
     public function __construct($user, $pass, $db, $host)
     {
 
-        $dsn = "mysql:dbname={apartaments_figuerencs};host={localhost}";
+        $dsn = "mysql:dbname={$db};host={$host}";
         try {
             $this->sql = new \PDO($dsn, $user, $pass);
         } catch (\PDOException $e) {

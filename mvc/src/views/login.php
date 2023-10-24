@@ -20,19 +20,20 @@
                 </div>
                 <h2 class="text-center">Iniciar Sessió</h2>
                 <hr>
-                <form>
+                <form method="POST" action="index.php?r=login">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" name="email">
                     </div>
                     <div class="form-group">
                         <label for="password">Contrasenya</label>
-                        <input type="password" class="form-control" id="password">
+                        <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="text-center">
                         <button type="submit" class="button1">Submit</button>
                     </div>
                 </form>
+
             </div>
         </div>
         <div class="text-center redirectButton">

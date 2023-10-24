@@ -11,7 +11,7 @@ ini_set('display_errors', 1);
 include('../../pdo/init.php'); // Include the init.php file for database connection
 include('../src/models/uploadUser.php'); // Include the UserModel
 
-$userModel = new UserModel($sql); // Create an instance of UserModel
+$RegisterModel = new RegisterModel($sql); // Create an instance of UserModel
 
 // Check if the form has been submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefon = null;
     $num_targeta = null;
 
-    $result = $userModel->registerUser($name, $surname, $email, $password, $telefon, $num_targeta);
+    $result = $RegisterModel->registerUser($name, $surname, $email, $password, $telefon, $num_targeta);
 
     if ($result) {
         // Registration successful
