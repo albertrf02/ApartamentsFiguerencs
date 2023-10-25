@@ -4,7 +4,8 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 require "../src/config.php";
-
+include "../src/models/Db.php";
+include "../src/models/showapartaments.php";
 
 // include "../src/config.php";
 
@@ -40,9 +41,8 @@ $request = new Emeset\Request();
 
 
 if ($r === "login") {
-    if(middleAdmin($request, $response, $container, $next)){
         $response = ctrlLogin($request, $response, $container);
-    }
+
 } elseif ($r === "registre") {
     $response = ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
