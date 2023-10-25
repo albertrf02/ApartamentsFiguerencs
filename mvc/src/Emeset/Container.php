@@ -30,6 +30,7 @@ class Container
     public function __construct($config)
     {
         $this->config = $config;
+        $this->sql = $this->db()->getConnection();
     }
 
     public function response()
@@ -40,6 +41,19 @@ class Container
     public function request()
     {
         return new \Emeset\Request();
+    }
+    public function db(){
+        return new \Daw\Db(
+            $this->config["db"]["user"],
+            $this->config["db"]["pass"],
+            $this->config["db"]["db"], 
+            $this->config["db"]["host"]
+        );
+    }
+
+    public function apartaments()
+    {
+        return new \Daw\Showapartaments($this->sql);
     }
 
     public function images()

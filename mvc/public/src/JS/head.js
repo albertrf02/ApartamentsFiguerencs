@@ -28,3 +28,24 @@ const nav = document.getElementById('nav');
 
     lastScrollTop = scrollTop;
   });
+
+
+  //Flecha hacia arriba
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("scrollTopButton");
+
+    // Muestra u oculta el botón según la posición de desplazamiento
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    };
+
+    // Desplázate hacia arriba al hacer clic en el botón
+    button.addEventListener("click", function () {
+      document.body.scrollTop = 0; // Para navegadores Safari
+      document.documentElement.scrollTop = 0; // Para otros navegadores
+    });
+  });

@@ -79,6 +79,84 @@ padding: 15px;
 .form-control{
     border-radius: 50px;
 }
+/* footer */
+/* Estilos para el footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .footer ul a:hover {
+    color: #50c878;
+  }
+  
+  .social-icons {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #50c878;
+  }
+
+  /* Flecha hacia arriba */
+  #scrollTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  #scrollTopButton:hover {
+    background: #a7a7a7;
+  }
+  
+
+
+
+
 /* Do a media screen to 428px */
 @media screen and (max-width: 428px) {
     /* CSS específico para pantallas de 428px o menos */
