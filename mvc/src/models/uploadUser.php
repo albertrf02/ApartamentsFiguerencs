@@ -1,5 +1,7 @@
 <?php
-class RegisterModel
+
+namespace Daw;
+class UploadUser
 {
     private $pdo;
 
@@ -20,8 +22,8 @@ class RegisterModel
         $stmt->bindParam(':surname', $surname);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':telefon', $telefon, PDO::PARAM_STR);
-        $stmt->bindParam(':num_targeta', $num_targeta, PDO::PARAM_STR);
+        $stmt->bindParam(':telefon', $telefon, \PDO::PARAM_STR);
+        $stmt->bindParam(':num_targeta', $num_targeta, \PDO::PARAM_STR);
 
         // Execute the INSERT statement
         return $stmt->execute();

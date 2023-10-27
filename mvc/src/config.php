@@ -1,18 +1,19 @@
 <?php
 
-$config = array();
-
 $config = [
     "db" => [
-        "user" => "demo-daw",
-        "pass" => "1234",
-        "db" => "tasks",
+        "user" => "root",
+        "pass" => "",
+        "db" => "apartaments_figuerencs",
         "host" => "localhost"
     ],
 ];
 
-require_once "../src/Emeset/Request.php";
-require_once "../src/Emeset/Response.php";
-require_once "../src/Emeset/Container.php";
+include "../src/Emeset/Container.php";
+include "../src/Emeset/Request.php";
+include "../src/Emeset/Response.php";
 
 
+include '../src/models/Db.php';
+include '../src/models/LoginUser.php';
+include '../src/models/UploadUser.php';

@@ -1,5 +1,7 @@
 <?php
-class loginModel
+
+namespace Daw;
+class LoginUser
 {
     private $pdo;
 
@@ -19,7 +21,7 @@ class loginModel
         $stmt->bindParam(':password', $password);
 
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         return $result;
     }
 }
