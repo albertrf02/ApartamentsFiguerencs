@@ -8,7 +8,6 @@ function ctrlRegistre($request, $response, $container)
 // Include error reporting and init.php for database connection
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-include('../../pdo/init.php'); // Include the init.php file for database connection
 include('../src/models/uploadUser.php'); // Include the UserModel
 
 $userModel = new UserModel($sql); // Create an instance of UserModel
