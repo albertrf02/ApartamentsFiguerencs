@@ -22,7 +22,10 @@ include "../src/controllers/apartament.php";
 
 include "../src/middleware/middleAdmin.php";
 
-$r = $_REQUEST["r"];
+$r = '';
+if (isset($_REQUEST["r"])) {
+  $r = $_REQUEST["r"];
+}
 
 
 /* Creem els diferents models */
