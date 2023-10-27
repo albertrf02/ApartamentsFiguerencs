@@ -17,7 +17,15 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success search" type="submit">Ss</button>
-        <a class="btn btn-outline-success" href="index.php?r=login">Entrar</a>
+        <a class="btn btn-outline-success" href="index.php?r=login">
+          <?php
+          if (isset($_SESSION['user'])) {
+            echo $_SESSION['user']['Nom'];
+          } else {
+            echo "Login";
+          }
+          ?>
+        </a>
         <a class="btn btn-outline-success" href="index.php?r=registre">Crear</a>
         <a class="btn btn-outline-success" href="index.php?r=apartament">apartament</a>
         <a onclick="agregarClaseDark()" class="btn btn-outline-success">Canviar</a>

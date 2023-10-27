@@ -26,5 +26,19 @@ class RegisterModel
         // Execute the INSERT statement
         return $stmt->execute();
     }
+
+    public function isEmailExists($email)
+    {
+        // Prepare a SQL query to check if the email exists in the database
+        $sql = "SELECT COUNT(*) FROM Usuari WHERE CorreuElectronic = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        $count = $stmt->fetchColumn();
+
+        // If count is greater than 0, the email already exists
+        return $count > 0;
+    }
 }
 ?>

@@ -20,8 +20,10 @@ include "../src/controllers/registre.php";
 include "../src/controllers/apartament.php";
 
 
-$r = $_REQUEST["r"];
-
+$r = '';
+if (isset($_REQUEST["r"])) {
+    $r = $_REQUEST["r"];
+}
 
 /* Creem els diferents models */
 $container = new Emeset\Container($config);
