@@ -27,6 +27,7 @@
         <?php endif; ?>
         <?php if ($loginValid): ?>
           <a class="btn btn-outline-success" href="index.php?r=userpage">Dades</a>
+          <a class="btn btn-outline-success" href="index.php?r=logout">logout</a>
         <?php endif; ?>
         <a class="btn btn-outline-success" href="index.php?r=apartament">apartament</a>
         <a onclick="agregarClaseDark()" class="btn btn-outline-success">Canviar</a>

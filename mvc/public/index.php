@@ -18,6 +18,8 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/Apartament.php";
+include "../src/controllers/logout.php";
+
 
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
@@ -35,8 +37,8 @@ if ($r === "login") {
     $response = ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
     $response = ctrlApartament($request, $response, $container);
-} elseif ($r == "s") {
-    ctrlExemple($images);
+} elseif ($r == "logout") {
+    $response = ctrlLogout($request, $response, $container);
 } elseif ($r == "") {
     $response = ctrlIndex($request, $response, $container);
 } else {
