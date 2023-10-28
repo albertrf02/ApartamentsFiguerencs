@@ -53,6 +53,21 @@ class Users
         }
     }
 
+    public function updateUser($id, $nom, $cognoms, $correuelectronic, $contrasenya, $telefon, $numTargetaCredit)
+    {
+
+        $stm = $this->sql->prepare('update usuari set Nom=:Nom, Cognoms=:Cognoms, CorreuElectronic=:CorreuElectronic, Contrasenya=:Contrasenya, Telefon=:Telefon, NumTargetaCredit=:NumTargetaCredit where id=:id;');
+        $result = $stm->execute([':id' => $id, ':Nom' => $nom, ':Cognoms' => $cognoms, ':CorreuElectronic' => $correuelectronic, ':Contrasenya' => $contrasenya, ':Telefon' => $telefon, ':NumTargetaCredit' => $numTargetaCredit]);
+
+
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 
 }
