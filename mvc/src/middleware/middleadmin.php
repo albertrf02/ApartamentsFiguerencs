@@ -49,19 +49,32 @@ function middleAdmin($request, $response, $container, $next)
 function isLogged($request, $response, $container, $next)
 {
 
-    // Aquí va el codi del middleware
-    $logged = $request->get("SESSION", "logged");
-
-    if (!$logged) {
+    if (isset($_SESSION['user'])) {
+        $response = getUserData($request, $response, $container, $next);
+    } else {
         $response->redirect("location: index.php?r=login");
-        return $response;
     }
-
-    $response->set("user", $request->get("SESSION", "user"));
-
-    $response = $next($request, $response, $container);
-
 
     return $response;
 
+}
+
+function getUserData($request, $response, $container, $next)
+{
+    $response = $next($request, $response, $container);
+
+    if (isset($_SESSION['user'])) {
+        $userId = $_SESSION['user']['Id'];
+
+        $usersModel = $container->users();
+        $userDb = $usersModel->getById($userId);
+
+        // User is logged in, retrieve their name
+        $loginName = $userDb['Nom'];
+        $loginValid = true;
+
+        $response->set("loginValid", $loginValid);
+        $response->set("loginName", $loginName);
+    }
+    return $response;
 }

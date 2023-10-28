@@ -17,15 +17,14 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success search" type="submit">Ss</button>
-        <a class="btn btn-outline-success" href="index.php?r=login">
-          <?php
-          echo $loginValid ? $loginName : 'Login';
-          ?>
-        </a>
         <?php if (!$loginValid): ?>
-          <a class="btn btn-outline-success" href="index.php?r=registre">Crear</a>
+          <a class="btn btn-outline-success" href="index.php?r=login">Login</a>
+          <a class="btn btn-outline-success" href="index.php?r=registre">Registre</a>
         <?php endif; ?>
         <?php if ($loginValid): ?>
+          <b>
+            <?php echo $loginName; ?>
+          </b>
           <a class="btn btn-outline-success" href="index.php?r=userpage">Dades</a>
           <a class="btn btn-outline-success" href="index.php?r=logout">logout</a>
         <?php endif; ?>

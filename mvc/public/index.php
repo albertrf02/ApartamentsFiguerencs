@@ -49,7 +49,7 @@ if ($r === "login") {
 } elseif ($r == "adminpanel") {
     $response = ctrlAdminPanel($request, $response, $container);
 } elseif ($r == "") {
-    $response = ctrlIndex($request, $response, $container);
+    $response = getUserData($request, $response, $container, "ctrlIndex");
 } else {
     $response = ctrlIndex($request, $response, $container);
 }
