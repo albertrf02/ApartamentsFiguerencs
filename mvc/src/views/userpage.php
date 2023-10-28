@@ -40,12 +40,12 @@
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="Nom" name="Nom"
-                                    placeholder="Enter your name" value=<?php echo $userDb['Nom']; ?>>
+                                    placeholder="Enter your name" value=<?php echo $userToEdit['Nom']; ?>>
                             </div>
                             <div class="form-group">
                                 <label for="lastname">Last Name</label>
                                 <input type="text" class="form-control" id="Cognoms" name="Cognoms"
-                                    placeholder="Enter your lastname" value=<?php echo $userDb['Cognoms']; ?>>
+                                    placeholder="Enter your lastname" value=<?php echo $userToEdit['Cognoms']; ?>>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
@@ -59,24 +59,29 @@
                                         </select>
                                     </div>
                                     <input type="tel" class="form-control" id="Telefon" name="Telefon"
-                                        placeholder="Enter your phone number" value=<?php echo $userDb['Telefon']; ?>>
+                                        placeholder="Enter your phone number" value=<?php echo $userToEdit['Telefon']; ?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="CorreuElectronic" name="CorreuElectronic"
-                                    placeholder="Enter your email" value=<?php echo $userDb['CorreuElectronic']; ?>>
+                                    placeholder="Enter your email" value=<?php echo $userToEdit['CorreuElectronic']; ?>>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
-                                    placeholder="Enter your password" value=<?php echo $userDb['Contrasenya']; ?>>
+                                    placeholder="Enter your password" value=<?php echo $userToEdit['Contrasenya']; ?>>
                             </div>
                             <div class="form-group">
                                 <label for="num_targeta">Targeta</label>
                                 <input type="targeta" class="form-control" id="NumTargetaCredit" name="NumTargetaCredit"
-                                    placeholder="targeta" value=<?php echo $userDb['NumTargetaCredit']; ?>>
+                                    placeholder="targeta" value=<?php echo $userToEdit['NumTargetaCredit']; ?>>
                             </div>
+                            <input type="hidden" name="Id" value=<?php echo $userToEdit['Id']; ?>>
+                            <?php if (isset($admin)): ?>
+                                <input type="checkbox" name="delete"> Delete user
+                            <?php endif; ?>
+
                             <button type="submit" class="btn btn-primary">Save</button>
                         </form>
                     </div>

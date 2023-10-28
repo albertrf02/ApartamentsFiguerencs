@@ -80,4 +80,17 @@ class Users
     }
 
 
+    public function deleteUser($id)
+    {
+
+        $stm = $this->sql->prepare('delete from usuari where id=:id;');
+        $result = $stm->execute([':id' => $id]);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
