@@ -19,20 +19,22 @@
         <button class="btn btn-outline-success search" type="submit">Ss</button>
         <a class="btn btn-outline-success" href="index.php?r=login">
           <?php
-          if (isset($_SESSION['user'])) {
-            echo $_SESSION['user']['Nom'];
-          } else {
-            echo "Login";
-          }
+          echo $loginValid ? $loginName : 'Login';
           ?>
         </a>
-        <a class="btn btn-outline-success" href="index.php?r=registre">Crear</a>
+        <?php if (!$loginValid): ?>
+          <a class="btn btn-outline-success" href="index.php?r=registre">Crear</a>
+        <?php endif; ?>
+        <?php if ($loginValid): ?>
+          <a class="btn btn-outline-success" href="index.php?r=userpage">Dades</a>
+        <?php endif; ?>
         <a class="btn btn-outline-success" href="index.php?r=apartament">apartament</a>
         <a onclick="agregarClaseDark()" class="btn btn-outline-success">Canviar</a>
       </form>
     </div>
   </nav>
   <hr class="hr" />
+
   </div>
 
 </html>
