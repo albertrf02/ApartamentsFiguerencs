@@ -68,6 +68,16 @@ class Users
         }
     }
 
+    public function getAllUsers()
+    {
+        $users = array();
+        $query = "select * from usuari;";
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user) {
+            $users[] = $user;
+        }
+
+        return $users;
+    }
 
 
 }

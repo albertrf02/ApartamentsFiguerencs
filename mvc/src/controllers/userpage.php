@@ -4,13 +4,16 @@ function ctrlUserPage($request, $response, $container)
     $response->setTemplate("userpage.php");
     $usersModel = $container->users();
 
+    $userId = '';
+    if (isset($_REQUEST["Id"])) { // TODOL CHeck if user is admin
+        $userId = $_REQUEST["Id"];
+    } else {
+        $userId = $_SESSION['user']['Id'];
+    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // update user in the database
         if (isset($_POST['CorreuElectronic']) && isset($_POST['Contrasenya']) && isset($_POST['Nom']) && isset($_POST['Cognoms']) && isset($_POST['Telefon']) && isset($_POST['NumTargetaCredit'])) {
-
-            $userId = $_SESSION['user']['Id'];
-
             if (empty($_POST['Nom']) || empty($_POST['Cognoms']) || empty($_POST['CorreuElectronic']) || empty($_POST['Contrasenya'])) {
                 $response->set("error", "Falten camps per omplir");
             } else {
@@ -26,10 +29,7 @@ function ctrlUserPage($request, $response, $container)
     }
 
     if (isset($_SESSION['user'])) {
-        $userId = $_SESSION['user']['Id'];
-
         $userDb = $usersModel->getById($userId);
-
         $response->set("userDb", $userDb);
     }
 

@@ -20,7 +20,7 @@ include "../src/controllers/registre.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
-
+include "../src/controllers/adminPanelCtrl.php";
 
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
@@ -42,6 +42,8 @@ if ($r === "login") {
     $response = ctrlLogout($request, $response, $container);
 } elseif ($r == "userpage") {
     $response = ctrlUserpage($request, $response, $container);
+} elseif ($r == "adminpanel") {
+    $response = ctrlAdminPanel($request, $response, $container);
 } elseif ($r == "") {
     $response = ctrlIndex($request, $response, $container);
 } else {
