@@ -55,6 +55,10 @@
                                 <input type="password" class="form-control" id="password"
                                     placeholder="Enter your password">
                             </div>
+                            <div class="form-group">
+                                <label for="num_targeta">Targeta</label>
+                                <input type="targeta" class="form-control" id="targeta" placeholder="targeta">
+                            </div>
                         </form>
                     </div>
                 </div>

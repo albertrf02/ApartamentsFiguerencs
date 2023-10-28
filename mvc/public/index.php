@@ -19,6 +19,7 @@ include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
+include "../src/controllers/userpage.php";
 
 
 $request = new \Emeset\Request();
@@ -39,6 +40,8 @@ if ($r === "login") {
     $response = ctrlApartament($request, $response, $container);
 } elseif ($r == "logout") {
     $response = ctrlLogout($request, $response, $container);
+} elseif ($r == "userpage") {
+    $response = ctrlUserpage($request, $response, $container);
 } elseif ($r == "") {
     $response = ctrlIndex($request, $response, $container);
 } else {

@@ -2,15 +2,18 @@
 
 namespace Daw;
 
-class Users {
+class Users
+{
 
     public $sql;
 
-    public function __construct($sql){
+    public function __construct($sql)
+    {
         $this->sql = $sql;
     }
 
-    public function getAll(){
+    public function getAll()
+    {
         $tasks = array();
         $query = "select id, user, pass from users;";
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $task) {
@@ -26,11 +29,24 @@ class Users {
     // }
 
 
-    public function login($user, $pass){
+    public function login($user, $pass)
+    {
         $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
-        if(is_array($result) && $result["pass"] == $pass){
+        if (is_array($result) && $result["pass"] == $pass) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function getById($id)
+    {
+        $stm = $this->sql->prepare('select * from usuari where id=:id;');
+        $stm->execute([':id' => $id]);
+        $result = $stm->fetch(\PDO::FETCH_ASSOC);
+        if (is_array($result)) {
             return $result;
         } else {
             return false;

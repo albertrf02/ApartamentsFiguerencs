@@ -17,3 +17,4 @@ include "../src/Emeset/Response.php";
 include '../src/models/Db.php';
 include '../src/models/LoginUser.php';
 include '../src/models/UploadUser.php';
+include '../src/models/Users.php';
