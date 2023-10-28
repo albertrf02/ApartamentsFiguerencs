@@ -22,6 +22,9 @@ include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
 include "../src/controllers/adminPanelCtrl.php";
 
+include "../src/middleware/middleadmin.php";
+
+
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
 $container = new \Emeset\Container($config);
@@ -30,6 +33,7 @@ $r = '';
 if (isset($_REQUEST["r"])) {
     $r = $_REQUEST["r"];
 }
+
 
 
 if ($r === "login") {
@@ -41,7 +45,7 @@ if ($r === "login") {
 } elseif ($r == "logout") {
     $response = ctrlLogout($request, $response, $container);
 } elseif ($r == "userpage") {
-    $response = ctrlUserpage($request, $response, $container);
+    $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "adminpanel") {
     $response = ctrlAdminPanel($request, $response, $container);
 } elseif ($r == "") {

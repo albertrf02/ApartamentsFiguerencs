@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    <div id="nav">
+        <?php
+        include 'head.php';
+        ?>
+    </div>
 
     <ul>
         <?php foreach ($users as $user): ?>

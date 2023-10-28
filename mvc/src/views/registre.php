@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <div id="nav">
+        <?php
+        include 'head.php';
+        ?>
+    </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-4">
