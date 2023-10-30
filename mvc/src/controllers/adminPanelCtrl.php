@@ -8,6 +8,7 @@ function ctrlAdminPanel($request, $response, $container)
 
     $response->set("users", $users);
 
+
     return $response;
 }
 

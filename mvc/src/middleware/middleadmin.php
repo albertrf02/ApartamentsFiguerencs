@@ -58,6 +58,22 @@ function isLogged($request, $response, $container, $next)
     return $response;
 
 }
+function isAdmin($request, $response, $container, $next)
+{
+
+    if (isset($_SESSION['user'])) {
+        $user = $_SESSION['user'];
+
+        if ($user['Rol'] === 'Administrador') {
+            $response = getUserData($request, $response, $container, $next);
+        } else {
+            $response->redirect("location: index.php");
+        }
+    }
+    return $response;
+}
+
+
 
 function getUserData($request, $response, $container, $next)
 {

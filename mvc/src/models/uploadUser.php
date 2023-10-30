@@ -1,6 +1,7 @@
 <?php
 
 namespace Daw;
+
 class UploadUser
 {
     private $pdo;
@@ -10,11 +11,11 @@ class UploadUser
         $this->pdo = $pdo;
     }
 
-    public function registerUser($name, $surname, $email, $password, $telefon, $num_targeta)
+    public function registerUser($name, $surname, $email, $password, $telefon, $num_targeta, $rol)
     {
         // Prepare the SQL INSERT statement
-        $sql = "INSERT INTO Usuari (Nom, Cognoms, CorreuElectronic, Contrasenya, Telefon, NumTargetaCredit) 
-                VALUES (:name, :surname, :email, :password, :telefon, :num_targeta)";
+        $sql = "INSERT INTO Usuari (Nom, Cognoms, CorreuElectronic, Contrasenya, Telefon, NumTargetaCredit, Rol) 
+                VALUES (:name, :surname, :email, :password, :telefon, :num_targeta, :rol)";
         $stmt = $this->pdo->prepare($sql);
 
         // Bind the user input to the prepared statement
@@ -24,6 +25,7 @@ class UploadUser
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':telefon', $telefon, \PDO::PARAM_STR);
         $stmt->bindParam(':num_targeta', $num_targeta, \PDO::PARAM_STR);
+        $stmt->bindParam(':rol', $rol);
 
         // Execute the INSERT statement
         return $stmt->execute();

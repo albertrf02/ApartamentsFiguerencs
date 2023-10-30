@@ -14,9 +14,11 @@ include "../src/config.php";
 // include "../src/controllers/error.php";
 // include "../src/controllers/about.php";
 // include "../src/controllers/exemple.php";
+// include "../src/controllers/registre.php";
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
+include "../src/controllers/registreAdmin.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
@@ -44,10 +46,12 @@ if ($r === "login") {
     $response = ctrlApartament($request, $response, $container);
 } elseif ($r == "logout") {
     $response = ctrlLogout($request, $response, $container);
+} elseif ($r == "adminpanel") {
+    $response = isAdmin($request, $response, $container, "ctrlAdminPanel");
 } elseif ($r == "userpage") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
-} elseif ($r == "adminpanel") {
-    $response = ctrlAdminPanel($request, $response, $container);
+} elseif ($r == "registreadmin") {
+    $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
 } elseif ($r == "") {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 } else {

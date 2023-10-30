@@ -17,16 +17,21 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success search" type="submit">Ss</button>
-        <?php if (!$loginValid): ?>
-          <a class="btn btn-outline-success" href="index.php?r=login">Login</a>
-          <a class="btn btn-outline-success" href="index.php?r=registre">Registre</a>
-        <?php endif; ?>
         <?php if ($loginValid): ?>
           <b>
             <?php echo $loginName; ?>
           </b>
           <a class="btn btn-outline-success" href="index.php?r=userpage">Dades</a>
           <a class="btn btn-outline-success" href="index.php?r=logout">logout</a>
+          <!-- <?php if (isset($adminUser)): ?>
+            <a class="btn btn-outline-success" href="index.php?r=adminpanel">adminPanel</a>
+          <?php endif; ?> -->
+          <?php var_dump($adminUser); ?>
+          <a class="btn btn-outline-success" href="index.php?r=adminpanel">adminPanel</a>
+
+        <?php else: ?>
+          <a class="btn btn-outline-success" href="index.php?r=login">Login</a>
+          <a class="btn btn-outline-success" href="index.php?r=registre">Registre</a>
         <?php endif; ?>
         <a class="btn btn-outline-success" href="index.php?r=apartament">apartament</a>
         <a onclick="agregarClaseDark()" class="btn btn-outline-success">Canviar</a>
