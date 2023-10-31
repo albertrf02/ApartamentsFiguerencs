@@ -5,7 +5,7 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 require "../src/config.php";
 include "../src/models/Db.php";
-include "../src/models/showapartaments.php";
+include "../src/models/apartaments.php";
 
 // include "../src/config.php";
 

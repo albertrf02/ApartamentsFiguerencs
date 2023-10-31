@@ -32,5 +32,4 @@
     </nav>
     <hr class="hr" />
     </div>
-
 </html>

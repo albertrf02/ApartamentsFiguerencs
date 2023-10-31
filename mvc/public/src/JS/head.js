@@ -49,3 +49,39 @@ const nav = document.getElementById('nav');
       document.documentElement.scrollTop = 0; // Para otros navegadores
     });
   });
+
+
+
+
+  $('#staticBackdrop').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Botón que abrió el modal
+    var apartamentoID = button.data('apartamento-id'); // ID del apartamento
+
+    // Utiliza AJAX para obtener la información del apartamento y luego actualiza el contenido del modal.
+    $.ajax({
+        url: '../../../src/models/apartaments.php', // Ruta para obtener la información del apartamento
+        type: 'GET',
+        data: { id: apartamentoID, /* otros parámetros si es necesario */ },
+        success: function (data) {
+            // Rellena el contenido de #apartment-details con la información del apartamento
+            $('#apartment-details').html(data);
+        }
+    });
+});
+
+
+
+
+$( "#datepicker" ).datepicker({dateFormat: 'dd/mm/yy'});
+$( "#datepicker2" ).datepicker({
+  dateFormat: 'dd/mm/yy',
+  minDate: 0, // Esto evitará fechas anteriores a la fecha actual
+  beforeShow: function(input, inst) {
+    var minDate = $("#datepicker").datepicker("getDate");
+    if (minDate) {
+      minDate.setDate(minDate.getDate() + 1); // Puedes ajustar este valor según tus necesidades
+      $(this).datepicker("option", "minDate", minDate);
+    }
+  }
+});
+$("#spinner").spinner();
