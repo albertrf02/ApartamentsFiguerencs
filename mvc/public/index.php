@@ -21,9 +21,6 @@ include "../src/controllers/registre.php";
 include "../src/controllers/registreAdmin.php";
 include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
-include "../src/controllers/logout.php";
-include "../src/controllers/userpage.php";
-include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
 include "../src/controllers/uploadApartament.php";
 
