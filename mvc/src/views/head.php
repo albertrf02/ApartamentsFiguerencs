@@ -23,8 +23,4 @@
         <a onclick="agregarClaseDark()" class="btn btn-outline-success">Canviar</a>
       </form>
     </div>
-  </nav>
-  <hr class="hr" />
-  </div>
-
 </html>
