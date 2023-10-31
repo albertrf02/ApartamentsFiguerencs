@@ -42,6 +42,7 @@ class Container
     {
         return new \Emeset\Request();
     }
+
     public function db()
     {
         return new \Daw\Db(
@@ -50,11 +51,6 @@ class Container
             $this->config["db"]["db"],
             $this->config["db"]["host"]
         );
-    }
-
-    public function apartaments()
-    {
-        return new \Daw\Apartaments($this->sql);
     }
 
     public function loginUser()

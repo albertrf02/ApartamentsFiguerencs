@@ -24,7 +24,7 @@ include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
 include "../src/controllers/adminPanelCtrl.php";
 
-include "../src/middleware/middleadmin.php";
+include "../src/middleware/middleAdmin.php";
 
 
 $request = new \Emeset\Request();
