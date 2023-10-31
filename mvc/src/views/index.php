@@ -194,7 +194,6 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
       <!-- <div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23621.343034727826!2d2.94464425078716!3d42.26426456678038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8de7daf77b2d%3A0x2f451468ac1a35cb!2s17600%20Figueres%2C%20Girona!5e0!3m2!1ses!2ses!4v1697462333869!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -203,63 +202,4 @@
 <script src="src/JS/head.js"></script>
   </body>
   
-=======
-    <?php endforeach; ?>
-</div>
-
-
-    </div>
-    <!-- Button trigger modal -->
-    <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles del Apartamento</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="apartment-details">
-                <!-- Aquí se mostrará la información del apartamento -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Aceptar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-  <!-- <div class="modal" id="apartmentModal">
-      <div class="modal-content">
-          Contenido de la ventana emergente (detalles del apartamento)
-          <img src="" alt="Imagen del apartamento" id="modalImage">
-          <h5 id="modalTitle"></h5>
-          <p>Número habitaciones: <span id="modalBedrooms"></span></p>
-          <p>Metros cuadrados: <span id="modalArea"></span></p>
-          <p>Date: <input type="text" id="datepicker"></p>
-          <button id="closeModal">Cerrar</button>
-      </div>
-  </div> -->
-
-    <!-- Botón de flecha hacia arriba -->
-  <div id="scrollTopButton">
-    <i class="fas fa-arrow-up bi">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/></svg>
-    </i>
-  </div>
-
-</body>
-<footer>
-  <?php
-  include 'footer.php';
-  ?>
-</footer>
->>>>>>> setmana3
 </html>
