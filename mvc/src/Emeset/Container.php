@@ -53,7 +53,7 @@ class Container
 
     public function apartaments()
     {
-        return new \Daw\Showapartaments($this->sql);
+        return new \Daw\Apartaments($this->sql);
     }
 
     public function images()

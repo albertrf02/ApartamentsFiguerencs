@@ -15,7 +15,20 @@
   #nav.hidden {
     top: -60px; /* La altura del encabezado (ajusta según tus necesidades) */
   }
+  .buscador{
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 80%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    display: flex;
+  }
+  /* Datepicker */
   
+
+
 .imgcar{
     border-radius: 15px;
     /* Haz que tenga una sombra de fondo */
@@ -54,6 +67,9 @@
     margin-right: 20px;
     padding: 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.col{
+  cursor: pointer;
 }
 .container-fluid{
 /* Hacer que el buscador del nav este ne le centro */
@@ -181,3 +197,43 @@ padding: 15px;
 img {
     max-width: 100%;
 }
+
+/* finestra modal */
+
+/* .modal-open {
+  overflow: hidden;
+} */
+
+/* 
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 10px;
+  width: 80%;
+  max-width: 700px; 
+  border-radius: 5px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+#closeModal {
+  margin-top: 10px;
+  cursor: pointer;
+} */
