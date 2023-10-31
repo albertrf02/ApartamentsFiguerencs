@@ -96,8 +96,6 @@ function isGestor($request, $response, $container, $next)
 
 function getUserData($request, $response, $container, $next)
 {
-    $response = $next($request, $response, $container);
-
     if (isset($_SESSION['user'])) {
         $userId = $_SESSION['user']['Id'];
 

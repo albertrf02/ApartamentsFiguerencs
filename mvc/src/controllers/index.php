@@ -6,7 +6,8 @@ function ctrlIndex($request, $response, $container)
     $response->setTemplate("index.php");
 
     // Function that converts DD/MM/YYYY to YYYY-MM-DD
-    function convertDate($date){
+    function convertDate($date)
+    {
         $date = explode("/", $date);
         $date = array_reverse($date);
         $date = implode("-", $date);
@@ -27,6 +28,7 @@ function ctrlIndex($request, $response, $container)
     $response->set("datepicker", $datepicker);
     $response->set("datepicker2", $datepicker2);
     $response->set("numPersones", $numPersones);
+
     return $response;
 }
 
