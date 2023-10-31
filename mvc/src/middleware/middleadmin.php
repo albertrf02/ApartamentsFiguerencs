@@ -66,13 +66,32 @@ function isAdmin($request, $response, $container, $next)
 
         if ($user['Rol'] === 'Administrador') {
             $response = getUserData($request, $response, $container, $next);
+
+            $adminUser = true;
+            $response->set("adminUser", $adminUser);
         } else {
-            $response->redirect("location: index.php");
+            $response->redirect("location: index.php?");
         }
     }
     return $response;
 }
 
+function isGestor($request, $response, $container, $next)
+{
+    if (isset($_SESSION['user'])) {
+        $user = $_SESSION['user'];
+
+        if ($user['Rol'] === 'Gestor') {
+            $response = getUserData($request, $response, $container, $next);
+
+            $gestorUser = true;
+            $response->set("gestorUser", $gestorUser);
+        } else {
+            $response->redirect("location: index.php?");
+        }
+    }
+    return $response;
+}
 
 
 function getUserData($request, $response, $container, $next)

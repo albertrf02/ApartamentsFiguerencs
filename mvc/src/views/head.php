@@ -23,12 +23,9 @@
           </b>
           <a class="btn btn-outline-success" href="index.php?r=userpage">Dades</a>
           <a class="btn btn-outline-success" href="index.php?r=logout">logout</a>
-          <!-- <?php if (isset($adminUser)): ?>
+          <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
             <a class="btn btn-outline-success" href="index.php?r=adminpanel">adminPanel</a>
-          <?php endif; ?> -->
-          <?php var_dump($adminUser); ?>
-          <a class="btn btn-outline-success" href="index.php?r=adminpanel">adminPanel</a>
-
+          <?php endif; ?>
         <?php else: ?>
           <a class="btn btn-outline-success" href="index.php?r=login">Login</a>
           <a class="btn btn-outline-success" href="index.php?r=registre">Registre</a>
