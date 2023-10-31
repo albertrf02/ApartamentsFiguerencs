@@ -1,5 +1,8 @@
 <?php
-function ctrlIndex($request, $response, $container){
+
+
+function ctrlIndex($request, $response, $container)
+{
     $response->setTemplate("index.php");
 
     // Function that converts DD/MM/YYYY to YYYY-MM-DD
@@ -26,3 +29,4 @@ function ctrlIndex($request, $response, $container){
     $response->set("numPersones", $numPersones);
     return $response;
 }
+

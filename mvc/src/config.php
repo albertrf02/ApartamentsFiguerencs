@@ -1,16 +1,20 @@
 <?php
 
-$config = array();
+$config = [
+    "db" => [
+        "user" => "root",
+        "pass" => "",
+        "db" => "apartaments_figuerencs",
+        "host" => "localhost"
+    ],
+];
+
+include "../src/Emeset/Container.php";
+include "../src/Emeset/Request.php";
+include "../src/Emeset/Response.php";
 
 
-require_once "../src/Emeset/Request.php";
-require_once "../src/Emeset/Response.php";
-require_once "../src/Emeset/Container.php";
-
-
-/* configuració de connexió a la base dades */
-$config["db"] = array();
-$config["db"]["user"] = 'root';
-$config["db"]["pass"] = '1234';
-$config["db"]["db"] = 'apartaments_figuerencs';
-$config["db"]["host"] = 'localhost';
+include '../src/models/Db.php';
+include '../src/models/LoginUser.php';
+include '../src/models/UploadUser.php';
+include '../src/models/Users.php';

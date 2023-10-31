@@ -56,10 +56,28 @@ class Container
         return new \Daw\Apartaments($this->sql);
     }
 
-    public function images()
+    public function db(){
+        return new \Daw\Db(
+            $this->config["db"]["user"],
+            $this->config["db"]["pass"],
+            $this->config["db"]["db"], 
+            $this->config["db"]["host"]
+        );
+    }
+
+    public function loginUser()
     {
-        $conn = new \Daw\Connection($this->config["sqlite"]);
-        return new \Daw\ImagesSQLite($conn);
+        return new \Daw\LoginUser($this->sql);
+    }
+
+    public function uploadUser()
+    {
+        return new \Daw\UploadUser($this->sql);
+    }
+
+    public function users()
+    {
+        return new \Daw\Users($this->sql);
     }
 
 }

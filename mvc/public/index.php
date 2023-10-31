@@ -3,9 +3,8 @@
 
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
-require "../src/config.php";
-include "../src/models/Db.php";
-include "../src/models/apartaments.php";
+include "../src/config.php";
+
 
 // include "../src/config.php";
 
@@ -15,42 +14,47 @@ include "../src/models/apartaments.php";
 // include "../src/controllers/error.php";
 // include "../src/controllers/about.php";
 // include "../src/controllers/exemple.php";
+// include "../src/controllers/registre.php";
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
-include "../src/controllers/apartament.php";
+include "../src/controllers/registreAdmin.php";
+include "../src/controllers/Apartament.php";
+include "../src/controllers/logout.php";
+include "../src/controllers/userpage.php";
+include "../src/controllers/adminPanelCtrl.php";
 
-include "../src/middleware/middleAdmin.php";
+include "../src/middleware/middleadmin.php";
+
+
+$request = new \Emeset\Request();
+$response = new \Emeset\Response();
+$container = new \Emeset\Container($config);
 
 $r = '';
 if (isset($_REQUEST["r"])) {
-  $r = $_REQUEST["r"];
+    $r = $_REQUEST["r"];
 }
-
-
-/* Creem els diferents models */
-$container = new Emeset\Container($config);
-$response = new Emeset\Response();
-$request = new Emeset\Request();
-
-
-// /* Creem els diferents models */
-// $session = new Daw\Session();
-// $images = new Daw\Images();
 
 
 
 if ($r === "login") {
-        $response = ctrlLogin($request, $response, $container);
+    $response = ctrlLogin($request, $response, $container);
 
 } elseif ($r === "registre") {
     $response = ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
     $response = ctrlApartament($request, $response, $container);
-} elseif ($r == "s") {
-    ctrlExemple($images);
+} elseif ($r == "logout") {
+    $response = ctrlLogout($request, $response, $container);
+} elseif ($r == "adminpanel") {
+    $response = isAdmin($request, $response, $container, "ctrlAdminPanel");
+} elseif ($r == "userpage") {
+    $response = isLogged($request, $response, $container, "ctrlUserpage");
+} elseif ($r == "registreadmin") {
+    $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
 } elseif ($r == "") {
-    $response = ctrlIndex($request, $response, $container);
+    $response = getUserData($request, $response, $container, "ctrlIndex");
 } else {
     $response = ctrlIndex($request, $response, $container);
 }
