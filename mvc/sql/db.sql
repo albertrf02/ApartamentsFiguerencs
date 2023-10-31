@@ -8,12 +8,14 @@ CREATE TABLE Apartament (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Titol VARCHAR(255),
     Adreca VARCHAR(255),
-    Coordenades VARCHAR(255),
+    Longitud DECIMAL(10, 8),
+    Latitud DECIMAL(10, 8),
     Descripcio TEXT,
     MetresQuadrats INT,
     NumHabitacions INT,
     PreuDiaTemporadaBaixa DECIMAL(10, 2),
     PreuDiaTemporadaAlta DECIMAL(10, 2)
+    numPersones INT,
 );
 
 -- Crea la taula Extres

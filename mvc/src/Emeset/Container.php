@@ -68,4 +68,9 @@ class Container
         return new \Daw\Users($this->sql);
     }
 
+    public function apartaments()
+    {
+        return new \Daw\Apartaments($this->sql);
+    }
+
 }
