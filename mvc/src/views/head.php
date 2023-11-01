@@ -17,7 +17,7 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success search" type="submit">Ss</button>
-        <?php if ($loginValid): ?>
+        <?php if (isset($loginValid) && $loginValid): ?>
           <b>
             <?php echo $loginName; ?>
           </b>
