@@ -108,7 +108,7 @@
 
 
 
-  <!-- <div class="modal" id="apartmentModal">
+ <!-- <div class="modal" id="apartmentModal">
       <div class="modal-content">
           Contenido de la ventana emergente (detalles del apartamento)
           <img src="" alt="Imagen del apartamento" id="modalImage">
@@ -117,7 +117,7 @@
           <p>Metros cuadrados: <span id="modalArea"></span></p>
           <p>Date: <input type="text" id="datepicker"></p>
           <button id="closeModal">Cerrar</button>
-      </div>
+      </div> 
   </div> -->
 
     <!-- Botón de flecha hacia arriba -->

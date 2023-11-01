@@ -14,8 +14,8 @@ CREATE TABLE Apartament (
     MetresQuadrats INT,
     NumHabitacions INT,
     PreuDiaTemporadaBaixa DECIMAL(10, 2),
-    PreuDiaTemporadaAlta DECIMAL(10, 2)
-    numPersones INT,
+    PreuDiaTemporadaAlta DECIMAL(10, 2),
+    numPersones INT
 );
 
 -- Crea la taula Extres
@@ -39,7 +39,7 @@ CREATE TABLE Usuari (
     CorreuElectronic VARCHAR(255),
     Contrasenya VARCHAR(255),
     NumTargetaCredit VARCHAR(16),
-    Rol ENUM('usuari', 'gestor', 'administrador') DEFAULT 'usuari'
+    Rol ENUM('Usuari', 'Gestor', 'Administrador') DEFAULT 'Usuari'
 );
 
 -- Crea la taula Reserva
@@ -93,3 +93,6 @@ CREATE TABLE Imatges (
 ALTER TABLE Reserva
 ADD COLUMN IdTemporada INT,
 ADD FOREIGN KEY (IdTemporada) REFERENCES Temporada(Id);
+
+INSERT INTO `usuari` (`Id`, `Nom`, `Cognoms`, `Telefon`, `CorreuElectronic`, `Contrasenya`, `NumTargetaCredit`, `Rol`) VALUES
+(1, 'admin', 'admin', NULL, 'admin@admin', '1234', NULL, 'Administrador');

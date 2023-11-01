@@ -53,10 +53,8 @@ if ($r === "login") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
-} elseif ($r == "") {
-    $response = getUserData($request, $response, $container, "ctrlIndex");
 } else {
-    $response = ctrlIndex($request, $response, $container);
-}
+    $response = getUserData($request, $response, $container, "ctrlIndex");
+}   
 
 $response->response();

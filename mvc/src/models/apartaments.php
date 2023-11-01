@@ -14,7 +14,7 @@ class Apartaments
     {
         $stm = $this->db->prepare("SELECT Apartament.*, Imatges.Enlace
         FROM Apartament
-        JOIN Imatges ON Imatges.Id_Apartament = Apartament.Id
+        JOIN Imatges ON Imatges.IdApartament = Apartament.Id
         WHERE :numPersones <= Apartament.numPersones
         and Apartament.Id NOT IN (
             SELECT Id
@@ -36,5 +36,4 @@ class Apartaments
         }
         return $tasks;
     }
-}
-;
+};
