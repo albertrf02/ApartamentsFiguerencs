@@ -94,22 +94,24 @@ function isGestor($request, $response, $container, $next)
 }
 
 
+// obtenir dades de l'usuari si està loggejat, per així mostrar el seu nom a la navbar
 function getUserData($request, $response, $container, $next)
 {
-    $response = $next($request, $response, $container);
     
     if (isset($_SESSION['user'])) {
         $userId = $_SESSION['user']['Id'];
-
+        
         $usersModel = $container->users();
         $userDb = $usersModel->getById($userId);
-
+        
         // User is logged in, retrieve their name
         $loginName = $userDb['Nom'];
         $loginValid = true;
-
+        
         $response->set("loginValid", $loginValid);
         $response->set("loginName", $loginName);
     }
+    $response = $next($request, $response, $container); 
+    
     return $response;
 }
