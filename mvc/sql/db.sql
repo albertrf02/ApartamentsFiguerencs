@@ -82,6 +82,13 @@ CREATE TABLE ApartamentPeriodeTancament (
     FOREIGN KEY (IdPeriodeTancament) REFERENCES PeriodeTancament(Id)
 );
 
+CREATE TABLE Imatges (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Enlace VARCHAR(255),
+    IdApartament INT,
+    FOREIGN KEY (IdApartament) REFERENCES Apartament(Id)
+);
+
 -- Relació entre Temporada i Reserva
 ALTER TABLE Reserva
 ADD COLUMN IdTemporada INT,
