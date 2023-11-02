@@ -73,7 +73,7 @@
                     <h5 class="card-title"><?php echo $apartament['Titol']; ?></h5>
                     <p class="card-text">Número habitaciones: <?php echo $apartament['NumHabitacions']; ?></p>
                     <p class="card-text">Metros cuadrados: <?php echo $apartament['MetresQuadrats']; ?></p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-apartamento-id="<?php echo $apartament['Id_Apartament']; ?>">Ver detalles</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-apartamento-id="<?php echo isset($apartament['Id_Apartament']); ?>">Ver detalles</button>
                 </div>
             </div>
         </div>
