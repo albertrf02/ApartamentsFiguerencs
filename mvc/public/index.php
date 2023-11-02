@@ -23,6 +23,7 @@ include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
 include "../src/controllers/adminPanelCtrl.php";
+include "../src/controllers/gestorPanelCtrl.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -53,8 +54,12 @@ if ($r === "login") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
+} elseif ($r == "gestorpanel") {
+    $response = isGestor($request, $response, $container, "ctrlGestorPanel");
+} elseif ($r == "registregestor") {
+    $response = isGestor($request, $response, $container, "ctrlRegistre");
 } else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
-}   
+}
 
 $response->response();

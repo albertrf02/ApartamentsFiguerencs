@@ -29,7 +29,8 @@
                     <h2 class="text-center">Registre</h2>
                     <hr>
                     <form method="POST"
-                        action="<?php echo (isset($adminUser)) ? 'index.php?r=registreadmin' : 'index.php?r=registre'; ?>">
+                        action="<?php echo (isset($gestorUser)) ? 'index.php?r=registregestor' : (isset($adminUser) ? 'index.php?r=registreadmin' : 'index.php?r=registre'); ?>">
+
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input type="text" class="form-control" id="name" name="name">
