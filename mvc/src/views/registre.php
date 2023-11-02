@@ -47,6 +47,15 @@
                             <label for="password">Contrasenya</label>
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
+                        <?php if (isset($gestorUser)): ?>
+                            <div class="form-group">
+                                <label for="rol">Rol</label>
+                                <select class="form-control" id="rol" name="rol">
+                                    <option value="Gestor">Gestor</option>
+                                    <option value="Usuari">Usuari</option>
+                                </select>
+                            </div>
+                        <?php endif; ?>
                         <?php if (isset($adminUser)): ?>
                             <div class="form-group">
                                 <label for="rol">Rol</label>

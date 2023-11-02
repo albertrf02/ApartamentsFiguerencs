@@ -19,6 +19,7 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/registreAdmin.php";
+include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
@@ -57,7 +58,7 @@ if ($r === "login") {
 } elseif ($r == "gestorpanel") {
     $response = isGestor($request, $response, $container, "ctrlGestorPanel");
 } elseif ($r == "registregestor") {
-    $response = isGestor($request, $response, $container, "ctrlRegistre");
+    $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
 } else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 }
