@@ -95,4 +95,32 @@ ADD COLUMN IdTemporada INT,
 ADD FOREIGN KEY (IdTemporada) REFERENCES Temporada(Id);
 
 INSERT INTO `usuari` (`Id`, `Nom`, `Cognoms`, `Telefon`, `CorreuElectronic`, `Contrasenya`, `NumTargetaCredit`, `Rol`) VALUES
-(1, 'admin', 'admin', NULL, 'admin@admin', '1234', NULL, 'Administrador');
+(1, 'admin', 'admin', NULL, 'admin@admin', '1234', NULL, 'Administrador'),
+(2, 'gestor', 'gestor', NULL, 'gestor@gestor', '1234', NULL, 'Gestor'),
+(3, 'usuari', 'usuari', NULL, 'usuari@usuari', '1234', NULL, 'Usuari');
+
+INSERT INTO Apartament (Titol, Adreca, Longitud, Latitud, Descripcio, MetresQuadrats, NumHabitacions, PreuDiaTemporadaBaixa, PreuDiaTemporadaAlta, numPersones)
+VALUES
+    ('Apartamento 1', 'Dirección 1', 12.345678, 23.456789, 'Descripción del apartamento 1', 80, 2, 100.00, 150.00, 4),
+    ('Apartamento 2', 'Dirección 2', 12.345679, 23.456790, 'Descripción del apartamento 2', 100, 3, 120.00, 180.00, 6),
+    ('Apartamento 3', 'Dirección 3', 12.345680, 23.456781, 'Descripción del apartamento 3', 70, 2, 90.00, 140.00, 4),
+    ('Apartamento 4', 'Dirección 4', 12.345681, 23.456782, 'Descripción del apartamento 4', 120, 4, 150.00, 220.00, 8),
+    ('Apartamento 5', 'Dirección 5', 12.345682, 23.456783, 'Descripción del apartamento 5', 90, 3, 110.00, 170.00, 6),
+    ('Apartamento 6', 'Dirección 6', 12.345683, 23.456784, 'Descripción del apartamento 6', 60, 1, 80.00, 120.00, 2),
+    ('Apartamento 7', 'Dirección 7', 12.345684, 23.456785, 'Descripción del apartamento 7', 110, 4, 140.00, 200.00, 8),
+    ('Apartamento 8', 'Dirección 8', 12.345685, 23.456786, 'Descripción del apartamento 8', 75, 2, 95.00, 150.00, 4),
+    ('Apartamento 9', 'Dirección 9', 12.345686, 23.456787, 'Descripción del apartamento 9', 100, 3, 120.00, 180.00, 6),
+    ('Apartamento 10', 'Dirección 10', 12.345687, 23.456788, 'Descripción del apartamento 10', 85, 2, 100.00, 160.00, 4);
+
+INSERT INTO Imatges (Enlace, IdApartament)
+VALUES
+    ('hab1.jpg', 1),
+    ('hab2.jpg', 2),
+    ('hab3.jpg', 3),
+    ('hab4.jpg', 4),
+    ('hab5.jpg', 5),
+    ('hab6.jpg', 6),
+    ('hab7.jpg', 7),
+    ('hab8.jpg', 8),
+    ('hab9.jpg', 9),
+    ('hab10.jpg', 10);
