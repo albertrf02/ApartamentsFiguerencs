@@ -17,17 +17,31 @@
             include 'head.php';
             ?>
         </div>
-        <ul>
-            <?php foreach ($users as $user): ?>
-                <li>
-                    <a href="index.php?r=userpage&Id=<?php echo $user["Id"]; ?>">
-                        <?php echo $user["Nom"]; ?>
-                    </a>
+        <div style="display: flex">
+            <ul>
+                <?php foreach ($users as $user): ?>
+                    <li>
+                        <a href="index.php?r=userpage&Id=<?php echo $user["Id"]; ?>">
+                            <?php echo $user["Nom"]; ?>
+                        </a>
 
-                </li>
-            <?php endforeach; ?>
-        </ul>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <ul>
+                <?php foreach ($apartaments as $apartament): ?>
+                    <li>
+                        <a href="index.php?r=apartament&Id=<?php echo $apartament["Id"]; ?>">
+                            <?php echo $apartament["Titol"]; ?>
+                        </a>
+
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
         <a class="btn btn-outline-success" href="index.php?r=registreadmin">Crear Usuari</a>
+        <a class="btn btn-outline-success" href="index.php?r=uploadapartament">uploadapartament</a>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

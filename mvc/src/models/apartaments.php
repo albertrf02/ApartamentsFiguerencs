@@ -80,5 +80,19 @@ class uploadApartaments
         }
         return $tasks;
     }
+
+    public function getAllApartaments()
+    {
+        $stm = $this->pdo->prepare("SELECT Apartament.*, Imatges.Enlace
+        FROM Apartament
+        JOIN Imatges ON Imatges.IdApartament = Apartament.Id
+        ");
+        $stm->execute();
+
+        $tasks = array();
+        while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $tasks[] = $task;
+        }
+        return $tasks;
+    }
 }
-;

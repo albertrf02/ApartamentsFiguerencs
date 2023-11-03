@@ -59,11 +59,10 @@ if ($r === "login") {
 } elseif ($r == "gestorpanel") {
     $response = isGestor($request, $response, $container, "ctrlGestorPanel");
 } elseif ($r == "registregestor") {
-    $response = isGestor($request, $response, $container, "ctrlRegistreGestor"); 
-} elseif ($r == "uploadapartament"){
+    $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
+} elseif ($r == "uploadapartament") {
     $response = isAdmin($request, $response, $container, "ctrlUploadApartament");
-} 
-else {
+} else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 }
 

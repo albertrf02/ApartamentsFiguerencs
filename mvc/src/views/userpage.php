@@ -33,65 +33,34 @@
                                 Personal Information
                                 <hr>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-                                        <p>
-                                            <b>Nom:</b>
-                                        </p>
-                                        <?php echo $userToEdit['Nom']; ?>
-
-                                    <?php else: ?>
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="Nom" name="Nom"
-                                            placeholder="Enter your name" value="<?php echo $userToEdit['Nom']; ?>">
-                                    <?php endif; ?>
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="Nom" name="Nom"
+                                        placeholder="Enter your name" value="<?php echo $userToEdit['Nom']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-                                        <p>
-                                            <b>Cognoms:</b>
-                                        </p>
-                                        <?php echo $userToEdit['Cognoms'] ?>
-                                    <?php else: ?>
-                                        <label for="lastname">Last Name</label>
-                                        <input type="text" class="form-control" id="Cognoms" name="Cognoms"
-                                            placeholder="Enter your lastname" value="<?php echo $userToEdit['Cognoms']; ?>">
-                                    <?php endif; ?>
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" class="form-control" id="Cognoms" name="Cognoms"
+                                        placeholder="Enter your lastname" value="<?php echo $userToEdit['Cognoms']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-                                        <p>
-                                            <b>Telefon:</b>
-                                        </p>
-                                        <?php echo isset($userToEdit['Telefon']) ? $userToEdit['Telefon'] : 'No tens telefon establert'; ?>
-                                    <?php else: ?>
-                                        <label for="phone">Phone Number</label>
-                                        <div class="input-group">
-                                            <input type="tel" class="form-control" id="Telefon" name="Telefon"
-                                                placeholder="Enter your phone number"
-                                                value="<?php echo $userToEdit['Telefon']; ?>">
-                                        </div>
-                                    <?php endif; ?>
+                                    <label for="phone">Phone Number</label>
+                                    <div class="input-group">
+                                        <input type="tel" class="form-control" id="Telefon" name="Telefon"
+                                            placeholder="Enter your phone number"
+                                            value="<?php echo $userToEdit['Telefon']; ?>">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-                                        <p>
-                                            <b>Email:</b>
-                                        </p>
-                                        <?php echo $userToEdit['CorreuElectronic']; ?>
-                                    <?php else: ?>
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="CorreuElectronic"
-                                            name="CorreuElectronic" placeholder="Enter your email"
-                                            value="<?php echo $userToEdit['CorreuElectronic']; ?>">
-                                    <?php endif; ?>
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="CorreuElectronic"
+                                        name="CorreuElectronic" placeholder="Enter your email"
+                                        value="<?php echo $userToEdit['CorreuElectronic']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
-                                            placeholder="Enter your password"
-                                            value="<?php echo $userToEdit['Contrasenya']; ?>">
-                                    <?php endif; ?>
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
+                                        placeholder="Enter your password"
+                                        value="<?php echo $userToEdit['Contrasenya']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
