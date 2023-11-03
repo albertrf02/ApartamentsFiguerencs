@@ -68,9 +68,9 @@ class Container
         return new \Daw\Users($this->sql);
     }
 
-    public function apartaments()
+    public function uploadApartaments()
     {
-        return new \Daw\Apartaments($this->sql);
+        return new \Daw\UploadApartaments($this->sql);
     }
 
 }

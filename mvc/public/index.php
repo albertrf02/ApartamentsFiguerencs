@@ -25,6 +25,7 @@ include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
 include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
+include "../src/controllers/uploadApartament.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -58,8 +59,11 @@ if ($r === "login") {
 } elseif ($r == "gestorpanel") {
     $response = isGestor($request, $response, $container, "ctrlGestorPanel");
 } elseif ($r == "registregestor") {
-    $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
-} else {
+    $response = isGestor($request, $response, $container, "ctrlRegistreGestor"); 
+} elseif ($r == "uploadapartament"){
+    $response = isAdmin($request, $response, $container, "ctrlUploadApartament");
+} 
+else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 }
 

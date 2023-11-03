@@ -25,9 +25,11 @@
           <a class="btn btn-outline-success" href="index.php?r=logout">logout</a>
           <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
             <a class="btn btn-outline-success" href="index.php?r=adminpanel">adminPanel</a>
+            <a class="btn btn-outline-success" href="index.php?r=uploadapartament">uploadapartament</a>
           <?php endif; ?>
           <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
             <a class="btn btn-outline-success" href="index.php?r=gestorpanel">gestorPanel</a>
+            <a class="btn btn-outline-success" href="index.php?r=uploadapartament">uploadapartament</a>
           <?php endif; ?>
         <?php else: ?>
           <a class="btn btn-outline-success" href="index.php?r=login">Login</a>
