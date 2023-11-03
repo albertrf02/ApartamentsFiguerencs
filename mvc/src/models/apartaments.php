@@ -9,21 +9,22 @@ class uploadApartaments
     {
         $this->pdo = $pdo;
     }
-    public function uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones){
-        
+    public function uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones)
+    {
+
         //TO DO
 
         // Check if a file was uploaded
-        if (isset($_FILES['imatge']) && $_FILES['imatge']['error'] === 0) {
-            $imagePath = '..\..\public\img' . $_FILES['imatge']['name'];
-    
+        if (isset($_FILES['imatges']) && $_FILES['imatges']['error'] === 0) {
+            $imagePath = 'img/' . $_FILES['imatges']['name'];
+
             // Move the uploaded image to a designated folder
-            if (move_uploaded_file($_FILES['imatge']['tmp_name'], $imagePath)) {
+            if (move_uploaded_file($_FILES['imatges']['tmp_name'], $imagePath)) {
                 // Image uploaded successfully, proceed to insert apartment data
                 $sql = "INSERT INTO apartament (Titol, Adreca, Longitud, Latitud, Descripcio, MetresQuadrats, NumHabitacions, PreuDiaTemporadaBaixa, PreuDiaTemporadaAlta, NumPersones) 
                         VALUES (:titol, :adreca, :longitud, :latitud, :descripcio, :metresQuadrats, :numHabitacions, :preuDiaTemporadaBaixa, :preuDiaTemporadaAlta, :numPersones)";
                 $stmt = $this->pdo->prepare($sql);
-    
+
                 // Bind the user input to the prepared statement
                 $stmt->bindParam(':titol', $titol);
                 $stmt->bindParam(':adreca', $adreca);
@@ -35,13 +36,13 @@ class uploadApartaments
                 $stmt->bindParam(':preuDiaTemporadaBaixa', $preuDiaTemporadaBaixa);
                 $stmt->bindParam(':preuDiaTemporadaAlta', $preuDiaTemporadaAlta);
                 $stmt->bindParam(':numPersones', $numPersones);
-    
+
                 // Execute the INSERT statement for apartment data
                 if ($stmt->execute()) {
                     // Insert the image link into a separate table
                     $imageSql = "INSERT INTO imatges (Enlace, idApartament) VALUES (:enlace, :idApartament)";
                     $imageStmt = $this->pdo->prepare($imageSql);
-                    $imageStmt->bindParam(':enlace', $imagePath);
+                    $imageStmt->bindParam(':enlace', $_FILES['imatges']['name']);
                     $imageStmt->bindParam(':idApartament', $this->pdo->lastInsertId()); // Get the ID of the last inserted apartment
                     $imageStmt->execute();
                     return true;
@@ -79,4 +80,5 @@ class uploadApartaments
         }
         return $tasks;
     }
-};
+}
+;

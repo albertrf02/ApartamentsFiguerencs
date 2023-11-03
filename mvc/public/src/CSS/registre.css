@@ -6,12 +6,19 @@ body {
 }
 body {
   background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff; /* Cambia el color de fondo a tu preferencia */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  transition: top 0.3s; /* Agrega una transición suave */
 }
 
 .col-4 {
@@ -22,6 +29,7 @@ body {
 }
 
 .col-8 {
+  margin-top: 200px;
   background-color: #fff;
   padding: 20px;
   border-radius: 15px;

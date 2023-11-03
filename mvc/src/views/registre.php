@@ -18,7 +18,8 @@
             ?>
         </div>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" <?php if (isset($adminUser) || isset($gestorUser)): ?>
+                    style="margin-top: 180px;" <?php else: ?> style="margin-top: 100px;" <?php endif; ?>>
                 <div class="col-4">
                     <div class="back-link">
                         <a href="index.php">

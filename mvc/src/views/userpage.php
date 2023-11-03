@@ -86,10 +86,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-                                        <p><b>Contrasenya:</b> </p>
-                                        <?php echo $userToEdit['Contrasenya']; ?>
-                                    <?php else: ?>
+                                    <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
                                         <label for="password">Password</label>
                                         <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
                                             placeholder="Enter your password"
@@ -97,12 +94,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                    <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-                                        <p>
-                                            <b>Targeta:</b>
-                                        </p>
-                                        <?php echo isset($userToEdit['NumTargetaCredit']) ? $userToEdit['NumTargetaCredit'] : 'No tens cap targeta establerta'; ?>
-                                    <?php else: ?>
+                                    <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
                                         <label for="num_targeta">Targeta</label>
                                         <input type="targeta" class="form-control" id="NumTargetaCredit"
                                             name="NumTargetaCredit" placeholder="targeta"
