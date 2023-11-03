@@ -1,5 +1,10 @@
 #content {
-  margin-top: 60px; /* Ajusta la altura del nav aquí (debe coincidir con la altura del nav) */
+    margin-top: 60px; /* Ajusta la altura del nav aquí (debe coincidir con la altura del nav) */
+  }
+
+.cont{
+    padding-left: 25px;
+    padding-right: 25px;
 }
 #nav {
   position: fixed;
