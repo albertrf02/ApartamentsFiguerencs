@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div id="content">
     <div id="nav">
         <?php
         include 'head.php';
@@ -93,7 +94,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </body>
 
 </html>
