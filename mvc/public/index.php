@@ -20,6 +20,7 @@ include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/registreAdmin.php";
 include "../src/controllers/Apartament.php";
+include "../src/controllers/apartament_ajax.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -50,7 +51,10 @@ if ($r === "login") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
-} else {
+}elseif ($r == "apartament_ajax") {
+    $response = ctrlApartamentAjax($request, $response, $container);
+} 
+else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 }   
 

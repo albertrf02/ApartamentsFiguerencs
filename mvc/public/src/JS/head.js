@@ -84,3 +84,34 @@ $( "#datepicker2" ).datepicker({
     }
   }
 });
+
+
+$(document).on('click', '.open-apartment-details', function(e) {
+  // Obtén el ID del apartamento desde el atributo personalizado
+  var apartmentId = $(e.target).data('apartamento-id');
+  console.log(apartmentId);
+  localStorage.setItem('apartmentId', apartmentId);
+
+  // Realiza una solicitud AJAX para obtener los detalles del apartamento
+  $.ajax({
+      type: 'GET',
+      url: 'index.php?r=apartament_ajax',
+      data: { id: apartmentId },
+      async: false,
+      success: function(data) {
+        console.log(data);
+          // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
+          $('#apartment-name').html(data);
+          $('#apartment-description').html(data);
+          $('#apartment-address').html(data);
+          $('#apartment-bedrooms').html(data);
+          $('#apartment-M4').html(data);
+          $('#apartment-people').html(data);
+          jason = JSON.parse(data);
+      },
+      error: function() {
+          // Maneja cualquier error que pueda ocurrir durante la solicitud AJAX
+          alert('Ha ocurrido un error.');
+      }
+  });
+});
