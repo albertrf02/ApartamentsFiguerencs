@@ -65,7 +65,7 @@
       <hr class="hr3" />
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
-    <?php foreach ($apartaments as $apartament) : ?>
+      <?php foreach ($apartaments as $apartament) : ?>
         <div class="col">
             <div class="card">
                 <img src="img/<?php echo $apartament['Enlace']; ?>" class="card-img-top" alt="Imagen del apartamento">
@@ -73,7 +73,7 @@
                     <h5 class="card-title"><?php echo $apartament['Titol']; ?></h5>
                     <p class="card-text">Número habitaciones: <?php echo $apartament['NumHabitacions']; ?></p>
                     <p class="card-text">Metros cuadrados: <?php echo $apartament['MetresQuadrats']; ?></p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-apartamento-id="<?php echo $apartament['Id_Apartament']; ?>">Ver detalles</button>
+                    <button class="btn btn-primary open-apartment-details" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-apartamento-id="<?php echo $apartament['Id']; ?>">Veure mes..</button>
                 </div>
             </div>
         </div>
@@ -88,18 +88,59 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles del Apartamento</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalls de l'apartament</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="apartment-details">
-                <!-- Aquí se mostrará la información del apartamento -->
+            <div class="modal-body" >
+              <div class="row">
+                <div class="col-12" id="apartment-img">
+                </div>
+                <div class="col-6" >
+                    <div class="row">
+                      <div class="col-6">Nom: </div>
+                      <div class="col-6" id="apartment-name"></div>
+                    </div>
+                </div>
+                <div class="col-6" >
+                  <div class="row">
+                    <div class="col-6">Descripció:</div>
+                    <div class="col-6" id="apartment-description"></div>
+                  </div>
+                </div>
+                <div class="col-6" >
+                  <div class="row">
+                    <div class="col-6">Adreça:</div>
+                    <div class="col-6" id="apartment-address"></div>
+                  </div>
+                </div>
+                <div class="col-6" >
+                  <div class="row">
+                    <div class="col-6">Número habitacions:</div>
+                    <div class="col-6" id="apartment-bedrooms"></div>
+                  </div>
+                </div>
+                <diV class="col-6" >
+                  <div class="row">
+                    <div class="col-6">Metres quadrats:</div>
+                    <div class="col-6" id="apartment-M4"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-6">Capacitat:</div>
+                    <div class="col-6" id="apartment-people"> persones</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Aceptar</button>
+                <a href="index.php?r=apartament">
+                  <button type="button" class="btn btn-primary">Reservar</button>
+                </a>
             </div>
         </div>
     </div>
