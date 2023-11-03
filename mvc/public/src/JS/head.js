@@ -99,7 +99,6 @@ $(document).on('click', '.open-apartment-details', function(e) {
       data: { id: apartmentId },
       async: false,
       success: function(data) {
-        console.log(data);
           // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
           $('#apartment-name').html(data);
           $('#apartment-description').html(data);

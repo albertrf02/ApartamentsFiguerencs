@@ -24,8 +24,11 @@ include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
 include "../src/controllers/adminPanelCtrl.php";
-
+include "../src/controllers/gestorPanelCtrl.php";
+include "../src/controllers/uploadApartament.php";
+include "../src/controllers/apartament_ajax.php";
 include "../src/middleware/middleAdmin.php";
+
 
 
 $request = new \Emeset\Request();
@@ -36,7 +39,6 @@ $r = '';
 if (isset($_REQUEST["r"])) {
     $r = $_REQUEST["r"];
 }
-
 
 
 if ($r === "login") {
@@ -54,8 +56,17 @@ if ($r === "login") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
-} else {
+}elseif ($r == "gestorpanel") {
+    $response = isGestor($request, $response, $container, "ctrlGestorPanel");
+} elseif ($r == "registregestor") {
+    $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
+} elseif ($r == "uploadapartament") {
+    $response = isAdmin($request, $response, $container, "ctrlUploadApartament");
+}elseif ($r == "apartament_ajax") {
+    $response = ctrlApartamentAjax($request, $response, $container);
+} 
+else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
-}
+}   
 
 $response->response();
