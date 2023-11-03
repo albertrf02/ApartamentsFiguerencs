@@ -1,7 +1,8 @@
 <?php
-function ctrlApartamentAjax($request, $response, $container){
+function ctrlApartamentAjax($request, $response, $container)
+{
     // $nom = $request->get(INPUT_GET, "Titol"??"hola");
-    $apartamentModal = $container->apartaments()->getModal();
+    $apartamentModal = $container->uploadApartaments()->getModal();
     $response->setJson();
     // $response->set("nom", $nom);
     echo $apartamentModal['Titol'];
