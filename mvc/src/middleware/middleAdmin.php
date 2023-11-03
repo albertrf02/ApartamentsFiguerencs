@@ -93,25 +93,42 @@ function isGestor($request, $response, $container, $next)
     return $response;
 }
 
+function isGestorAdmin($request, $response, $container, $next)
+{
+    if (isset($_SESSION['user'])) {
+        $user = $_SESSION['user'];
+
+        if ($user['Rol'] === 'Gestor' || $user['Rol'] === 'Administrador') {
+            $response = getUserData($request, $response, $container, $next);
+
+            $gestorUser = true;
+            $response->set("gestorUser", $gestorUser);
+        } else {
+            $response->redirect("location: index.php?");
+        }
+    }
+    return $response;
+}
+
 
 // obtenir dades de l'usuari si està loggejat, per així mostrar el seu nom a la navbar
 function getUserData($request, $response, $container, $next)
 {
-    
+
     if (isset($_SESSION['user'])) {
         $userId = $_SESSION['user']['Id'];
-        
+
         $usersModel = $container->users();
         $userDb = $usersModel->getById($userId);
-        
+
         // User is logged in, retrieve their name
         $loginName = $userDb['Nom'];
         $loginValid = true;
-        
+
         $response->set("loginValid", $loginValid);
         $response->set("loginName", $loginName);
     }
-    $response = $next($request, $response, $container); 
-    
+    $response = $next($request, $response, $container);
+
     return $response;
 }

@@ -56,17 +56,16 @@ if ($r === "login") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
-}elseif ($r == "gestorpanel") {
+} elseif ($r == "gestorpanel") {
     $response = isGestor($request, $response, $container, "ctrlGestorPanel");
 } elseif ($r == "registregestor") {
     $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
 } elseif ($r == "uploadapartament") {
-    $response = isAdmin($request, $response, $container, "ctrlUploadApartament");
-}elseif ($r == "apartament_ajax") {
+    $response = isGestorAdmin($request, $response, $container, "ctrlUploadApartament");
+} elseif ($r == "apartament_ajax") {
     $response = ctrlApartamentAjax($request, $response, $container);
-} 
-else {
+} else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
-}   
+}
 
 $response->response();
