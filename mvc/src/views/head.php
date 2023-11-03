@@ -26,6 +26,9 @@
           <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
             <a class="btn btn-outline-success" href="index.php?r=adminpanel">adminPanel</a>
           <?php endif; ?>
+          <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
+            <a class="btn btn-outline-success" href="index.php?r=gestorpanel">gestorPanel</a>
+          <?php endif; ?>
         <?php else: ?>
           <a class="btn btn-outline-success" href="index.php?r=login">Login</a>
           <a class="btn btn-outline-success" href="index.php?r=registre">Registre</a>

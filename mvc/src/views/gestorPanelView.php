@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href='src/CSS/index.css' rel='stylesheet' />
-    <title>Admin Panel</title>
+    <title>Gestor Panel</title>
 </head>
 
 <body>
@@ -17,31 +17,8 @@
             include 'head.php';
             ?>
         </div>
-        <div style="display: flex">
-            <ul>
-                <?php foreach ($users as $user): ?>
-                    <li>
-                        <a href="index.php?r=userpage&Id=<?php echo $user["Id"]; ?>">
-                            <?php echo $user["Nom"]; ?>
-                        </a>
-
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-            <ul>
-                <?php foreach ($apartaments as $apartament): ?>
-                    <li>
-                        <a href="index.php?r=apartament&Id=<?php echo $apartament["Id"]; ?>">
-                            <?php echo $apartament["Titol"]; ?>
-                        </a>
-
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        <a class="btn btn-outline-success" href="index.php?r=registreadmin">Crear Usuari</a>
+        <a class="btn btn-outline-success" href="index.php?r=registregestor">Crear Usuari</a>
         <a class="btn btn-outline-success" href="index.php?r=uploadapartament">uploadapartament</a>
-
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

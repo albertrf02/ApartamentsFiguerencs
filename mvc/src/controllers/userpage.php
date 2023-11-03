@@ -21,8 +21,8 @@ function ctrlUserPage($request, $response, $container)
         if (isset($_POST['delete'])) {
             $usersModel->deleteUser($userIdToEdit);
             $response->redirect("Location: index.php?r=adminpanel");
-        } elseif (isset($_POST['CorreuElectronic']) && isset($_POST['Contrasenya']) && isset($_POST['Nom']) && isset($_POST['Cognoms']) && isset($_POST['Telefon']) && isset($_POST['NumTargetaCredit'])) {
-            if (empty($_POST['Nom']) || empty($_POST['Cognoms']) || empty($_POST['CorreuElectronic']) || empty($_POST['Contrasenya'])) {
+        } elseif (isset($_POST['CorreuElectronic']) && isset($_POST['Contrasenya']) && isset($_POST['Nom']) && isset($_POST['Cognoms']) && isset($_POST['Telefon']) && isset($_POST['NumTargetaCredit']) && isset($_POST['Rol'])) {
+            if (empty($_POST['Nom']) || empty($_POST['Cognoms']) || empty($_POST['CorreuElectronic']) || empty($_POST['Contrasenya']) || empty($_POST['Rol'])) {
                 $response->set("error", "Falten camps per omplir");
             } else {
                 $nom = $_POST['Nom'];
@@ -31,7 +31,8 @@ function ctrlUserPage($request, $response, $container)
                 $password = $_POST['Contrasenya'];
                 $telefon = empty($_POST['Telefon']) ? null : $_POST['Telefon'];
                 $numTargeta = empty($_POST['NumTargetaCredit']) ? null : $_POST['NumTargetaCredit'];
-                $updateUser = $usersModel->updateUser($userIdToEdit, $nom, $cognom, $email, $password, $telefon, $numTargeta);
+                $rol = $_POST['Rol'];
+                $updateUser = $usersModel->updateUser($userIdToEdit, $nom, $cognom, $email, $password, $telefon, $numTargeta, $rol);
             }
         }
     }

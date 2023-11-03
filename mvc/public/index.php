@@ -19,10 +19,13 @@ include "../src/controllers/index.php";
 include "../src/controllers/login.php";
 include "../src/controllers/registre.php";
 include "../src/controllers/registreAdmin.php";
+include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
 include "../src/controllers/adminPanelCtrl.php";
+include "../src/controllers/gestorPanelCtrl.php";
+include "../src/controllers/uploadApartament.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -53,8 +56,14 @@ if ($r === "login") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
+} elseif ($r == "gestorpanel") {
+    $response = isGestor($request, $response, $container, "ctrlGestorPanel");
+} elseif ($r == "registregestor") {
+    $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
+} elseif ($r == "uploadapartament") {
+    $response = isAdmin($request, $response, $container, "ctrlUploadApartament");
 } else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
-}   
+}
 
 $response->response();

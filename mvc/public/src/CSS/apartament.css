@@ -1,35 +1,52 @@
-.cont{
-    padding-left: 25px;
-    padding-right: 25px;
+#content {
+  margin-top: 60px; /* Ajusta la altura del nav aquí (debe coincidir con la altura del nav) */
 }
-.carousel-inner{
-    margin-top: 0;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff; /* Cambia el color de fondo a tu preferencia */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  transition: top 0.3s; /* Agrega una transición suave */
 }
 
-.divmaps{
-    margin-top: 15px;
-    width: 100%;
-    display: flex;
+#nav.hidden {
+  top: -60px; /* La altura del encabezado (ajusta según tus necesidades) */
 }
-.maps{
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+.cont {
+  padding-left: 25px;
+  padding-right: 25px;
 }
-.border-shadow{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.carousel-inner {
+  margin-top: 0;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.row{
-    display: flex;
-    padding: 10px;
+
+.divmaps {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
 }
-.align-start{
-    margin-top: auto;
-    margin-bottom: auto;
+.maps {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.divcar{
-    padding: 10px;
+.border-shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.row {
+  display: flex;
+  padding: 10px;
+}
+.align-start {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.divcar {
+  padding: 10px;
 }

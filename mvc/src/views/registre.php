@@ -18,7 +18,8 @@
             ?>
         </div>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" <?php if (isset($adminUser) || isset($gestorUser)): ?>
+                    style="margin-top: 180px;" <?php else: ?> style="margin-top: 100px;" <?php endif; ?>>
                 <div class="col-4">
                     <div class="back-link">
                         <a href="index.php">
@@ -29,7 +30,8 @@
                     <h2 class="text-center">Registre</h2>
                     <hr>
                     <form method="POST"
-                        action="<?php echo (isset($adminUser)) ? 'index.php?r=registreadmin' : 'index.php?r=registre'; ?>">
+                        action="<?php echo (isset($gestorUser)) ? 'index.php?r=registregestor' : (isset($adminUser) ? 'index.php?r=registreadmin' : 'index.php?r=registre'); ?>">
+
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input type="text" class="form-control" id="name" name="name">
@@ -46,6 +48,15 @@
                             <label for="password">Contrasenya</label>
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
+                        <?php if (isset($gestorUser)): ?>
+                            <div class="form-group">
+                                <label for="rol">Rol</label>
+                                <select class="form-control" id="rol" name="rol">
+                                    <option value="Gestor">Gestor</option>
+                                    <option value="Usuari">Usuari</option>
+                                </select>
+                            </div>
+                        <?php endif; ?>
                         <?php if (isset($adminUser)): ?>
                             <div class="form-group">
                                 <label for="rol">Rol</label>

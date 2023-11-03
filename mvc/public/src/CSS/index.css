@@ -71,9 +71,7 @@
 .col{
   cursor: pointer;
 }
-.container-fluid{
-/* Hacer que el buscador del nav este ne le centro */
-}
+
 .row {
 margin: 0 auto;
 justify-content: center;
