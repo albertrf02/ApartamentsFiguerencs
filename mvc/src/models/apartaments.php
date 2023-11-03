@@ -114,7 +114,7 @@ class uploadApartaments
     // }
     public function getModal()
     {
-        $stm = $this->db->prepare("SELECT Apartament.*, Imatges.Enlace
+        $stm = $this->pdo->prepare("SELECT Apartament.*, Imatges.Enlace
         FROM Apartament
         JOIN Imatges ON Imatges.IdApartament = Apartament.Id
         WHERE Apartament.Id = :id
