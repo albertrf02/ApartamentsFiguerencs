@@ -17,6 +17,28 @@
             include 'head.php';
             ?>
         </div>
+        <div style="display: flex">
+            <ul>
+                <?php foreach ($users as $user): ?>
+                    <li>
+                        <a href="index.php?r=userpage&Id=<?php echo $user["Id"]; ?>">
+                            <?php echo $user["Nom"]; ?>
+                        </a>
+
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <ul>
+                <?php foreach ($apartaments as $apartament): ?>
+                    <li>
+                        <a href="index.php?r=apartament&Id=<?php echo $apartament["Id"]; ?>">
+                            <?php echo $apartament["Titol"]; ?>
+                        </a>
+
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
         <a class="btn btn-outline-success" href="index.php?r=registregestor">Crear Usuari</a>
         <a class="btn btn-outline-success" href="index.php?r=uploadapartament">uploadapartament</a>
     </div>

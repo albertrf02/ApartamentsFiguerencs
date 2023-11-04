@@ -23,6 +23,7 @@ include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
+include "../src/controllers/userpageGestor.php";
 include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
 include "../src/controllers/uploadApartament.php";
@@ -64,6 +65,8 @@ if ($r === "login") {
     $response = isGestorAdmin($request, $response, $container, "ctrlUploadApartament");
 } elseif ($r == "apartament_ajax") {
     $response = ctrlApartamentAjax($request, $response, $container);
+} elseif ($r == "userpagegestor") {
+    $response = isGestor($request, $response, $container, "ctrlUserPageGestor");
 } else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 }
