@@ -132,15 +132,17 @@
                             Reserves
                         </div>
                         <div>
-                            <?php
-                            var_dump($userReserves);
-                            ?>
                             <ul>
                                 <?php foreach ($userReserves as $userReserva): ?>
                                     <li>
                                         <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">
-                                            <?php echo $userReserva["Id"]; ?>
                                         </a>
+                                        <?php echo $userReserva["Id"]; ?>
+                                        <br>
+                                        <?php echo $userReserva["Titol"]; ?>
+                                        <br>
+                                        <?php echo $userReserva["StartDate"]; ?>  --
+                                        <?php echo $userReserva["EndDate"]; ?>
                                         <?php if ($potBorrarReserva): ?>
                                             <form method="POST" action="index.php?r=userpage&action=deletereserva">
                                                 <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">

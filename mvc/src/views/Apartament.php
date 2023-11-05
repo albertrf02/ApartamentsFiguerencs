@@ -38,7 +38,21 @@
                     <h2>Precio por día:</h2>
                     <p>Temporada Baja: $200.00</p>
                     <p>Temporada Alta: $300.00</p>
-                    <a href="#" class="btn btn-primary">Reservar</a>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <form action="index.php?r=reserva" method="post">
+
+                                <label for="dataInici">Start Date:</label>
+                                <input type="date" name="dataInici" id="dataInici" required><br><br>
+
+                                <label for="dataFi">End Date:</label>
+                                <input type="date" name "dataFi" id="dataFi" required><br><br>
+
+                                <input type="submit" value="Reserva">
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div id="carouselImages" class="carousel slide" data-ride="carousel">

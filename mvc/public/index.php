@@ -49,7 +49,7 @@ if ($r === "login") {
 } elseif ($r === "registre") {
     $response = ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
-    $response = ctrlApartament($request, $response, $container);
+    $response = isLogged($request, $response, $container, "ctrlApartament");
 } elseif ($r == "logout") {
     $response = ctrlLogout($request, $response, $container);
 } elseif ($r == "adminpanel") {
