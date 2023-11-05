@@ -52,13 +52,11 @@ if ($r === "login") {
 } elseif ($r == "logout") {
     $response = ctrlLogout($request, $response, $container);
 } elseif ($r == "adminpanel") {
-    $response = isAdmin($request, $response, $container, "ctrlAdminPanel");
+    $response = isGestorAdmin($request, $response, $container, "ctrlAdminPanel");
 } elseif ($r == "userpage") {
     $response = isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
     $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
-} elseif ($r == "gestorpanel") {
-    $response = isGestor($request, $response, $container, "ctrlGestorPanel");
 } elseif ($r == "registregestor") {
     $response = isGestor($request, $response, $container, "ctrlRegistreGestor");
 } elseif ($r == "uploadapartament") {

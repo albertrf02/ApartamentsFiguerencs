@@ -27,7 +27,7 @@
             <a class="btn btn-outline-success" href="index.php?r=userpage">Dades</a>
           <?php endif; ?>
           <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
-            <a class="btn btn-outline-success" href="index.php?r=gestorpanel">gestorPanel</a>
+            <a class="btn btn-outline-success" href="index.php?r=adminpanel">gestorPanel</a>
             <a class="btn btn-outline-success" href="index.php?r=userpagegestor">Dades</a>
           <?php endif; ?>
           <?php if ($_SESSION['user']['Rol'] === 'Usuari'): ?>
