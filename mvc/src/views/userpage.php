@@ -45,46 +45,71 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="form-group">
+                                    <?php if (!$potEditarUsuari): ?>
+                                        <p>
+                                            <b>Cognoms:</b>
+                                            <?php echo $userToEdit['Cognoms']; ?>
+                                        </p>
+                                    <?php else: ?>
                                         <label for="lastname">Last Name</label>
                                         <input type="text" class="form-control" id="Cognoms" name="Cognoms"
                                             placeholder="Enter your lastname" value="<?php echo $userToEdit['Cognoms']; ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                        <label for="phone">Phone Number</label>
+                                    <?php if (!$potEditarUsuari): ?>
+                                        <p>
+                                            <b>Telefon:</b>
+                                            <?php echo $userToEdit['Telefon']; ?>
+                                        </p>
+                                    <?php else: ?>
+                                        <label for="phone">Telefon</label>
                                         <div class="input-group">
                                             <input type="tel" class="form-control" id="Telefon" name="Telefon"
                                                 placeholder="Telefon" value="<?php echo $userToEdit['Telefon']; ?>">
                                         </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
+                                    <?php if (!$potEditarUsuari): ?>
+                                        <p>
+                                            <b>Email:</b>
+                                            <?php echo $userToEdit['CorreuElectronic']; ?>
+                                        </p>
+                                    <?php else: ?>
                                         <label for="email">Email</label>
                                         <input type="email" class="form-control" id="CorreuElectronic"
                                             name="CorreuElectronic" placeholder="Enter your email"
                                             value="<?php echo $userToEdit['CorreuElectronic']; ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
-                                            placeholder="Enter your password"
-                                            value="<?php echo $userToEdit['Contrasenya']; ?>">
+                                <?php if ($dadesSensibles): ?>
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
+                                        placeholder="Enter your password"
+                                        value="<?php echo $userToEdit['Contrasenya']; ?>">
+                                <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                        <label for="num_targeta">Targeta</label>
-                                        <input type="targeta" class="form-control" id="NumTargetaCredit"
-                                            name="NumTargetaCredit" placeholder="targeta"
-                                            value="<?php echo $userToEdit['NumTargetaCredit']; ?>">
+                                <?php if ($dadesSensibles): ?>
+                                    <label for="num_targeta">Targeta</label>
+                                    <input type="targeta" class="form-control" id="NumTargetaCredit"
+                                        name="NumTargetaCredit" placeholder="targeta"
+                                        value="<?php echo $userToEdit['NumTargetaCredit']; ?>">
+                                <?php endif; ?>
                                 </div>
                                 <div class="form-group">
                                     <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
                                         <label for="rol">Rol</label>
                                         <select class="form-control" id="Rol" name="Rol">
-                                            <option value="Administrador" <?php if ($userToEdit['Rol'] === 'Administrador') {
+                                            <option value="Administrador" <?php if ($userToEdit['Rol']) {
                                                 echo 'selected';
                                             } ?>>Administrador</option>
-                                            <option value="Gestor" <?php if ($userToEdit['Rol'] === 'Gestor') {
+                                            <option value="Gestor" <?php if ($userToEdit['Rol']) {
                                                 echo 'selected';
                                             } ?>>Gestor</option>
-                                            <option value="Usuari" <?php if ($userToEdit['Rol'] === 'Usuari') {
+                                            <option value="Usuari" <?php if ($userToEdit['Rol']) {
                                                 echo 'selected';
                                             } ?>>Usuari</option>
                                         </select>
@@ -119,10 +144,10 @@
                                             <?php echo $userReserva["Id"]; ?>
                                         </a>
                                         <?php if ($potBorrarReserva): ?>
-                                        <form method="POST" action="index.php?r=userpage&action=deletereserva">
-                                            <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
-                                            <button type="submit" class="btn btn-danger">Borrar</button>
-                                        </form>
+                                            <form method="POST" action="index.php?r=userpage&action=deletereserva">
+                                                <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
+                                                <button type="submit" class="btn btn-danger">Borrar</button>
+                                            </form>
                                         <?php endif; ?>
                                     </li>
                                 <?php endforeach; ?>
