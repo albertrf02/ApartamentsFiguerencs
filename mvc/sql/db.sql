@@ -57,7 +57,9 @@ CREATE TABLE Disponibilitat (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Data DATE,
     IdReserva INT,
-    FOREIGN KEY (IdReserva) REFERENCES Reserva(Id)
+    IdApartament INT,
+    FOREIGN KEY (IdReserva) REFERENCES Reserva(Id),
+    FOREIGN KEY (IdApartament) REFERENCES Apartament(Id)
 );
 
 -- Crea la taula Temporada

@@ -37,10 +37,11 @@ class UploadReserva
             $idReserva = $this->pdo->lastInsertId();
             foreach ($period as $dt) {
                 error_log($dt->format("Y-m-d"));
-                $disponiblitatSql = "INSERT INTO Disponibilitat (Data, idReserva) VALUES (:data, :idReserva)";
+                $disponiblitatSql = "INSERT INTO Disponibilitat (Data, idReserva, idApartament) VALUES (:data, :idReserva, :idApartament)";
                 $disponiblitatStmt = $this->pdo->prepare($disponiblitatSql);
                 $disponiblitatStmt->bindParam(':data', $dt->format("Y-m-d"));
                 $disponiblitatStmt->bindParam(':idReserva', $idReserva); // Get the ID of the last inserted apartment
+                $disponiblitatStmt->bindParam(':idApartament', $idApartament);
                 $disponiblitatStmt->execute();
             }
             return true;
