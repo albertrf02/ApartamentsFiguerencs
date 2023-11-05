@@ -1,7 +1,7 @@
 <?php
 namespace Daw;
 
-class uploadApartaments
+class apartaments
 {
     private $pdo;
 
