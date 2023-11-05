@@ -56,10 +56,27 @@ function ctrlUserPage($request, $response, $container)
         $userToEdit = $usersModel->getById($userIdToEdit);
     }
 
+    // defaults
+    $response->set("potEditarUsuari", false);
+    $response->set("potBorrarUsuari", false);
+    $response->set("potBorrarReserva", false);
+
 
     if ($currentUserDb['Rol'] === 'Administrador') {
         $response->set("admin", true);
+        $response->set("potEditarUsuari", true);
+        $response->set("potBorrarUsuari", true);
+        $response->set("potBorrarReserva", true);
     }
+
+    if ($currentUserDb['Rol'] === 'Gestor') {
+        $response->set("potBorrarReserva", true);
+    }
+
+    if($userToEdit == $currentUserDb){
+        $response->set("potEditarUsuari", true);
+    }
+
 
     $response->set("userToEdit", $userToEdit);
 
@@ -67,6 +84,8 @@ function ctrlUserPage($request, $response, $container)
     $userReserves = $reservaModel->getReservesByUserId($userIdToEdit);
 
     $response->set("userReserves", $userReserves);
+
+
     return $response;
 }
 

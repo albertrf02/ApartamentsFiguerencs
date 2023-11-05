@@ -56,11 +56,19 @@ class apartaments
 
     public function getAll($datepicker, $datepicker2, $numPersones)
     {
-        $stm = $this->pdo->prepare("SELECT a.*
-        FROM Apartament a
-        LEFT JOIN Disponibilitat d ON a.Id = d.IdApartament AND d.Data BETWEEN :dataInici AND :dataFi
-        WHERE d.Id IS NULL
-        GROUP BY a.Id;
+        $stm = $this->pdo->prepare("SELECT 
+        a.*,
+        MIN(i.Enlace) AS Enlace
+    FROM 
+        Apartament a
+    LEFT JOIN 
+        Disponibilitat d ON a.Id = d.IdApartament AND d.Data BETWEEN :dataInici AND :dataFi
+    LEFT JOIN 
+        Imatges i ON a.Id = i.IdApartament
+    WHERE 
+        d.Id IS NULL
+    GROUP BY 
+        a.Id;
         ");
         $stm->bindParam(':dataInici', $datepicker);
         $stm->bindParam(':dataFi', $datepicker2);
