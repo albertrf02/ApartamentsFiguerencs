@@ -7,8 +7,8 @@ function ctrlReserva($request, $response, $container)
     $idUser = 3;
     $idApartament = 2;
     $data = '2023-05-11';
-    $dataInici = '2023-05-11';
-    $dataFi = '2023-05-14';   
+    $dataInici = '2026-05-11';
+    $dataFi = '2026-05-14';   
     $preu = 100;
     $idTemporada = 1;
 

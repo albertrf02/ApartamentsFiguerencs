@@ -63,4 +63,53 @@ class UploadReserva
         // If count is greater than 0, the email already exists
         return $count > 0;
     }
+
+    public function getReservesByUserId($idUser)
+    {
+        $stm = $this->pdo->prepare("SELECT
+        r.Id, 
+        r.IdApartament,
+        a.Titol,
+        MIN(d.Data) as StartDate,
+        MAX(d.Data) as EndDate
+      FROM 
+        Reserva r
+      JOIN 
+        Apartament a ON r.IdApartament = a.Id
+      JOIN 
+        Disponibilitat d ON r.Id = d.IdReserva
+      WHERE 
+        r.IdUsuari = :idUser -- Replace specificUserId with the actual user ID
+      GROUP BY 
+        r.IdUsuari, r.IdApartament, a.Titol
+      HAVING 
+        EndDate > CURDATE()
+      ORDER BY 
+        StartDate;
+        ");
+        $stm->bindParam(':idUser', $idUser);
+        $stm->execute();
+
+        $reserves = array();
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reserves[] = $reserva;
+        }
+        return $reserves;
+    }
+
+    public function deleteReservaById($id){
+        $stm = $this->pdo->prepare('delete from Disponibilitat where idReserva=:id;');
+        $result = $stm->execute([':id' => $id]);
+
+        $stm = $this->pdo->prepare('delete from Reserva where id=:id;');
+        $result = $stm->execute([':id' => $id]);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+        
+
 }

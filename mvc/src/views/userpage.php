@@ -29,7 +29,7 @@
                                     <?php echo $error; ?>
                                 </div>
                             <?php endif; ?>
-                            <form method="POST" action="index.php?r=userpage">
+                            <form method="POST" action="index.php?r=userpage&action=updateuser">
                                 Personal Information
                                 <hr>
                                 <div class="form-group">
@@ -133,6 +133,24 @@
                     <div class="card">
                         <div class="card-header">
                             Reserves
+                        </div>
+                        <div>
+                            <?php
+                            var_dump($userReserves);
+                            ?>
+                            <ul>
+                                <?php foreach ($userReserves as $userReserva): ?>
+                                    <li>
+                                        <form method="POST" action="index.php?r=userpage&action=deletereserva">
+                                            <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">
+                                                <?php echo $userReserva["Id"]; ?>
+                                            </a>
+                                            <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
+                                            <button type="submit" class="btn btn-danger">Borrar</button>
+                                        </form>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
