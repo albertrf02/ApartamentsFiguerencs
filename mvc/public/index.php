@@ -22,13 +22,14 @@ include "../src/controllers/registreAdmin.php";
 include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
-include "../src/controllers/userpage.php";
-include "../src/controllers/userpageGestor.php";
+include "../src/controllers/userpage.php";;
 include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
 include "../src/controllers/uploadApartament.php";
 include "../src/controllers/apartament_ajax.php";
+include "../src/controllers/reservaCtrl.php";
 include "../src/middleware/middleAdmin.php";
+
 
 
 
@@ -63,9 +64,11 @@ if ($r === "login") {
     $response = isGestorAdmin($request, $response, $container, "ctrlUploadApartament");
 } elseif ($r == "apartament_ajax") {
     $response = ctrlApartamentAjax($request, $response, $container);
-} elseif ($r == "userpagegestor") {
-    $response = isGestor($request, $response, $container, "ctrlUserPageGestor");
-} else {
+} elseif ($r == "reserva"){
+    $response = isLogged($request, $response, $container, "ctrlReserva");
+} 
+
+else {
     $response = getUserData($request, $response, $container, "ctrlIndex");
 }
 

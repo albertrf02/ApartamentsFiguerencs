@@ -129,3 +129,5 @@ VALUES
     ('hab8.jpg', 8),
     ('hab9.jpg', 9),
     ('hab10.jpg', 10);
+
+    INSERT INTO `temporada` (`Id`, `DataIniciTemporadaAlta`, `DataFinalitzacioTemporadaAlta`, `DataIniciTemporadaBaixa`, `DataFinalitzacioTemporadaBaixa`) VALUES ('1', NULL, NULL, NULL, NULL);

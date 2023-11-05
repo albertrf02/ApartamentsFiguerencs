@@ -73,5 +73,9 @@ class Container
         return new \Daw\UploadApartaments($this->sql);
     }
 
+    public function reserva()
+    {
+        return new \Daw\UploadReserva($this->sql);
+    }
 
 }
