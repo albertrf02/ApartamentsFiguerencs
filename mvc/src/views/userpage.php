@@ -84,37 +84,35 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                <?php if ($dadesSensibles): ?>
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
-                                        placeholder="Enter your password"
-                                        value="<?php echo $userToEdit['Contrasenya']; ?>">
-                                <?php endif; ?>
+                                    <?php if ($dadesSensibles): ?>
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="Contrasenya" name="Contrasenya"
+                                            placeholder="Enter your password"
+                                            value="<?php echo $userToEdit['Contrasenya']; ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
-                                <?php if ($dadesSensibles): ?>
-                                    <label for="num_targeta">Targeta</label>
-                                    <input type="targeta" class="form-control" id="NumTargetaCredit"
-                                        name="NumTargetaCredit" placeholder="targeta"
-                                        value="<?php echo $userToEdit['NumTargetaCredit']; ?>">
-                                <?php endif; ?>
+                                    <?php if ($dadesSensibles): ?>
+                                        <label for="num_targeta">Targeta</label>
+                                        <input type="targeta" class="form-control" id="NumTargetaCredit"
+                                            name="NumTargetaCredit" placeholder="targeta"
+                                            value="<?php echo $userToEdit['NumTargetaCredit']; ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
                                     <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
                                         <label for="rol">Rol</label>
                                         <select class="form-control" id="Rol" name="Rol">
-                                            <option value="Administrador" <?php if ($userToEdit['Rol']) {
-                                                echo 'selected';
-                                            } ?>>Administrador</option>
-                                            <option value="Gestor" <?php if ($userToEdit['Rol']) {
-                                                echo 'selected';
-                                            } ?>>Gestor</option>
-                                            <option value="Usuari" <?php if ($userToEdit['Rol']) {
-                                                echo 'selected';
-                                            } ?>>Usuari</option>
+                                            <option value="Administrador" <?php if ($userToEdit['Rol'] === 'Administrador')
+                                                echo 'selected'; ?>>Administrador</option>
+                                            <option value="Gestor" <?php if ($userToEdit['Rol'] === 'Gestor')
+                                                echo 'selected'; ?>>Gestor</option>
+                                            <option value="Usuari" <?php if ($userToEdit['Rol'] === 'Usuari')
+                                                echo 'selected'; ?>>Usuari</option>
                                         </select>
                                     <?php endif; ?>
                                 </div>
+
 
                                 <input type="hidden" name="Id" value="<?php echo $userToEdit['Id']; ?>">
                                 <?php if (isset($admin)): ?>

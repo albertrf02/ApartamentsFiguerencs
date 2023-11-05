@@ -22,7 +22,6 @@ function ctrlUserPage($request, $response, $container)
         error_log($action);
 
         if ($action === "updateuser") {
-            error_log($_POST['delete']);
             if (isset($_POST['delete'])) {
                 $usersModel->deleteUser($userIdToEdit);
                 $response->redirect("Location: index.php?r=adminpanel");
