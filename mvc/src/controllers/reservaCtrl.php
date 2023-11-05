@@ -5,7 +5,7 @@ function ctrlReserva($request, $response, $container)
 
     error_log ("Reserva");
     $idUser = 3;
-    $idApartament = 1;
+    $idApartament = 2;
     $data = '2023-05-11';
     $dataInici = '2023-05-11';
     $dataFi = '2023-05-14';   
@@ -13,8 +13,10 @@ function ctrlReserva($request, $response, $container)
     $idTemporada = 1;
 
     $reservaModel = $container->reserva();
-    $result = $reservaModel->uploadReserva($idUser,$idApartament,$data,$dataInici,$dataFi,$preu,$idTemporada);
-
+    $isBooked = $reservaModel->isBooked($idApartament,$dataInici,$dataFi);
+    if (!$isBooked){
+        $result = $reservaModel->uploadReserva($idUser,$idApartament,$data,$dataInici,$dataFi,$preu,$idTemporada);
+    }
     return $response;
 }
 

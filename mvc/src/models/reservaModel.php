@@ -49,12 +49,13 @@ class UploadReserva
 
     }
 
-    public function isEmailExists($email)
+    public function isBooked($idApartament, $dataInici, $dataFi)
     {
-        // Prepare a SQL query to check if the email exists in the database
-        $sql = "SELECT COUNT(*) FROM Usuari WHERE CorreuElectronic = :email";
+        $sql = "SELECT COUNT(*) FROM Disponibilitat WHERE idApartament = :idApartament AND Data BETWEEN :dataInici AND :dataFi";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':idApartament', $idApartament);
+        $stmt->bindParam(':dataInici', $dataInici);
+        $stmt->bindParam(':dataFi', $dataFi);
         $stmt->execute();
 
         $count = $stmt->fetchColumn();
