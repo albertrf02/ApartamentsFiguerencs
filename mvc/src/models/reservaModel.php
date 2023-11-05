@@ -11,7 +11,8 @@ class UploadReserva
         $this->pdo = $pdo;
     }
 
-    public function registerReserva($idUser,$idApartament,$data,$dataInici,$dataFi,$preu,$idTemporada) {
+    public function uploadReserva($idUser, $idApartament, $data, $dataInici, $dataFi, $preu, $idTemporada)
+    {
         // Prepare the SQL INSERT statement
         $sql = "INSERT INTO `reserva` (`Preu`, `DataReserva`, `IdUsuari`, `IdApartament`, `IdTemporada`)
                 VALUES (:preu, :data, :idUser, :idApartament, :idTemporada)";
@@ -23,14 +24,28 @@ class UploadReserva
         $stmt->bindParam(':data', $data);
         $stmt->bindParam(':preu', $preu);
         $stmt->bindParam(':idTemporada', $idTemporada);
-        // Execute the INSERT statement
-        return $stmt->execute();
 
-        
+        // Execute the INSERT statement for apartment data
+        if ($stmt->execute()) {
 
-        // $sql = "INSERT INTO `disponiblitat` (`data`, `idReserva`)
-        //         VALUES (:data, :idReserva)";
-        
+            $begin = new \DateTime($dataInici);
+            $end = new \DateTime($dataFi);
+
+            $interval = \DateInterval::createFromDateString('1 day');
+            $period = new \DatePeriod($begin, $interval, $end);
+
+            $idReserva = $this->pdo->lastInsertId();
+            foreach ($period as $dt) {
+                error_log($dt->format("Y-m-d"));
+                $disponiblitatSql = "INSERT INTO Disponibilitat (Data, idReserva) VALUES (:data, :idReserva)";
+                $disponiblitatStmt = $this->pdo->prepare($disponiblitatSql);
+                $disponiblitatStmt->bindParam(':data', $dt->format("Y-m-d"));
+                $disponiblitatStmt->bindParam(':idReserva', $idReserva); // Get the ID of the last inserted apartment
+                $disponiblitatStmt->execute();
+            }
+            return true;
+        }
+
     }
 
     public function isEmailExists($email)

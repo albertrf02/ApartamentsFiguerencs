@@ -13,7 +13,7 @@ function ctrlReserva($request, $response, $container)
     $idTemporada = 1;
 
     $reservaModel = $container->reserva();
-    $result = $reservaModel->registerReserva($idUser,$idApartament,$data,$dataInici,$dataFi,$preu,$idTemporada);
+    $result = $reservaModel->uploadReserva($idUser,$idApartament,$data,$dataInici,$dataFi,$preu,$idTemporada);
 
     return $response;
 }
