@@ -108,16 +108,16 @@ INSERT INTO `usuari` (`Id`, `Nom`, `Cognoms`, `Telefon`, `CorreuElectronic`, `Co
 
 INSERT INTO Apartament (Titol, Adreca, Longitud, Latitud, Descripcio, MetresQuadrats, NumHabitacions, PreuDiaTemporadaBaixa, PreuDiaTemporadaAlta, numPersones)
 VALUES
-    ('Apartamento 1', 'Dirección 1', 12.345678, 23.456789, 'Descripción del apartamento 1', 80, 2, 100.00, 150.00, 4),
-    ('Apartamento 2', 'Dirección 2', 12.345679, 23.456790, 'Descripción del apartamento 2', 100, 3, 120.00, 180.00, 6),
-    ('Apartamento 3', 'Dirección 3', 12.345680, 23.456781, 'Descripción del apartamento 3', 70, 2, 90.00, 140.00, 4),
-    ('Apartamento 4', 'Dirección 4', 12.345681, 23.456782, 'Descripción del apartamento 4', 120, 4, 150.00, 220.00, 8),
-    ('Apartamento 5', 'Dirección 5', 12.345682, 23.456783, 'Descripción del apartamento 5', 90, 3, 110.00, 170.00, 6),
-    ('Apartamento 6', 'Dirección 6', 12.345683, 23.456784, 'Descripción del apartamento 6', 60, 1, 80.00, 120.00, 2),
-    ('Apartamento 7', 'Dirección 7', 12.345684, 23.456785, 'Descripción del apartamento 7', 110, 4, 140.00, 200.00, 8),
-    ('Apartamento 8', 'Dirección 8', 12.345685, 23.456786, 'Descripción del apartamento 8', 75, 2, 95.00, 150.00, 4),
-    ('Apartamento 9', 'Dirección 9', 12.345686, 23.456787, 'Descripción del apartamento 9', 100, 3, 120.00, 180.00, 6),
-    ('Apartamento 10', 'Dirección 10', 12.345687, 23.456788, 'Descripción del apartamento 10', 85, 2, 100.00, 160.00, 4);
+    ('Apartamento 1', 'Direccion 1', 12.345678, 23.456789, 'Descripcion del apartamento 1', 80, 2, 100.00, 150.00, 4),
+    ('Apartamento 2', 'Direccion 2', 12.345679, 23.456790, 'Descripcion del apartamento 2', 100, 3, 120.00, 180.00, 6),
+    ('Apartamento 3', 'Direccion 3', 12.345680, 23.456781, 'Descripcion del apartamento 3', 70, 2, 90.00, 140.00, 4),
+    ('Apartamento 4', 'Direccion 4', 12.345681, 23.456782, 'Descripcion del apartamento 4', 120, 4, 150.00, 220.00, 8),
+    ('Apartamento 5', 'Direccion 5', 12.345682, 23.456783, 'Descripcion del apartamento 5', 90, 3, 110.00, 170.00, 6),
+    ('Apartamento 6', 'Direccion 6', 12.345683, 23.456784, 'Descripcion del apartamento 6', 60, 1, 80.00, 120.00, 2),
+    ('Apartamento 7', 'Direccion 7', 12.345684, 23.456785, 'Descripcion del apartamento 7', 110, 4, 140.00, 200.00, 8),
+    ('Apartamento 8', 'Direccion 8', 12.345685, 23.456786, 'Descripcion del apartamento 8', 75, 2, 95.00, 150.00, 4),
+    ('Apartamento 9', 'Direccion 9', 12.345686, 23.456787, 'Descripcion del apartamento 9', 100, 3, 120.00, 180.00, 6),
+    ('Apartamento 10', 'Direccion 10', 12.345687, 23.456788, 'Descripcion del apartamento 10', 85, 2, 100.00, 160.00, 4);
 
 INSERT INTO Imatges (Enlace, IdApartament)
 VALUES
