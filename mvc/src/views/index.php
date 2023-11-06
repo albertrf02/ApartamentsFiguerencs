@@ -131,7 +131,7 @@
                 <div class="col-6">
                   <div class="row">
                     <div class="col-6">Capacitat:</div>
-                    <div class="col-6" id="apartment-people"> persones</div>
+                    <div class="col-6" id="apartment-people"> </div>
                   </div>
                 </div>
               </div>

@@ -27,12 +27,12 @@
             <div class="col-md-6 align-start">
                 <h1>Título del Apartamento</h1>
                 <p id="apartment-name2"></p>
-                <p>Ubicación: Dirección del apartamento</p>
-                <p>Coordenadas: Coordenadas del apartamento</p>
-                <p>Descripción: Descripción del apartamento</p>
+                <p id="apartment-address2">Ubicación: Dirección del apartamento</p>
+                <p id="">Coordenadas: Coordenadas del apartamento</p>
+                <p id="apartment-description2">Descripción: Descripción del apartamento</p>
                 <h2>Características:</h2>
-                <p>Metros cuadrados: 100 m²</p>
-                <p>Número de Habitaciones: 2</p>
+                <p id="apartment-M42">Metros cuadrados: </p>
+                <p id="apartment-bedrooms2">Número de Habitaciones: </p>
                 <h2>Precio por día:</h2>
                 <p>Temporada Baja: $200.00</p>
                 <p>Temporada Alta: $300.00</p>
