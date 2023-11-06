@@ -45,13 +45,20 @@ CREATE TABLE Usuari (
 -- Crea la taula Reserva
 CREATE TABLE Reserva (
     Id INT AUTO_INCREMENT PRIMARY KEY,
-    DataEntrada DATE,
-    DataSortida DATE,
-    Estat ENUM('Lliure', 'Ocupat', 'Tancat'),
     Preu DECIMAL(10, 2),
+    DataReserva DATE,
     IdUsuari INT,
     IdApartament INT,
     FOREIGN KEY (IdUsuari) REFERENCES Usuari(Id),
+    FOREIGN KEY (IdApartament) REFERENCES Apartament(Id)
+);
+
+CREATE TABLE Disponibilitat (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Data DATE,
+    IdReserva INT,
+    IdApartament INT,
+    FOREIGN KEY (IdReserva) REFERENCES Reserva(Id),
     FOREIGN KEY (IdApartament) REFERENCES Apartament(Id)
 );
 
@@ -124,3 +131,5 @@ VALUES
     ('hab8.jpg', 8),
     ('hab9.jpg', 9),
     ('hab10.jpg', 10);
+
+    INSERT INTO `temporada` (`Id`, `DataIniciTemporadaAlta`, `DataFinalitzacioTemporadaAlta`, `DataIniciTemporadaBaixa`, `DataFinalitzacioTemporadaBaixa`) VALUES ('1', NULL, NULL, NULL, NULL);

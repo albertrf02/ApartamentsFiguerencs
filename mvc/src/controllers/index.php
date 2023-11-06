@@ -23,7 +23,7 @@ function ctrlIndex($request, $response, $container)
 
 
 
-    $apartaments = $container->uploadApartaments()->getAll($convertedDatepicker, $convertedDatepicker2, $numPersones);
+    $apartaments = $container->apartaments()->getAll($convertedDatepicker, $convertedDatepicker2, $numPersones);
     $response->set("apartaments", $apartaments);
     $response->set("datepicker", $datepicker);
     $response->set("datepicker2", $datepicker2);

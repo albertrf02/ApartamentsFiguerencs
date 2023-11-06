@@ -19,49 +19,40 @@
 
 <body>
     <div id="content">
-    <div id="nav">
-        <?php
-        include 'head.php';
-        ?>
-    </div>
-    <div class="cont" id="content">
-        <div class="row">
-            <div class="col-md-6 align-start">
-                <h1>Título del Apartamento</h1>
-                <p id="apartment-name2"></p>
-                <p id="apartment-address2">Ubicación: Dirección del apartamento</p>
-                <p id="">Coordenadas: Coordenadas del apartamento</p>
-                <p id="apartment-description2">Descripción: Descripción del apartamento</p>
-                <h2>Características:</h2>
-                <p id="apartment-M42">Metros cuadrados: </p>
-                <p id="apartment-bedrooms2">Número de Habitaciones: </p>
-                <h2>Precio por día:</h2>
-                <p>Temporada Baja: $200.00</p>
-                <p>Temporada Alta: $300.00</p>
-                <a href="#" class="btn btn-primary">Reservar</a>
-            </div>
-            <div class="col-md-6">
-                <div id="carouselImages" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="img/hab3.jpg" class="d-block w-100" alt="Imagen 1">
+        <div id="nav">
+            <?php
+            include 'head.php';
+            ?>
+        </div>
+        <div class="cont" id="content">
+            <div class="row">
+                <div class="col-md-6 align-start">
+                    <h1>Título del Apartamento</h1>
+                    <p id="apartment-name2"></p>
+                    <p>Ubicación: Dirección del apartamento</p>
+                    <p>Coordenadas: Coordenadas del apartamento</p>
+                    <p>Descripción: Descripción del apartamento</p>
+                    <h2>Características:</h2>
+                    <p>Metros cuadrados: 100 m²</p>
+                    <p>Número de Habitaciones: 2</p>
+                    <h2>Precio por día:</h2>
+                    <p>Temporada Baja: $200.00</p>
+                    <p>Temporada Alta: $300.00</p>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <form action="index.php?r=reserva" method="post">
+
+                                <label for="dataInici">Start Date:</label>
+                                <input type="date" name="dataInici" id="dataInici" required><br><br>
+
+                                <label for="dataFi">End Date:</label>
+                                <input type="date" name "dataFi" id="dataFi" required><br><br>
+
+                                <input type="submit" value="Reserva">
+                            </form>
                         </div>
-                        <div class="carousel-item">
-                            <img src="img/Habslider2.jpg" class="d-block w-100" alt="Imagen 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/Habslider3.jpg" class="d-block w-100" alt="Imagen 3">
-                        </div>
-                        <!-- Agrega más imágenes aquí según sea necesario -->
                     </div>
-                    <a class="carousel-control-prev" href="#carouselImages" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselImages" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Siguiente</span>
-                    </a>
                 </div>
                 <div class="col-md-6">
                     <div id="carouselImages" class="carousel slide" data-ride="carousel">

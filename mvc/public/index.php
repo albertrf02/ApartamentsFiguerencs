@@ -23,16 +23,17 @@ include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
+;
 include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
 include "../src/controllers/uploadApartament.php";
 include "../src/controllers/apartament_ajax.php";
+include "../src/controllers/reservaCtrl.php";
 include "../src/middleware/middleAdmin.php";
 
 
-include "../src/Emeset/Container.php";
-include "../src/Emeset/Request.php";
-include "../src/Emeset/Response.php";
+
+
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
 $container = new \Emeset\Container($config);
@@ -47,28 +48,27 @@ if ($r === "login") {
     $response = ctrlLogin($request, $response, $container);
 
 } elseif ($r == "registre") {
-     ctrlRegistre($request, $response, $container);
+    ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
-     ctrlApartament($request, $response, $container);
+    $response = isLogged($request, $response, $container, "ctrlApartament");
 } elseif ($r == "logout") {
-     ctrlLogout($request, $response, $container);
+    ctrlLogout($request, $response, $container);
 } elseif ($r == "adminpanel") {
-     isAdmin($request, $response, $container, "ctrlAdminPanel");
+    $response = isGestorAdmin($request, $response, $container, "ctrlAdminPanel");
 } elseif ($r == "userpage") {
-     isLogged($request, $response, $container, "ctrlUserpage");
+    isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
-     isAdmin($request, $response, $container, "ctrlRegistreAdmin");
-}elseif ($r == "gestorpanel") {
-     isGestor($request, $response, $container, "ctrlGestorPanel");
+    $response = isAdmin($request, $response, $container, "ctrlRegistreAdmin");
 } elseif ($r == "registregestor") {
-     isGestor($request, $response, $container, "ctrlRegistreGestor");
+    isGestor($request, $response, $container, "ctrlRegistreGestor");
 } elseif ($r == "uploadapartament") {
-     isAdmin($request, $response, $container, "ctrlUploadApartament");
-}elseif ($r == "apartament_ajax") {
-     ctrlApartamentAjax($request, $response, $container);
-} 
-else {
-    getUserData($request, $response, $container, "ctrlIndex");
-}   
+    $response = isGestorAdmin($request, $response, $container, "ctrlUploadApartament");
+} elseif ($r == "apartament_ajax") {
+    $response = ctrlApartamentAjax($request, $response, $container);
+} elseif ($r == "reserva") {
+    $response = isLogged($request, $response, $container, "ctrlReserva");
+} else {
+    $response = getUserData($request, $response, $container, "ctrlIndex");
+}
 
 $response->response();

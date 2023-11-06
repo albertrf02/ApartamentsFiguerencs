@@ -39,7 +39,12 @@
                 <?php endforeach; ?>
             </ul>
         </div>
+        <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
         <a class="btn btn-outline-success" href="index.php?r=registreadmin">Crear Usuari</a>
+        <?php endif; ?>
+        <?php if ($_SESSION['user']['Rol'] === 'Gestor'): ?>
+            <a class="btn btn-outline-success" href="index.php?r=registregestor">Crear Usuari</a>
+        <?php endif; ?>
         <a class="btn btn-outline-success" href="index.php?r=uploadapartament">uploadapartament</a>
 
     </div>

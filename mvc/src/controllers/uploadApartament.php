@@ -27,7 +27,7 @@ function ctrlUploadApartament($request, $response, $container){
             $currentUserDb = $container->users()->getById($_SESSION['user']['Id']);
             if (($currentUserDb['Rol'] === 'Gestor') || ($currentUserDb['Rol'] === 'Administrador')) {    
                 // Admin user, allow user creation
-                $RegisterModel = $container->uploadApartaments();
+                $RegisterModel = $container->apartaments();
 
                     // Proceed with registration
                     $result = $RegisterModel->uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones);

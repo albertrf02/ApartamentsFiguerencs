@@ -6,7 +6,7 @@ function ctrlApartamentAjax($request, $response, $container)
     //$response->setJson();
     // $response->set("nom", $nom);
     echo json_encode($apartamentModal);
-   //  echo $apartamentModal['Adreca'];
+    //  echo $apartamentModal['Adreca'];
     // echo $apartamentModal['Descripcio'];
     // echo $apartamentModal['MetresQuadrats'];
     // echo $apartamentModal['Numhabitacions'];

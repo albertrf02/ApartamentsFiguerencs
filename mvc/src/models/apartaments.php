@@ -1,7 +1,7 @@
 <?php
 namespace Daw;
 
-class uploadApartaments
+class apartaments
 {
     private $pdo;
 
@@ -56,22 +56,24 @@ class uploadApartaments
 
     public function getAll($datepicker, $datepicker2, $numPersones)
     {
-        $stm = $this->pdo->prepare("SELECT Apartament.*, Imatges.Enlace
-        FROM Apartament
-        JOIN Imatges ON Imatges.IdApartament = Apartament.Id
-        WHERE :numPersones <= Apartament.numPersones
-        and Apartament.Id NOT IN (
-            SELECT IdApartament
-            FROM Reserva
-            WHERE dataEntrada BETWEEN :datepicker AND :datepicker2
-            or dataSortida BETWEEN :datepicker AND :datepicker2
-            or :datepicker BETWEEN DataEntrada AND DataSortida
-            or :datepicker2 BETWEEN DataEntrada AND DataSortida
-        );
+        $stm = $this->pdo->prepare("SELECT 
+        a.*,
+        MIN(i.Enlace) AS Enlace
+    FROM 
+        Apartament a
+    LEFT JOIN 
+        Disponibilitat d ON a.Id = d.IdApartament AND d.Data BETWEEN :dataInici AND :dataFi
+    LEFT JOIN 
+        Imatges i ON a.Id = i.IdApartament
+    WHERE 
+        d.Id IS NULL
+    GROUP BY 
+        a.Id;
         ");
-        $stm->bindParam(':datepicker', $datepicker);
-        $stm->bindParam(':datepicker2', $datepicker2);
-        $stm->bindParam(':numPersones', $numPersones);
+        $stm->bindParam(':dataInici', $datepicker);
+        $stm->bindParam(':dataFi', $datepicker2);
+        error_log("query: " . $datepicker . " " . $datepicker2 . " " . $numPersones);
+        // $stm->bindParam(':numPersones', $numPersones);
         $stm->execute();
 
         $tasks = array();

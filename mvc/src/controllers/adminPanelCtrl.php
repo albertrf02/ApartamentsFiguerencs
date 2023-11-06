@@ -6,7 +6,7 @@ function ctrlAdminPanel($request, $response, $container)
     $usersModel = $container->users();
     $users = $usersModel->getAllUsers();
 
-    $apartamentsModel = $container->uploadApartaments();
+    $apartamentsModel = $container->apartaments();
     $apartaments = $apartamentsModel->getAllApartaments();
 
     $response->set("users", $users);
