@@ -23,7 +23,6 @@ include "../src/controllers/registreGestor.php";
 include "../src/controllers/Apartament.php";
 include "../src/controllers/logout.php";
 include "../src/controllers/userpage.php";
-;
 include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
 include "../src/controllers/uploadApartament.php";
@@ -32,7 +31,9 @@ include "../src/controllers/reservaCtrl.php";
 include "../src/middleware/middleAdmin.php";
 
 
-
+include "../src/Emeset/Container.php";
+include "../src/Emeset/Request.php";
+include "../src/Emeset/Response.php";
 
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
