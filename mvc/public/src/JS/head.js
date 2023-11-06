@@ -101,13 +101,14 @@ $(document).on('click', '.open-apartment-details', function(e) {
       success: function(data) {
           // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
           let data2=JSON.parse(data);
+          console.log(data2.Titol);
 
           $('#apartment-name').html(data2.Titol);
-          $('#apartment-description').html(data2.Descripcio);
-          $('#apartment-address').html(data2.Adreca);
-          $('#apartment-bedrooms').html(data2.NumHabitacions);
-          $('#apartment-M4').html(data2.MetresQuadrats);
-          $('#apartment-people').html(data2.numPersones + " persones");
+          // $('#apartment-description').html(data2.Descripcio);
+          // $('#apartment-address').html(data2.Adreca);
+          // $('#apartment-bedrooms').html(data2.NumHabitacions);
+          // $('#apartment-M4').html(data2.MetresQuadrats);
+          // $('#apartment-people').html(data2.numPersones + " persones");
       },
      dataype: 'json'
   });
