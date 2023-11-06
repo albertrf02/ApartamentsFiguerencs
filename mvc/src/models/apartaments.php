@@ -112,18 +112,18 @@ class uploadApartaments
     //     }
     //     return $tasks;
     // }
-    public function getModal()
+    public function getModal($id)
     {
         $stm = $this->pdo->prepare("SELECT Apartament.*, Imatges.Enlace
         FROM Apartament
         JOIN Imatges ON Imatges.IdApartament = Apartament.Id
         WHERE Apartament.Id = :id
         ");
-        $stm->bindParam(':id', $_GET['id']);
         // echo $_GET['id'];
         // echo $nom;
-        $stm->execute();
-        return $stm->fetch(\PDO::FETCH_ASSOC);
+        $stm->execute([':id'=>$id]);
+        $array_=$stm->fetch(\PDO::FETCH_ASSOC);
+        return $array_;
 
     }
     // public function get($id)
