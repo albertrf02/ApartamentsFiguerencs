@@ -170,5 +170,55 @@ class apartaments
         return $price;
     }
 
+    
+    public function getSeasons()
+{
+    try {
+        $sql = "SELECT DataIniciTemporadaAlta, DataFinalitzacioTemporadaAlta, DataIniciTemporadaBaixa, DataFinalitzacioTemporadaBaixa 
+                FROM Temporada";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        $seasonData = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if ($seasonData) {
+            return $seasonData;
+        } else {
+            return [
+                'DataIniciTemporadaBaixa' => '2023-01-01',
+                'DataFinalitzacioTemporadaBaixa' => '2023-06-30',
+                'DataIniciTemporadaAlta' => '2023-07-01',
+                'DataFinalitzacioTemporadaAlta' => '2023-12-31',
+            ];
+        }
+
+    } catch (\PDOException $e) {
+        // Handle any database connection errors here
+        // You can log the error or return an appropriate response
+        die("Database error: " . $e->getMessage());
+    }
+}
+
+public function updateSeasonDates($highSeasonStart, $highSeasonEnd, $lowSeasonStart, $lowSeasonEnd)
+    {
+        $sql = "UPDATE Temporada SET
+            DataIniciTemporadaAlta = :highSeasonStart,
+            DataFinalitzacioTemporadaAlta = :highSeasonEnd,
+            DataIniciTemporadaBaixa = :lowSeasonStart,
+            DataFinalitzacioTemporadaBaixa = :lowSeasonEnd
+            WHERE Id = 1"; // Assuming you want to update the row with Id = 1
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':lowSeasonStart', $lowSeasonStart);
+        $stmt->bindParam(':lowSeasonEnd', $lowSeasonEnd);
+        $stmt->bindParam(':highSeasonStart', $highSeasonStart);
+        $stmt->bindParam(':highSeasonEnd', $highSeasonEnd);
+
+        return $stmt->execute();
+    }
+
+
+
 
 }

@@ -53,7 +53,7 @@
                                 <input type="date" name="dataInici" id="dataInici" required><br><br>
 
                                 <label for="dataFi">End Date:</label>
-                                <input type="date" name "dataFi" id="dataFi" required><br><br>
+                                <input type="date" name="dataFi" id="dataFi" required><br><br>
 
                                 <input type="submit" value="Reserva">
                             </form>

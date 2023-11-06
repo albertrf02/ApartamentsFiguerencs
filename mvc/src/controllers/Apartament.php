@@ -22,7 +22,9 @@ function ctrlApartament($request, $response, $container)
     $currentDate = date('m-d');
 
     // Determine the current season
-    if ($currentDate >= $lowSeasonStart && $currentDate <= $lowSeasonEnd) {
+    $seasonData = $apartamentModel->getSeasons();
+
+    if ($currentDate >= $seasonData['DataIniciTemporadaBaixa'] && $currentDate <= $seasonData['DataFinalitzacioTemporadaBaixa']) {
         $currentSeason = "Temporada baixa";
     } else {
         $currentSeason = "Temporada alta";
@@ -34,3 +36,5 @@ function ctrlApartament($request, $response, $container)
 
     return $response;
 }
+
+
