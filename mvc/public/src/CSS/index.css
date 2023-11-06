@@ -197,15 +197,6 @@ img {
 }
 
 /* finestra modal */
-#apartment-details{
-  background-color: tomato;
-}
-#apartment-name{
-  background-color: turquoise;
-}
-#apartment-img{
-  background-color: yellowgreen;
-}
 
 .cont-apt{
   margin-top: 100px;

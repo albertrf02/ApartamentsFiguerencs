@@ -94,23 +94,21 @@ $(document).on('click', '.open-apartment-details', function(e) {
 
   // Realiza una solicitud AJAX para obtener los detalles del apartamento
   $.ajax({
-      type: 'GET',
+      type: 'POST',
       url: 'index.php?r=apartament_ajax',
       data: { id: apartmentId },
       async: false,
       success: function(data) {
           // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
-          $('#apartment-name').html(data);
-          $('#apartment-description').html(data);
-          $('#apartment-address').html(data);
-          $('#apartment-bedrooms').html(data);
-          $('#apartment-M4').html(data);
-          $('#apartment-people').html(data);
-          jason = JSON.parse(data);
+          let data2=JSON.parse(data);
+
+          $('#apartment-name').html(data2.Titol);
+          $('#apartment-description').html(data2.Descripcio);
+          $('#apartment-address').html(data2.Adreca);
+          $('#apartment-bedrooms').html(data2.NumHabitacions);
+          $('#apartment-M4').html(data2.MetresQuadrats);
+          $('#apartment-people').html(data2.numPersones + " persones");
       },
-      error: function() {
-          // Maneja cualquier error que pueda ocurrir durante la solicitud AJAX
-          alert('Ha ocurrido un error.');
-      }
+     dataype: 'json'
   });
 });
