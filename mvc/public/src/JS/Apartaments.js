@@ -31,16 +31,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
     async: false,
     success: function (data) {
       // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
-      let data2 = JSON.parse(data);
 
-      $("#apartment-name2").html(data2.Titol);
-      $("#apartment-description2").html(data2.Descripcio);
-      $("#apartment-address2").html(data2.Adreca);
-      $("#apartment-bedrooms2").html(data2.NumHabitacions);
-      $("#apartment-M42").html(data2.MetresQuadrats);
+      $("#apartment-name2").html(data.Titol);
+      $("#apartment-description2").html(data.Descripcio);
+      $("#apartment-address2").html(data.Adreca);
+      $("#apartment-bedrooms2").html(data.NumHabitacions);
+      $("#apartment-M42").html(data.MetresQuadrats);
       // $('#apartment-people').html(data2.numPersones + " persones");
     },
-    dataype: "json",
+    dataType: "json",
   });
 });
 

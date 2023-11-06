@@ -103,11 +103,11 @@ $(document).on('click', '.open-apartment-details', function(e) {
           console.log(data.Titol);
 
           $('#apartment-name').html(data.Titol);
-          // $('#apartment-description').html(data2.Descripcio);
-          // $('#apartment-address').html(data2.Adreca);
-          // $('#apartment-bedrooms').html(data2.NumHabitacions);
-          // $('#apartment-M4').html(data2.MetresQuadrats);
-          // $('#apartment-people').html(data2.numPersones + " persones");
+          $('#apartment-description').html(data.Descripcio);
+          $('#apartment-address').html(data.Adreca);
+          $('#apartment-bedrooms').html(data.NumHabitacions);
+          $('#apartment-M4').html(data.MetresQuadrats);
+          $('#apartment-people').html(data.numPersones + " persones");
       },
       dataType: 'json'
   });
