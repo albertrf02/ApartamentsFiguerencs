@@ -123,8 +123,8 @@ class apartaments
         ");
         // echo $_GET['id'];
         // echo $nom;
-        $stm->execute([':id'=>$id]);
-        $array_=$stm->fetch(\PDO::FETCH_ASSOC);
+        $stm->execute([':id' => $id]);
+        $array_ = $stm->fetch(\PDO::FETCH_ASSOC);
         return $array_;
 
     }
@@ -143,5 +143,32 @@ class apartaments
     //     return $stm->fetch(\PDO::FETCH_ASSOC);
     // }
 
+    public function getApartmentPrice($apartmentId)
+    {
+        // Get the current season based on the provided dates
+        $currentDate = date('m-d');
+        $lowSeasonStart = '01-01'; //mes i dia
+        $lowSeasonEnd = '06-30'; // Replace with your actual low season end date
+
+        $currentSeason = ($currentDate >= $lowSeasonStart && $currentDate <= $lowSeasonEnd) ? "Temporada baixa" : "Temporada alta";
+
+        // Query the database to get the price based on the current season
+        if ($currentSeason === "Temporada baixa") {
+            $columnToRetrieve = "PreuDiaTemporadaBaixa";
+        } else {
+            $columnToRetrieve = "PreuDiaTemporadaAlta";
+        }
+
+        $sql = "SELECT $columnToRetrieve AS preu FROM apartament WHERE Id = :apartmentId";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':apartmentId', $apartmentId, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch();
+        $price = $result['preu'];
+
+        return $price;
+    }
+
+
 }
-;

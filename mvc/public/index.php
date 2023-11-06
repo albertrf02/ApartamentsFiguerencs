@@ -27,8 +27,10 @@ include "../src/controllers/adminPanelCtrl.php";
 include "../src/controllers/gestorPanelCtrl.php";
 include "../src/controllers/uploadApartament.php";
 include "../src/controllers/reservaCtrl.php";
-include "../src/middleware/middleAdmin.php";
+include "../src/controllers/temporadaCtrl.php";
 include "../src/controllers/apartament_ajax.php";
+include "../src/middleware/middleAdmin.php";
+
 
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
@@ -45,30 +47,30 @@ if (isset($_REQUEST["r"])) {
 
 
 if ($r == "login") {
-     ctrlLogin($request, $response, $container);
+    ctrlLogin($request, $response, $container);
 
 } elseif ($r == "registre") {
     ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
-     isLogged($request, $response, $container, "ctrlApartament");
+    isLogged($request, $response, $container, "ctrlApartament");
 } elseif ($r == "logout") {
     ctrlLogout($request, $response, $container);
 } elseif ($r == "adminpanel") {
-     isGestorAdmin($request, $response, $container, "ctrlAdminPanel");
+    isGestorAdmin($request, $response, $container, "ctrlAdminPanel");
 } elseif ($r == "userpage") {
     isLogged($request, $response, $container, "ctrlUserpage");
 } elseif ($r == "registreadmin") {
-     isAdmin($request, $response, $container, "ctrlRegistreAdmin");
+    isAdmin($request, $response, $container, "ctrlRegistreAdmin");
 } elseif ($r == "registregestor") {
     isGestor($request, $response, $container, "ctrlRegistreGestor");
 } elseif ($r == "uploadapartament") {
-     isGestorAdmin($request, $response, $container, "ctrlUploadApartament");
+    isGestorAdmin($request, $response, $container, "ctrlUploadApartament");
 } elseif ($r == "apartament_ajax") {
     ctrlApartamentAjax($request, $response, $container);
 } elseif ($r == "reserva") {
-     isLogged($request, $response, $container, "ctrlReserva");
+    isLogged($request, $response, $container, "ctrlReserva");
 } else {
-     getUserData($request, $response, $container, "ctrlIndex");
+    getUserData($request, $response, $container, "ctrlIndex");
 }
 
 $response->response();

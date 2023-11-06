@@ -74,7 +74,8 @@ function ctrlUserPage($request, $response, $container)
         $response->set("potBorrarReserva", true);
     }
 
-    if($userToEdit == $currentUserDb){
+    if ($userToEdit == $currentUserDb) {
+        $response->set("potBorrarReserva", true);
         $response->set("potEditarUsuari", true);
         $response->set("dadesSensibles", true);
     }
