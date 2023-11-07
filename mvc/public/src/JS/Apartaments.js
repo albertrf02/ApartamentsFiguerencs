@@ -32,47 +32,60 @@ document.addEventListener("DOMContentLoaded", function (e) {
     success: function (data) {
       // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
 
+      $("#apartment-id").html(data.Id);
       $("#apartment-name2").html(data.Titol);
-      $("#apartment-description2").html("Descripció: "+data.Descripcio);
-      $("#apartment-address2").html("Adreça: "+data.Adreca);
-      $("#apartment-bedrooms2").html("Número habitacions: "+data.NumHabitacions);
-      $("#apartment-M42").html("Metres quadrats: "+data.MetresQuadrats+" m2");
-      $('#apartment-people2').html("Capacitat: "+data.numPersones + " persones");
-      $("#apartment-pricealt2").html("Preu/dia temporada alta: "+data.PreuDiaTemporadaAlta);
-      $("#apartment-pricebaixa2").html("Preu/dia temporada baixa: "+data.PreuDiaTemporadaBaixa);
+      $("#apartment-description2").html("Descripció: " + data.Descripcio);
+      $("#apartment-address2").html("Adreça: " + data.Adreca);
+      $("#apartment-bedrooms2").html(
+        "Número habitacions: " + data.NumHabitacions
+      );
+      $("#apartment-M42").html(
+        "Metres quadrats: " + data.MetresQuadrats + " m2"
+      );
+      $("#apartment-people2").html(
+        "Capacitat: " + data.numPersones + " persones"
+      );
+      $("#apartment-pricealt2").html(
+        "Preu/dia temporada alta: " + data.PreuDiaTemporadaAlta
+      );
+      $("#apartment-pricebaixa2").html(
+        "Preu/dia temporada baixa: " + data.PreuDiaTemporadaBaixa
+      );
+
       // $("#apartament-image2").attr("src", "img/"+data.Enlace);
       // $("#apartament-image3").attr("src", "img/"+data.Enlace);
-      
-        var $slider = $("#image-slider");
-        $slider.empty();
 
-if (data.Enlace) {
-  var imagenesArray = data.Enlace.split(',');
+      var $slider = $("#image-slider");
+      $slider.empty();
 
-  imagenesArray.forEach(function (imagenSrc, index) {
-    var $imagen = $("<img>").attr("src", "img/" + imagenSrc.trim());
-    var $item = $("<div class='carousel-item'></div>").append($imagen);
+      if (data.Enlace) {
+        var imagenesArray = data.Enlace.split(",");
 
-    // Marca la primera imagen como activa
-    if (index === 0) {
-      $item.addClass("active");
-    }
+        imagenesArray.forEach(function (imagenSrc, index) {
+          var $imagen = $("<img>").attr("src", "img/" + imagenSrc.trim());
+          var $item = $("<div class='carousel-item'></div>").append($imagen);
 
-    $slider.append($item);
-    
-  });
-}
+          // Marca la primera imagen como activa
+          if (index === 0) {
+            $item.addClass("active");
+          }
+
+          $slider.append($item);
+        });
+      }
 
       console.log(data.Enlace);
-      var mymap = L.map('map').setView([data.Latitud, data.Longitud], 13);
+      var mymap = L.map("map").setView([data.Latitud, data.Longitud], 13);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(mymap);
 
-L.marker([data.Latitud, data.Longitud]).addTo(mymap)
-  .bindPopup(data.Titol)
-  .openPopup();
+      L.marker([data.Latitud, data.Longitud])
+        .addTo(mymap)
+        .bindPopup(data.Titol)
+        .openPopup();
     },
     dataType: "json",
   });

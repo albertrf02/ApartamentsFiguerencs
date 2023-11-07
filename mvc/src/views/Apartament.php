@@ -30,16 +30,19 @@
         <div class="cont" id="content">
             <div class="row">
                 <div class="col-md-6 align-start">
-                    <h1 id="apartment-name2">Títol de l'apartament</h1>
+                    <input type="hidden" id="apartment-id">
+                    <h1 id="apartment-name2"></h1>
                     <p id="apartment-address2"></p>
-                    <p>Coordenadas: Coordenadas del apartamento</p>
-                    <p>Descripción: Descripción del apartamento</p>
+                    <p id="apartment-description2"></p>
                     <h2>Características:</h2>
-                    <p>Metros cuadrados: 100 m²</p>
-                    <p>Número de Habitaciones: 2</p>
-                    <h2>Precio por día:</h2>
-                    <p>Current Season: <?php echo $currentSeason; ?></p>
-                    <p><?php echo $apartmentPrice; ?> €</p>
+                    <p id="apartment-M42"></p>
+                    <p id="apartment-bedrooms2"></p>
+                    <p>Current Season:
+                        <?php echo $currentSeason; ?>
+                    </p>
+                    <p>
+                        <?php echo $apartmentPrice; ?> €
+                    </p>
                     <div class="dropdown">
                         <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
                         <div class="dropdown-content" id="dropdownContent">
@@ -61,11 +64,13 @@
                         <div class="carousel-inner" id="image-slider">
                             <!-- Las imágenes se cargarán aquí dinámicamente -->
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
