@@ -10,7 +10,7 @@ function ctrlApartament($request, $response, $container)
     $currentDate = date('Y-m-d');
     $lowSeasonStart = $seasonDates['DataIniciTemporadaBaixa']; 
     $lowSeasonEnd = $seasonDates['DataFinalitzacioTemporadaBaixa']; 
-
+    
     $currentSeason = ($currentDate >= $lowSeasonStart && $currentDate <= $lowSeasonEnd) ? "Temporada baixa" : "Temporada alta";
 
     // Get the price of an apartment for the current season

@@ -161,8 +161,8 @@ class apartaments
 }
 
 
-    
-    public function getSeasons()
+
+public function getSeasons()
 {
     try {
         $sql = "SELECT *
