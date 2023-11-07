@@ -30,14 +30,12 @@
         <div class="cont" id="content">
             <div class="row">
                 <div class="col-md-6 align-start">
-                    <h1 id="apartment-name2">Títol de l'apartament</h1>
+                    <h1 id="apartment-name2"></h1>
                     <p id="apartment-address2"></p>
-                    <p>Coordenadas: Coordenadas del apartamento</p>
-                    <p>Descripción: Descripción del apartamento</p>
+                    <p id="apartment-description2"></p>
                     <h2>Características:</h2>
-                    <p>Metros cuadrados: 100 m²</p>
-                    <p>Número de Habitaciones: 2</p>
-                    <h2>Precio por día:</h2>
+                    <p id="apartment-M42"></p>
+                    <p id="apartment-bedrooms2"></p>
                     <p>Current Season: <?php echo $currentSeason; ?></p>
                     <p><?php echo $apartmentPrice; ?> €</p>
                     <div class="dropdown">
