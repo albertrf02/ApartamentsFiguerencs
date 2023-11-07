@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
 
       $("#apartment-name2").html(data.Titol);
-      $("#apartment-description2").html("descripció: "+data.Descripcio);
+      $("#apartment-description2").html("Descripció: "+data.Descripcio);
       $("#apartment-address2").html("Adreça: "+data.Adreca);
       $("#apartment-bedrooms2").html("Número habitacions: "+data.NumHabitacions);
       $("#apartment-M42").html("Metres quadrats: "+data.MetresQuadrats+" m2");
@@ -83,13 +83,3 @@ function toggleDropdown() {
   dropdown.style.display =
     dropdown.style.display === "block" ? "none" : "block";
 }
-
-<<<<<<< HEAD
-document.getElementById('resetToDefault').addEventListener('click', function () {
-  document.getElementById('high_season_start').value = '2023-01-01';
-  document.getElementById('high_season_end').value = '2023-06-30';
-  document.getElementById('low_season_start').value = '2023-07-01';
-  document.getElementById('low_season_end').value = '2023-12-31';
-});
-=======
->>>>>>> feature-reserva-jordi
