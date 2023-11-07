@@ -143,38 +143,29 @@ class apartaments
     //     return $stm->fetch(\PDO::FETCH_ASSOC);
     // }
 
-    public function getApartmentPrice($apartmentId)
-    {
-        // Get the current season based on the provided dates
-        $currentDate = date('m-d');
-        $lowSeasonStart = '01-01'; //mes i dia
-        $lowSeasonEnd = '06-30'; // Replace with your actual low season end date
+    public function getApartmentPrice($apartmentId, $currentSeason)
+{
+    // Define the column to retrieve based on the current season
+    $columnToRetrieve = ($currentSeason === "Temporada baixa") ? "PreuDiaTemporadaBaixa" : "PreuDiaTemporadaAlta";
 
-        $currentSeason = ($currentDate >= $lowSeasonStart && $currentDate <= $lowSeasonEnd) ? "Temporada baixa" : "Temporada alta";
+    // Query the database to get the price based on the current season
+    $sql = "SELECT $columnToRetrieve AS preu FROM apartament WHERE Id = :apartmentId";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindParam(':apartmentId', $apartmentId, \PDO::PARAM_INT);
+    $stmt->execute();
 
-        // Query the database to get the price based on the current season
-        if ($currentSeason === "Temporada baixa") {
-            $columnToRetrieve = "PreuDiaTemporadaBaixa";
-        } else {
-            $columnToRetrieve = "PreuDiaTemporadaAlta";
-        }
+    $result = $stmt->fetch();
+    $price = $result['preu'];
 
-        $sql = "SELECT $columnToRetrieve AS preu FROM apartament WHERE Id = :apartmentId";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':apartmentId', $apartmentId, \PDO::PARAM_INT);
-        $stmt->execute();
+    return $price;
+}
 
-        $result = $stmt->fetch();
-        $price = $result['preu'];
 
-        return $price;
-    }
 
-    
-    public function getSeasons()
+public function getSeasons()
 {
     try {
-        $sql = "SELECT DataIniciTemporadaAlta, DataFinalitzacioTemporadaAlta, DataIniciTemporadaBaixa, DataFinalitzacioTemporadaBaixa 
+        $sql = "SELECT *
                 FROM Temporada";
 
         $stmt = $this->pdo->prepare($sql);
