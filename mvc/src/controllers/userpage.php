@@ -78,6 +78,7 @@ function ctrlUserPage($request, $response, $container)
         $response->set("potBorrarReserva", true);
         $response->set("potEditarUsuari", true);
         $response->set("dadesSensibles", true);
+        $response->set("potBorrarReserva", true);
     }
 
 

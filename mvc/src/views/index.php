@@ -71,9 +71,10 @@
                 <img src="img/<?php echo $apartament['Enlace']; ?>" class="card-img-top" alt="Imagen del apartamento">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $apartament['Titol']; ?></h5>
-                    <p class="card-text">Número habitaciones: <?php echo $apartament['NumHabitacions']; ?></p>
-                    <p class="card-text">Metros cuadrados: <?php echo $apartament['MetresQuadrats']; ?></p>
+                    <p class="card-text">Número d'habitacions: <?php echo $apartament['NumHabitacions']; ?></p>
+                    <p class="card-text">Metres quadrats: <?php echo $apartament['MetresQuadrats']; ?> m2</p>
                     <button class="btn btn-primary open-apartment-details" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-apartamento-id="<?php echo $apartament['Id']; ?>">Veure mes..</button>
+                    
                 </div>
             </div>
         </div>
@@ -88,49 +89,44 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalls de l'apartament</h1>
+                <h1 class="modal-title fs-5 apartment-name" id="staticBackdropLabel">Detalls de l'apartament</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" >
               <div class="row">
-                <div class="col-12" id="apartment-img">
-                </div>
-                <div class="col-6" >
-                    <div class="row">
-                      <div class="col-6">Nom: </div>
-                      <div class="col-6" id="apartment-name"></div>
-                    </div>
+                <div class="col-12" >
+                  <img id="apartment-img" src="" alt="Imatge"> 
                 </div>
                 <div class="col-6" >
                   <div class="row">
-                    <div class="col-6">Descripció:</div>
+                    <div class="col-6"><b>Descripció:</b></div>
                     <div class="col-6" id="apartment-description"></div>
                   </div>
                 </div>
                 <div class="col-6" >
                   <div class="row">
-                    <div class="col-6">Adreça:</div>
+                    <div class="col-6"><b>Adreça:</b></div>
                     <div class="col-6" id="apartment-address"></div>
                   </div>
                 </div>
                 <div class="col-6" >
                   <div class="row">
-                    <div class="col-6">Número habitacions:</div>
+                    <div class="col-6"><b>Número habitacions:</b></div>
                     <div class="col-6" id="apartment-bedrooms"></div>
                   </div>
                 </div>
                 <diV class="col-6" >
                   <div class="row">
-                    <div class="col-6">Metres quadrats:</div>
+                    <div class="col-6"><b>Metres quadrats:</b></div>
                     <div class="col-6" id="apartment-M4"></div>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="row">
-                    <div class="col-6">Capacitat:</div>
+                    <div class="col-6"><b>Capacitat:</b></div>
                     <div class="col-6" id="apartment-people"> </div>
                   </div>
                 </div>

@@ -67,11 +67,13 @@ class apartaments
         Imatges i ON a.Id = i.IdApartament
     WHERE 
         d.Id IS NULL
+        and a.NumPersones >= :numPersones
     GROUP BY 
         a.Id;
         ");
         $stm->bindParam(':dataInici', $datepicker);
         $stm->bindParam(':dataFi', $datepicker2);
+        $stm->bindParam(':numPersones', $numPersones);
         error_log("query: " . $datepicker . " " . $datepicker2 . " " . $numPersones);
         // $stm->bindParam(':numPersones', $numPersones);
         $stm->execute();
@@ -116,18 +118,17 @@ class apartaments
     // }
     public function getModal($id)
     {
-        $stm = $this->pdo->prepare("SELECT Apartament.*, Imatges.Enlace
+        $stm = $this->pdo->prepare("SELECT Apartament.*, GROUP_CONCAT(Imatges.Enlace) as Enlace
         FROM Apartament
         JOIN Imatges ON Imatges.IdApartament = Apartament.Id
         WHERE Apartament.Id = :id
-        ");
-        // echo $_GET['id'];
-        // echo $nom;
+        GROUP BY Apartament.Id;
+        ")  ;
         $stm->execute([':id' => $id]);
-        $array_ = $stm->fetch(\PDO::FETCH_ASSOC);
-        return $array_;
-
+        $result = $stm->fetch(\PDO::FETCH_ASSOC);
+        return $result;
     }
+    
     // public function get($id)
     // {
     //     $query = 'select id, title, url_image as url from gallery where id=:id;';
