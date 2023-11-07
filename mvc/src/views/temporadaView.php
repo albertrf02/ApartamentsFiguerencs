@@ -23,7 +23,7 @@
             <div class="row justify-content-center">
                 <div class="col-4">
                     <div class="back-link">
-                        <a href="index.php">
+                        <a href="index.php?r=adminpanel">
                             <i class="fas fa-arrow-left"></i> <img src="img/flecha-izquierda.png" alt=""
                                 style="width:25px">
                         </a>

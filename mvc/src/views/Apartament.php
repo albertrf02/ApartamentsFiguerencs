@@ -36,14 +36,8 @@
                     <p>Metros cuadrados: 100 m²</p>
                     <p>Número de Habitaciones: 2</p>
                     <h2>Precio por día:</h2>
-                    <p>Current Season:
-                        <?php echo $currentSeason; ?>
-                    </p>
-                    <p>Price: $
-                        <?php echo $price; ?>
-                    </p>
-                    <p>Temporada Baja: $200.00</p>
-                    <p>Temporada Alta: $300.00</p>
+                    <p>Current Season: <?php echo $currentSeason; ?></p>
+                    <p><?php echo $apartmentPrice; ?> €</p>
                     <div class="dropdown">
                         <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
                         <div class="dropdown-content" id="dropdownContent">

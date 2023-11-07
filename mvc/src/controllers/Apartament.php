@@ -2,37 +2,28 @@
 function ctrlApartament($request, $response, $container)
 {
     $response->setTemplate("Apartament.php");
-
-    // Move the season date variables to the model for a cleaner separation of concerns
-    $apartamentModel = $container->apartaments();
-
-    // Check if the user wants to update the season dates
-    if (isset($_POST['update_season'])) {
-        $lowSeasonStart = $_POST['low_season_start'];
-        $lowSeasonEnd = $_POST['low_season_end'];
-        $highSeasonStart = $_POST['high_season_start'];
-        $highSeasonEnd = $_POST['high_season_end'];
-    }
-
-    // Calculate the price based on the current season using the model method
-    $apartmentId = 3; // Replace with the actual apartment ID you want to display
-    $price = $apartamentModel->getApartmentPrice($apartmentId);
-
-    // Get the current date
-    $currentDate = date('m-d');
+    // Get the season dates from the model
+    $seasonModel = $container->apartaments();
+    $seasonDates = $seasonModel->getSeasons();
 
     // Determine the current season
-    $seasonData = $apartamentModel->getSeasons();
+    $currentDate = date('Y-m-d');
+    $lowSeasonStart = $seasonDates['DataIniciTemporadaBaixa']; 
+    $lowSeasonEnd = $seasonDates['DataFinalitzacioTemporadaBaixa']; 
 
-    if ($currentDate >= $seasonData['DataIniciTemporadaBaixa'] && $currentDate <= $seasonData['DataFinalitzacioTemporadaBaixa']) {
-        $currentSeason = "Temporada baixa";
-    } else {
-        $currentSeason = "Temporada alta";
-    }
+    $currentSeason = ($currentDate >= $lowSeasonStart && $currentDate <= $lowSeasonEnd) ? "Temporada baixa" : "Temporada alta";
 
-    // Pass the price and current season to the view
-    $response->set("price", $price);
-    $response->set("currentSeason", $currentSeason);
+    // Get the price of an apartment for the current season
+    $apartmentId = 1;
+    $apartmentModel = $container->apartaments();
+    $apartmentPrice = $apartmentModel->getApartmentPrice($apartmentId, $currentSeason);
+
+    $response->set('currentSeason', $currentSeason);
+    $response->set('apartmentPrice', $apartmentPrice);
+    $response->set('seasonDates', $seasonDates);
+
+    // Set the template for rendering
+    $response->setTemplate("Apartament.php");
 
     return $response;
 }
