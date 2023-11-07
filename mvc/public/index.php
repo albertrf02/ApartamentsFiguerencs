@@ -4,6 +4,7 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/config.php";
+require "fpdf/fpdf.php";
 
 
 // include "../src/config.php";

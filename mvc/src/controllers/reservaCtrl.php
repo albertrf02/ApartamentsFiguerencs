@@ -1,9 +1,16 @@
 <?php
 function ctrlReserva($request, $response, $container)
 {
+    if (isset($_REQUEST["action"]) && $_REQUEST["action"] === "descarregarPDF" && isset($_REQUEST["Id"])) {
+        $id = $_REQUEST["Id"];
+        $response->setTemplate("descarregarPDF.php");
+        $response->set("id", $id);
+        error_log("Descarregant PDF de la reserva " . $id);
+        return $response;
+    }
+    
     $response->setTemplate("userpage.php");
-
-    error_log ("Reserva");
+    
     $idUser = 3;
     $idApartament = 2;
     $data = '2023-05-11';
@@ -17,6 +24,7 @@ function ctrlReserva($request, $response, $container)
     if (!$isBooked){
         $result = $reservaModel->uploadReserva($idUser,$idApartament,$data,$dataInici,$dataFi,$preu,$idTemporada);
     }
+
     return $response;
 }
 

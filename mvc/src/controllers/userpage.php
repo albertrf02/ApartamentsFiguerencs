@@ -14,8 +14,6 @@ function ctrlUserPage($request, $response, $container)
         $userIdToEdit = $sessionUserId;
     }
 
-
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_REQUEST["action"])) {
         $action = $_REQUEST["action"];
 

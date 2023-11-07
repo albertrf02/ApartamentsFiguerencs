@@ -134,7 +134,7 @@
                         <div>
                             <ul>
                                 <?php foreach ($userReserves as $userReserva): ?>
-                                    <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">
+                                    <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">algo
                                     </a>
                                     <?php echo $userReserva["Titol"]; ?>
                                     <br>
@@ -145,6 +145,7 @@
                                             <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
                                             <button type="submit" class="btn btn-danger">Borrar</button>
                                         </form>
+                                        <a href="index.php?r=reserva&action=descarregarPDF&Id=<?php echo $userReserva["Id"]; ?>">PDF</a>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>

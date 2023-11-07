@@ -32,5 +32,3 @@ function ctrlApartament($request, $response, $container)
 
     return $response;
 }
-
-
