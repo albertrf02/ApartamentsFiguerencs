@@ -30,7 +30,7 @@
         <div class="cont" id="content">
             <div class="row">
                 <div class="col-md-6 align-start">
-                    <input type="hidden" id="apartment-id">
+                    <input type="hidden" id="apartment-id" value="<?php echo $apartmentId?>">
                     <h1 id="apartment-name2"></h1>
                     <p id="apartment-address2"></p>
                     <p id="apartment-description2"></p>

@@ -15,13 +15,14 @@ window.addEventListener("scroll", () => {
   lastScrollTop = scrollTop;
 });
 document.addEventListener("DOMContentLoaded", function (e) {
-  var apartmentId = localStorage.getItem("apartmentId");
-  if (apartmentId) {
-    // Utiliza el valor de apartmentId como sea necesario en esta página
-    console.log("apartmentId: " + apartmentId);
-  } else {
-    console.log("No se encontró apartmentId en el localStorage.");
-  }
+  // var apartmentId = localStorage.getItem("apartmentId");
+  // if (apartmentId) {
+  //   // Utiliza el valor de apartmentId como sea necesario en esta página
+  //   console.log("apartmentId: " + apartmentId);
+  // } else {
+  //   console.log("No se encontró apartmentId en el localStorage.");
+  // }
+  var apartmentId = document.getElementById("apartment-id").value;
 
   // Realiza una solicitud AJAX para obtener los detalles del apartamento
   $.ajax({
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     async: false,
     success: function (data) {
       // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
-
       $("#apartment-id").html(data.Id);
       $("#apartment-name2").html(data.Titol);
       $("#apartment-description2").html("Descripció: " + data.Descripcio);
