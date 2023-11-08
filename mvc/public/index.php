@@ -29,6 +29,7 @@ include "../src/controllers/uploadApartament.php";
 include "../src/controllers/reservaCtrl.php";
 include "../src/controllers/apartament_ajax.php";
 include "../src/controllers/temporadaCtrl.php";
+include "../src/controllers/buscarReservaCtrl.php";
 include "../src/middleware/middleAdmin.php";
 
 
@@ -71,8 +72,9 @@ if ($r == "login") {
     isLogged($request, $response, $container, "ctrlReserva");
 } elseif ($r == "temporada") {
     isGestorAdmin($request, $response, $container, "ctrlTemporada");
-}
-else {
+} elseif ($r == "buscarreserves") {
+    isGestorAdmin($request, $response, $container, "ctrlBuscarReserva");
+} else {
     getUserData($request, $response, $container, "ctrlIndex");
 }
 

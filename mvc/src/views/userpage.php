@@ -119,7 +119,7 @@
                                     <input type="checkbox" name="delete"> Delete user
                                 <?php endif; ?>
 
-                                <?php if ($_SESSION['user']['Rol'] !== 'Gestor'): ?>
+                                <?php if ($botoGuardar): ?>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 <?php endif; ?>
                             </form>
@@ -145,7 +145,8 @@
                                             <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
                                             <button type="submit" class="btn btn-danger">Borrar</button>
                                         </form>
-                                        <a href="index.php?r=reserva&action=descarregarPDF&Id=<?php echo $userReserva["Id"]; ?>">PDF</a>
+                                        <a
+                                            href="index.php?r=reserva&action=descarregarPDF&Id=<?php echo $userReserva["Id"]; ?>">PDF</a>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>

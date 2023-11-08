@@ -123,12 +123,12 @@ class apartaments
         JOIN Imatges ON Imatges.IdApartament = Apartament.Id
         WHERE Apartament.Id = :id
         GROUP BY Apartament.Id;
-        ")  ;
+        ");
         $stm->execute([':id' => $id]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
         return $result;
     }
-    
+
     // public function get($id)
     // {
     //     $query = 'select id, title, url_image as url from gallery where id=:id;';
@@ -145,54 +145,54 @@ class apartaments
     // }
 
     public function getApartmentPrice($apartmentId, $currentSeason)
-{
-    // Define the column to retrieve based on the current season
-    $columnToRetrieve = ($currentSeason === "Temporada baixa") ? "PreuDiaTemporadaBaixa" : "PreuDiaTemporadaAlta";
+    {
+        // Define the column to retrieve based on the current season
+        $columnToRetrieve = ($currentSeason === "Temporada baixa") ? "PreuDiaTemporadaBaixa" : "PreuDiaTemporadaAlta";
 
-    // Query the database to get the price based on the current season
-    $sql = "SELECT $columnToRetrieve AS preu FROM apartament WHERE Id = :apartmentId";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(':apartmentId', $apartmentId, \PDO::PARAM_INT);
-    $stmt->execute();
-
-    $result = $stmt->fetch();
-    $price = $result['preu'];
-
-    return $price;
-}
-
-
-
-public function getSeasons()
-{
-    try {
-        $sql = "SELECT *
-                FROM Temporada";
-
+        // Query the database to get the price based on the current season
+        $sql = "SELECT $columnToRetrieve AS preu FROM apartament WHERE Id = :apartmentId";
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':apartmentId', $apartmentId, \PDO::PARAM_INT);
         $stmt->execute();
 
-        $seasonData = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
+        $price = $result['preu'];
 
-        if ($seasonData) {
-            return $seasonData;
-        } else {
-            return [
-                'DataIniciTemporadaBaixa' => '2023-01-01',
-                'DataFinalitzacioTemporadaBaixa' => '2023-06-30',
-                'DataIniciTemporadaAlta' => '2023-07-01',
-                'DataFinalitzacioTemporadaAlta' => '2023-12-31',
-            ];
-        }
-
-    } catch (\PDOException $e) {
-        // Handle any database connection errors here
-        // You can log the error or return an appropriate response
-        die("Database error: " . $e->getMessage());
+        return $price;
     }
-}
 
-public function updateSeasonDates($highSeasonStart, $highSeasonEnd, $lowSeasonStart, $lowSeasonEnd)
+
+
+    public function getSeasons()
+    {
+        try {
+            $sql = "SELECT *
+                FROM Temporada";
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            $seasonData = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            if ($seasonData) {
+                return $seasonData;
+            } else {
+                return [
+                    'DataIniciTemporadaBaixa' => '2023-01-01',
+                    'DataFinalitzacioTemporadaBaixa' => '2023-06-30',
+                    'DataIniciTemporadaAlta' => '2023-07-01',
+                    'DataFinalitzacioTemporadaAlta' => '2023-12-31',
+                ];
+            }
+
+        } catch (\PDOException $e) {
+            // Handle any database connection errors here
+            // You can log the error or return an appropriate response
+            die("Database error: " . $e->getMessage());
+        }
+    }
+
+    public function updateSeasonDates($highSeasonStart, $highSeasonEnd, $lowSeasonStart, $lowSeasonEnd)
     {
         $sql = "UPDATE Temporada SET
             DataIniciTemporadaAlta = :highSeasonStart,
@@ -210,7 +210,34 @@ public function updateSeasonDates($highSeasonStart, $highSeasonEnd, $lowSeasonSt
         return $stmt->execute();
     }
 
+    public function getReservesByDate($date)
+    {
+        try {
+            $sql = "SELECT 
+            r.*,
+            a.Titol,
+            u.Nom,
+            u.Cognoms
+        FROM 
+            Reserva r
+        INNER JOIN 
+            Disponibilitat d ON r.Id = d.IdReserva
+        INNER JOIN 
+            Apartament a ON r.IdApartament = a.Id
+        INNER JOIN 
+            Usuari u ON r.IdUsuari = u.Id
+        WHERE 
+            d.Data = :date";
 
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':date', $date);
 
+            return $stmt->execute();
 
+        } catch (\PDOException $e) {
+            // Handle any exceptions that might occur
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
