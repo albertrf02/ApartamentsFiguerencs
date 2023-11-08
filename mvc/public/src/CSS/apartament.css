@@ -73,3 +73,17 @@
 .dropdown-content input {
   width: 100%;
 }
+
+.vent{
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#map{
+  border-radius: 15px;
+}
+.ola{
+  padding: 20px;
+}
+#apartment-name2{
+  margin-bottom: 20px;
+}
