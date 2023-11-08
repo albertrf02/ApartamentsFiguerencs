@@ -1,0 +1,203 @@
+/* Agrega un margen superior al contenido para evitar que se oculte detrás del nav */
+#content {
+    margin-top: 60px; /* Ajusta la altura del nav aquí (debe coincidir con la altura del nav) */
+  }
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff; /* Cambia el color de fondo a tu preferencia */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: top 0.3s; /* Agrega una transición suave */
+  }
+  
+  #nav.hidden {
+    top: -60px; /* La altura del encabezado (ajusta según tus necesidades) */
+  }
+  .buscador{
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 80%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    display: flex;
+  }
+  /* Datepicker */
+  
+
+
+.imgcar{
+    border-radius: 15px;
+    /* Haz que tenga una sombra de fondo */
+
+}
+.hr{
+    margin: 0;
+    background-color: black;
+    border: none;
+    height: 1px;
+}
+.hr2{
+    margin: 0;
+    background-color: black;
+    border: none;
+    height: 1px;
+    width: 95%;
+    margin-left: 2%;
+    margin-bottom: 20px;
+}
+.hr3{
+    margin: 0;
+    background-color: black;
+    border: none;
+    height: 1px;
+    width: 95%;
+    margin-left: 2%;
+}
+.p{
+    margin-left: 2%;
+    margin-top: 25px;
+}
+#carouselExampleDark{
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.col{
+  cursor: pointer;
+}
+
+.row {
+margin: 0 auto;
+justify-content: center;
+padding: 15px;
+}
+/* .col{
+    margin: 0 auto;
+    justify-content: center;
+} */
+.card{
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.btn{
+    margin-right: 5px;
+}
+.search{
+    border-radius: 50px;
+}
+.form-control{
+    border-radius: 50px;
+}
+/* footer */
+/* Estilos para el footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .footer ul a:hover {
+    color: #50c878;
+  }
+  
+  .social-icons {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #50c878;
+  }
+
+  /* Flecha hacia arriba */
+  #scrollTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  #scrollTopButton:hover {
+    background: #a7a7a7;
+  }
+  
+
+
+
+
+/* Do a media screen to 428px */
+@media screen and (max-width: 428px) {
+    /* CSS específico para pantallas de 428px o menos */
+    #nav {
+      position: static; /* Cambiar a posición estática (posición normal) */
+      top: auto;
+    }
+    #content {
+      margin-top: 0; /* Elimina el margen superior */
+    }
+    hr{
+        margin: 0;
+    }
+    #carouselExampleDark{
+        margin-top: 10px;
+    }
+  }
+  .open-apartment-details:hover {
+    transform: scale(1.05); 
+    transition: 0.5s;
+}
+img {
+    max-width: 100%;
+}
+
+/* finestra modal */
+
+.cont-apt{
+  margin-top: 100px;
+}
