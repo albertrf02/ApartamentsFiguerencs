@@ -36,7 +36,7 @@
                         <input type="date" name="high_season_start" id="high_season_start"
                             value="<?php echo $seasonDates['DataIniciTemporadaAlta']; ?>">
                         <br>
-                        
+
                         <label for="high_season_end">Finalització temporada alta:</label>
                         <input type="date" name="high_season_end" id="high_season_end"
                             value="<?php echo $seasonDates['DataFinalitzacioTemporadaAlta']; ?>">
@@ -56,6 +56,32 @@
                         <button type="button" id="resetToDefault">Reset to Default</button>
                     </form>
                 </div>
+                <div class="col-4">
+                <div class="back-link">
+                    <a href="index.php?r=adminpanel">
+                        <i class="fas fa-arrow-left"></i> <img src="img/flecha-izquierda.png" alt=""
+                            style="width:25px">
+                    </a>
+                </div>
+                <h2 class="text-center">Tencar Apartament</h2>
+                <hr>
+                <form action="index.php?r=temporada" method="post">
+
+                    <label for="dataInici">Start Date:</label>
+                    <input type="date" name="dataInici" id="dataInici" required><br><br>
+
+                    <label for="dataFi">End Date:</label>
+                    <input type="date" name="dataFi" id="dataFi" required><br><br>
+
+                    <input type="hidden" name="numUsuaris" id="numUsuaris" value="<?php echo $numUsuaris ?>">
+                    <input type="hidden" name="idApartament" id="idApartament" value="<?php echo $apartmentId ?>">
+                    <input type="hidden" name="preu" id="preu" value="<?php echo $apartmentPrice ?>">
+                    <input type="hidden" name="idTemporada" id="idTemporada" value="<?php echo $idTemporada ?>">
+
+
+                    <input type="submit" value="Reserva">
+                </form>
+            </div>
             </div>
         </div>
     </div>
