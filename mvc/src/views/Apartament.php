@@ -30,7 +30,7 @@
         <div class="cont" id="content">
             <div class="row">
                 <div class="col-md-6 align-start">
-                    <input type="hidden" id="apartment-id" value="<?php echo $apartmentId?>">
+                    <input type="hidden" id="idApartament" value="<?php echo $apartmentId?>">
                     <h1 id="apartment-name2"></h1>
                     <p id="apartment-address2"></p>
                     <p id="apartment-description2"></p>
@@ -46,13 +46,21 @@
                     <div class="dropdown">
                         <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
                         <div class="dropdown-content" id="dropdownContent">
-                            <form action="index.php?r=reserva" method="post">
+                            <form action="index.php?r=apartament&action=crearReserva" method="post">
 
                                 <label for="dataInici">Start Date:</label>
                                 <input type="date" name="dataInici" id="dataInici" required><br><br>
 
                                 <label for="dataFi">End Date:</label>
                                 <input type="date" name="dataFi" id="dataFi" required><br><br>
+
+                                <label for="numUsuaris">Usuari:</label>
+                                <input type="number" name="numUsuaris" id="numUsuaris" required><br><br>
+
+                                <input type="hidden" name="idApartament" id="idApartament" value="<?php echo $apartmentId?>">
+                                <input type="hidden" name="preu" id="preu" value="<?php echo $apartmentPrice?>">
+                                <input type="hidden" name="idTemporada" id="idTemporada" value="<?php echo $idTemporada?>">
+
 
                                 <input type="submit" value="Reserva">
                             </form>

@@ -147,7 +147,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           <form method="POST" action="index.php?r=apartament">
-            <input type="hidden" name="apartment-id" id="apartment-id">
+            <input type="hidden" name="idApartament" id="idApartament">
             <input type="submit" value="Reservar" class="btn btn-primary">Reservar</button>
           </form>
         </div>

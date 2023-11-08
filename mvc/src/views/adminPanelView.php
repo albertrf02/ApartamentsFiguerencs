@@ -31,7 +31,7 @@
             <ul>
                 <?php foreach ($apartaments as $apartament): ?>
                     <li>
-                        <a href="index.php?r=apartament&apartment-id=<?php echo $apartament["Id"]; ?>">
+                        <a href="index.php?r=apartament&idApartament=<?php echo $apartament["Id"]; ?>">
                             <?php echo $apartament["Titol"]; ?>
                         </a>
 

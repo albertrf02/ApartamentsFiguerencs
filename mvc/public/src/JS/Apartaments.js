@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   // } else {
   //   console.log("No se encontró apartmentId en el localStorage.");
   // }
-  var apartmentId = document.getElementById("apartment-id").value;
+  var apartmentId = document.getElementById("idApartament").value;
 
   // Realiza una solicitud AJAX para obtener los detalles del apartamento
   $.ajax({
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     async: false,
     success: function (data) {
       // Cuando la solicitud AJAX se completa con éxito, actualiza el contenido de la ventana modal
-      $("#apartment-id").html(data.Id);
+      $("#idApartament").html(data.Id);
       $("#apartment-name2").html(data.Titol);
       $("#apartment-description2").html("Descripció: " + data.Descripcio);
       $("#apartment-address2").html("Adreça: " + data.Adreca);
