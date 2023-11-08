@@ -3,7 +3,7 @@
 $config = [
     "db" => [
         "user" => "root",
-        "pass" => "",
+        "pass" => "1234",
         "db" => "apartaments_figuerencs",
         "host" => "localhost"
     ],

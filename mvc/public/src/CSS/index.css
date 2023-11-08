@@ -1,6 +1,6 @@
 /* Agrega un margen superior al contenido para evitar que se oculte detrás del nav */
 #content {
-    margin-top: 60px; /* Ajusta la altura del nav aquí (debe coincidir con la altura del nav) */
+    margin-top: 90px; /* Ajusta la altura del nav aquí (debe coincidir con la altura del nav) */
   }
 #nav {
     position: fixed;
@@ -11,24 +11,84 @@
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
     transition: top 0.3s; /* Agrega una transición suave */
   }
+  .logo{
+    max-width: 5%;
+    padding: 0;
+    margin-left: 2%;
+  }
   
   #nav.hidden {
     top: -60px; /* La altura del encabezado (ajusta según tus necesidades) */
   }
+
+  /* cercador */
   .buscador{
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /* border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); */
     width: 80%;
-    height: 100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     display: flex;
+    margin-top: 80px;
+    /* border-bottom: 2px solid #969ba2;
+    border-top: 2px solid #969ba2; */
   }
-  /* Datepicker */
-  
+  .bus-p{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+  }
+  .bus-inp{
+    border-radius: 15px;
+    border: 2px solid #3F7CAC;
+  }
+  .bus-div{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .btn-primary{
+    background-color: #3F7CAC !important;
+    border-color: #3F7CAC !important;
+  }
 
+  .btt{
+    width: 100%;
+    border-radius: 50px;
+  }
+  .card-img-top{
+    max-width: 100%;
 
+  }
+  .ui-spinner{
+    border: none !important;
+  }
+  .ui-button{
+background-color: white !important;
+border: none !important;
+    
+  }
+  .ui-button:hover{
+    background-color: #3F7CAC !important;
+    color: white !important;
+  }
+  #spinner{
+    text-decoration: none;
+  }
+
+.custom-input:focus {
+    border-color: #FF5733; /* Cambia el color del borde cuando el input está enfocado */
+}
+
+.btn-link{
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  color: #3F7CAC;
+}
+.btn-logout{
+  color: red !important;
+}
 .imgcar{
     border-radius: 15px;
     /* Haz que tenga una sombra de fondo */
@@ -200,4 +260,10 @@ img {
 
 .cont-apt{
   margin-top: 100px;
+}
+.modal-info{
+  margin-top: 15px;
+}
+#apartment-img{
+  border-radius: 15px;
 }

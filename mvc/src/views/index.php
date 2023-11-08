@@ -23,8 +23,8 @@
       </div>
       <form method="GET">
         <div class="buscador">
-            <div>
-                <p>Data inici: <input type="text" name="datepicker" id="datepicker" value="<?php
+            <div class="bus-div">
+                <p class="bus-p">Data inici: <input class="bus-inp"  type="text" name="datepicker" id="datepicker" value="<?php
                     if ($datepicker == '01/01/1970') {
                       echo "";
                     } else {
@@ -32,8 +32,8 @@
                     }
                   ?>"></p>
             </div>
-            <div>
-                <p>Data final: <input type="text" name="datepicker2" id="datepicker2" value="<?php
+            <div class="bus-div">
+                <p class="bus-p">Data final: <input class="bus-inp" type="text" name="datepicker2" id="datepicker2" value="<?php
                     if ($datepicker2 == '01/01/1970') {
                       echo "";
                     } else {
@@ -41,10 +41,10 @@
                     }
                   ?>"></p>
             </div>
-            <div>
-                <p>
-                    <label for="spinner">Número de persones:</label>
-                    <input id="spinner" name="numPersones" value="<?php
+            <div class="bus-div">
+                <p class="bus-p">Número de persones:
+                    
+                    <input class="bus-inp" id="spinner" name="numPersones" value="<?php
                     if ($numPersones == '0') {
                       echo "";
                     } else {
@@ -53,10 +53,13 @@
                   ?>">
                 </p>
             </div>
-            <div>
-                <button type="submit">Enviar</button>
+            <div class="bus-div">
+                <button class="btn btn-primary open-apartment-details" type="submit">Cercar</button>
             </div>
+ 
         </div>
+
+
     </form>
 
 
@@ -66,9 +69,16 @@
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
       <?php foreach ($apartaments as $apartament) : ?>
+        
         <div class="col">
             <div class="card">
-                <img src="img/<?php echo $apartament['Enlace']; ?>" class="card-img-top" alt="Imagen del apartamento">
+            <?php
+              $enlaces = explode(',', $apartament['Enlace']); // Divide la cadena en un array usando la coma como separador
+              $primeraImagen = trim($enlaces[0]); // Obtiene el primer elemento del array y elimina espacios en blanco
+
+              echo '<img src="img/' . $primeraImagen . '" class="card-img-top" alt="Imagen del apartamento">';
+            ?>
+
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $apartament['Titol']; ?></h5>
                     <p class="card-text">Número d'habitacions: <?php echo $apartament['NumHabitacions']; ?></p>
@@ -100,13 +110,13 @@
                 <div class="col-12" >
                   <img id="apartment-img" src="" alt="Imatge"> 
                 </div>
-                <div class="col-6" >
+                <div class="col-6 modal-info" >
                   <div class="row">
                     <div class="col-6"><b>Descripció:</b></div>
                     <div class="col-6" id="apartment-description"></div>
                   </div>
                 </div>
-                <div class="col-6" >
+                <div class="col-6 modal-info" >
                   <div class="row">
                     <div class="col-6"><b>Adreça:</b></div>
                     <div class="col-6" id="apartment-address"></div>
@@ -128,6 +138,12 @@
                   <div class="row">
                     <div class="col-6"><b>Capacitat:</b></div>
                     <div class="col-6" id="apartment-people"> </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6"> </div>
                   </div>
                 </div>
               </div>
