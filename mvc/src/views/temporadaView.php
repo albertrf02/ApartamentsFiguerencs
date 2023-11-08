@@ -55,7 +55,6 @@
                         <input type="submit" name="update_season" value="Update Season Dates">
                         <button type="button" id="resetToDefault">Reset to Default</button>
                     </form>
-
                 </div>
             </div>
         </div>

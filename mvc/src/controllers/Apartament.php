@@ -9,17 +9,13 @@ function ctrlApartament($request, $response, $container)
         $numUsuaris = $_POST['numUsuaris'];
         $preu = $_POST['preu'];
         $idTemporada = $_POST['idTemporada'];
-        error_log ("idApartament: " . $idApartament);
-        error_log ("dataInici: " . $dataInici);
-        error_log ("dataFi: " . $dataFi);
-        error_log ("numUsuaris: " . $numUsuaris);
         error_log ("preu: " . $preu);
-        error_log ("idTemporada: " . $idTemporada);
-        error_log ("idUser: " . $idUser);
+
+        $preuFinal = $preu * $numUsuaris;
         $reservaModel = $container->reserva();
         $isBooked = $reservaModel->isBooked($idApartament,$dataInici,$dataFi);
         if (!$isBooked){
-            $result = $reservaModel->uploadReserva($idUser,$idApartament,$dataInici,$dataFi,$preu,1, $numUsuaris);
+            $result = $reservaModel->uploadReserva($idUser,$idApartament,$dataInici,$dataFi,$preuFinal,1, $numUsuaris);
         }
     }
 
