@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form method="POST" action="index.php?r=buscarreserves">
+    <form method="POST" action="index.php?r=buscarreserva">
         <div class="form-group">
             <label for="data">Data</label>
             <input type="date" class="form-control" id="data" name="data">

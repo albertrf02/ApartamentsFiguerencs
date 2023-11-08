@@ -60,6 +60,7 @@ function ctrlUserPage($request, $response, $container)
     $response->set("potBorrarUsuari", false);
     $response->set("potBorrarReserva", false);
     $response->set("dadesSensibles", false);
+    $response->set("botoEditar", false);
 
 
     if ($currentUserDb['Rol'] === 'Administrador') {
@@ -68,6 +69,7 @@ function ctrlUserPage($request, $response, $container)
         $response->set("potBorrarUsuari", true);
         $response->set("potBorrarReserva", true);
         $response->set("dadesSensibles", true);
+        $response->set("botoEditar", true);
     }
 
     if ($currentUserDb['Rol'] === 'Gestor') {
@@ -79,6 +81,7 @@ function ctrlUserPage($request, $response, $container)
         $response->set("potEditarUsuari", true);
         $response->set("dadesSensibles", true);
         $response->set("potBorrarReserva", true);
+        $response->set("botoEditar", true);
     }
 
 

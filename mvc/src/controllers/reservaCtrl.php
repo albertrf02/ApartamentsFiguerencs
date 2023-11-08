@@ -9,15 +9,6 @@ function ctrlReserva($request, $response, $container)
         return $response;
     }
 
-    // $idUser = 3;
-    // $idApartament = 2;
-    // // $data = '2023-05-11';
-    // $dataInici = '2026-05-11';
-    // $dataFi = '2026-05-14';
-    // $numUsuaris = 1;
-    // $preu = 100;
-    // $idTemporada = 1;
-
     
 
 

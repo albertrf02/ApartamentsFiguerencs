@@ -119,7 +119,7 @@
                                     <input type="checkbox" name="delete"> Delete user
                                 <?php endif; ?>
 
-                                <?php if ($_SESSION['user']['Rol'] !== 'Gestor'): ?>
+                                <?php if ($botoEditar): ?>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 <?php endif; ?>
                             </form>
@@ -140,6 +140,7 @@
                                     <br>
                                     <?php echo $userReserva["StartDate"]; ?> --
                                     <?php echo $userReserva["EndDate"]; ?>
+                                    <?php echo $userReserva["preu"]; ?>
                                     <?php if ($potBorrarReserva): ?>
                                         <form method="POST" action="index.php?r=userpage&action=deletereserva">
                                             <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
