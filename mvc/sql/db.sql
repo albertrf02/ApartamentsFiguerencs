@@ -47,6 +47,7 @@ CREATE TABLE Reserva (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Preu DECIMAL(10, 2),
     DataReserva DATE,
+    numUsuaris INT,
     IdUsuari INT,
     IdApartament INT,
     FOREIGN KEY (IdUsuari) REFERENCES Usuari(Id),
