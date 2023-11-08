@@ -210,7 +210,42 @@ public function updateSeasonDates($highSeasonStart, $highSeasonEnd, $lowSeasonSt
         return $stmt->execute();
     }
 
+    public function getReservesByDate($date)
+    {
+        error_log ("date: " . $date);
+        try {
+            $sql = "SELECT 
+            r.*,
+            a.Titol,
+            u.Nom,
+            u.Cognoms
+        FROM 
+            Reserva r
+        INNER JOIN 
+            Disponibilitat d ON r.Id = d.IdReserva
+        INNER JOIN 
+            Apartament a ON r.IdApartament = a.Id
+        INNER JOIN 
+            Usuari u ON r.IdUsuari = u.Id
+        WHERE 
+            d.Data = :date";
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':date', $date);
+
+            $stmt->execute();
+
+            while ($reserva = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $reserves[] = $reserva;
+            }
+
+            return $reserves;
 
 
-
+        } catch (\PDOException $e) {
+            // Handle any exceptions that might occur
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
