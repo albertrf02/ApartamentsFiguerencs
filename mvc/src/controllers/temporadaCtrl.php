@@ -30,23 +30,5 @@ function ctrlTemporada($request, $response, $container)
             echo "Failed to update season dates.";
         }
     }
-
-    if (isset($_REQUEST["action"]) && $_REQUEST["action"] === "crearReserva") {
-        $idUser = $_SESSION['user']['Id'];
-        $idApartament = $_POST['idApartament'];
-        $dataInici = $_POST['dataInici'];
-        $dataFi = $_POST['dataFi'];
-        $numUsuaris = $_POST['numUsuaris'];
-        $preu = $_POST['preu'];
-        $idTemporada = $_POST['idTemporada'];
-        error_log ("preu: " . $preu);
-
-        $reservaModel = $container->reserva();
-        $isBooked = $reservaModel->isBooked($idApartament,$dataInici,$dataFi);
-        if (!$isBooked){
-            $result = $reservaModel->uploadReserva($idUser,$idApartament,$dataInici,$dataFi,0,1, $numUsuaris);
-        }
-    }
-
     return $response;
 }
