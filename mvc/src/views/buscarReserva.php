@@ -18,7 +18,7 @@
         </div>
     </form>
     <?php if (isset($reserves) && !empty($reserves)): ?>
-        <h2>Reservations for the selected date:</h2>
+        <h2>Reserves:</h2>
         <table>
             <thead>
                 <tr>
@@ -29,19 +29,19 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($reserves as $reserve): ?>
+                <?php foreach ($reserves as $reserva): ?>
                     <tr>
                         <td>
-                            <?php echo $reserve['Id']; ?>
+                            <?php echo $reserva["Id"]; ?>
                         </td>
                         <td>
-                            <?php echo $reserve['Titol']; ?>
+                            <?php echo $reserva['Titol']; ?>
                         </td>
                         <td>
-                            <?php echo $reserve['Nom']; ?>
+                            <?php echo $reserva['Nom']; ?>
                         </td>
                         <td>
-                            <?php echo $reserve['Cognoms']; ?>
+                            <?php echo $reserva['Cognoms']; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

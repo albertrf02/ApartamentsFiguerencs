@@ -15,6 +15,7 @@ function ctrlBuscarReserva($request, $response, $container)
 
             // Call the getReservesByDate function to retrieve data
             $reserves = $modelReserves->getReservesByDate($date);
+            error_log ("reserves: " . $reserves);
 
             // Pass the retrieved data to the view
             if ($reserves) {

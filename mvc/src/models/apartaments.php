@@ -212,6 +212,7 @@ class apartaments
 
     public function getReservesByDate($date)
     {
+        error_log ("date: " . $date);
         try {
             $sql = "SELECT 
             r.*,
@@ -232,7 +233,14 @@ class apartaments
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':date', $date);
 
-            return $stmt->execute();
+            $stmt->execute();
+
+            while ($reserva = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $reserves[] = $reserva;
+            }
+
+            return $reserves;
+
 
         } catch (\PDOException $e) {
             // Handle any exceptions that might occur
