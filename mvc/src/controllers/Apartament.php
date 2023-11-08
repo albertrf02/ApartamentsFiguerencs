@@ -41,6 +41,7 @@ function ctrlApartament($request, $response, $container)
     $apartmentModel = $container->apartaments();
     $apartmentPrice = $apartmentModel->getApartmentPrice($apartmentId, $currentSeason);
 
+    $response->set('apartmentId', $apartmentId);
     $response->set('currentSeason', $currentSeason);
     $response->set('apartmentPrice', $apartmentPrice);
     $response->set('seasonDates', $seasonDates);
