@@ -134,7 +134,7 @@
                         <div>
                             <ul>
                                 <?php foreach ($userReserves as $userReserva): ?>
-                                    <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">algo
+                                    <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">
                                     </a>
                                     <?php echo $userReserva["Titol"]; ?>
                                     <br>
