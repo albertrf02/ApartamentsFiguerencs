@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php?r=''"><img class="logo" src="img/logo.jpeg"></a>
+      <a class="navbar-brand a-logo" href="index.php?r=''"><img class="logo" src="img/logo.jpeg"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,9 +23,11 @@
       <form class="d-flex" role="search">
 
         <?php if (isset($loginValid) && $loginValid): ?>
-          <b>
-            <?php echo $loginName; ?>
-          </b>
+          <div class="d-flex">
+            <b class="Nomusuari">
+              <?php echo $loginName; ?>
+            </b>
+          </div>
           <a class="btn btn btn-link nav-link active btn-logout" aria-current="page" href="index.php?r=logout">logout</a>
           <?php if ($_SESSION['user']['Rol'] === 'Administrador'): ?>
             <a class="btn btn btn-link nav-link" href="index.php?r=adminpanel">adminPanel</a>

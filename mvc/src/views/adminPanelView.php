@@ -35,7 +35,6 @@
                     <th>Adreça</th>
                     <th>Descripcio</th>
                     <th>Nº Persones</th>
-                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,9 +55,6 @@
                         <td>
                             <?php echo $apartament["numPersones"]; ?>
                         </td>
-                        <td>
-                            <a class="btn btn-primary" href="index.php?r=apartamentpage&Id=<?php echo $apartament["Id"]; ?>">Editar</a>
-                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -72,7 +68,7 @@
             <a class="btn btn-primary" href="index.php?r=registregestor">Crear Usuari</a>
         <?php endif; ?>
         </h3>
-        <table id="example" class="table table-striped" style="width:100%">
+        <table id="example2" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -108,8 +104,9 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-        
-        <a class="btn btn-primary" href="index.php?r=temporada">temporada</a>
+        <h3>Editar temporada
+            <a class="btn btn-primary" href="index.php?r=temporada">Temporada</a>
+        </h3>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

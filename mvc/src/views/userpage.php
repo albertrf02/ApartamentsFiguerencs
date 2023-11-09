@@ -119,7 +119,7 @@
                                     <input type="checkbox" name="delete"> Delete user
                                 <?php endif; ?>
 
-                                <?php if ($_SESSION['user']['Rol'] !== 'Gestor'): ?>
+                                <?php if ($botoGuardar): ?>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 <?php endif; ?>
                             </form>

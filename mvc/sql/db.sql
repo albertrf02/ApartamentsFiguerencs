@@ -133,3 +133,5 @@ VALUES
     ('hab10.jpg', 10);
 
     INSERT INTO `temporada` (`Id`, `DataIniciTemporadaAlta`, `DataFinalitzacioTemporadaAlta`, `DataIniciTemporadaBaixa`, `DataFinalitzacioTemporadaBaixa`) VALUES ('1', NULL, NULL, NULL, NULL);
+    ALTER TABLE apartament
+ADD COLUMN Extras VARCHAR(255);

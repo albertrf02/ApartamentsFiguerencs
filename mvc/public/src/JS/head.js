@@ -2,10 +2,12 @@ let temaDark = false;
 
 function agregarClaseDark() {
     const bodyElement = document.querySelector('body');
+    const bodyElement2 = document.querySelector('body');
     if (bodyElement) {
         temaDark = !temaDark; // Invierte el estado actual del tema
         if (temaDark) {
             bodyElement.setAttribute('data-bs-theme', 'dark');
+            
         } else {
             bodyElement.removeAttribute('data-bs-theme');
         }
@@ -108,6 +110,7 @@ $(document).on('click', '.open-apartment-details', function(e) {
           $('#apartment-bedrooms').html(data.NumHabitacions+" habitacions");
           $('#apartment-M4').html(data.MetresQuadrats + " m2");
           $('#apartment-people').html(data.numPersones + " persones");
+          $('#apartment-extres').html(data.Extras);
           var imagenesArray = data.Enlace.split(',');
           $("#apartment-img").attr("src", "img/"+imagenesArray[0].trim());
       },
