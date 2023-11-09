@@ -36,7 +36,7 @@
                         <input type="date" name="high_season_start" id="high_season_start"
                             value="<?php echo $seasonDates['DataIniciTemporadaAlta']; ?>">
                         <br>
-                        
+
                         <label for="high_season_end">Finalització temporada alta:</label>
                         <input type="date" name="high_season_end" id="high_season_end"
                             value="<?php echo $seasonDates['DataFinalitzacioTemporadaAlta']; ?>">

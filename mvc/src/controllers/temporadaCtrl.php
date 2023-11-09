@@ -30,6 +30,5 @@ function ctrlTemporada($request, $response, $container)
             echo "Failed to update season dates.";
         }
     }
-
     return $response;
 }

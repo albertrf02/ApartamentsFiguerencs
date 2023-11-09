@@ -11,18 +11,18 @@ class UploadReserva
         $this->pdo = $pdo;
     }
 
-    public function uploadReserva($idUser, $idApartament, $data, $dataInici, $dataFi, $preu, $idTemporada)
+    public function uploadReserva($idUser, $idApartament, $dataInici, $dataFi, $preu, $idTemporada, $numUsuaris)
     {
         // Prepare the SQL INSERT statement
-        $sql = "INSERT INTO `reserva` (`Preu`, `DataReserva`, `IdUsuari`, `IdApartament`, `IdTemporada`)
-                VALUES (:preu, :data, :idUser, :idApartament, :idTemporada)";
+        $sql = "INSERT INTO `reserva` (`Preu`, `DataReserva`, `numUsuaris`, `IdUsuari`, `IdApartament`, `IdTemporada`)
+                VALUES (:preu, CURDATE(), :numUsuaris, :idUser, :idApartament, :idTemporada)";
         $stmt = $this->pdo->prepare($sql);
 
         // Bind the user input to the prepared statement
+        $stmt->bindParam(':preu', $preu);
+        $stmt->bindParam(':numUsuaris', $numUsuaris);
         $stmt->bindParam(':idUser', $idUser);
         $stmt->bindParam(':idApartament', $idApartament);
-        $stmt->bindParam(':data', $data);
-        $stmt->bindParam(':preu', $preu);
         $stmt->bindParam(':idTemporada', $idTemporada);
 
         // Execute the INSERT statement for apartment data
@@ -32,7 +32,7 @@ class UploadReserva
             $end = new \DateTime($dataFi);
 
             $interval = \DateInterval::createFromDateString('1 day');
-            $period = new \DatePeriod($begin, $interval, $end);
+            $period = new \DatePeriod($begin, $interval, $end, \DatePeriod::INCLUDE_END_DATE);
 
             $idReserva = $this->pdo->lastInsertId();
             foreach ($period as $dt) {
@@ -71,7 +71,8 @@ class UploadReserva
         r.IdApartament,
         a.Titol,
         MIN(d.Data) as StartDate,
-        MAX(d.Data) as EndDate
+        MAX(d.Data) as EndDate,
+        r.Preu as preu
       FROM 
         Reserva r
       JOIN 

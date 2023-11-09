@@ -57,7 +57,7 @@
                             <?php echo $apartament["numPersones"]; ?>
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="index.php?r=apartamentpage&Id=<?php echo $apartament["Id"]; ?>">Editar</a>
+                            <a class="btn btn-primary" href="index.php?r=apartament&idApartament=<?php echo $apartament["Id"]; ?>">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -110,7 +110,7 @@
         </table>
         
         <a class="btn btn-primary" href="index.php?r=temporada">temporada</a>
-
+        <a class="btn btn-primary" href="index.php?r=buscarreserva">buscarReserves</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
