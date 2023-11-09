@@ -4,6 +4,7 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/config.php";
+require "fpdf/fpdf.php";
 
 
 // include "../src/config.php";
@@ -74,8 +75,7 @@ if ($r == "login") {
     isGestorAdmin($request, $response, $container, "ctrlTemporada");
 } elseif ($r == "buscarreserva") {
     isGestorAdmin($request, $response, $container, "ctrlBuscarReserva");
-}
-else {
+} else {
     getUserData($request, $response, $container, "ctrlIndex");
 }
 
