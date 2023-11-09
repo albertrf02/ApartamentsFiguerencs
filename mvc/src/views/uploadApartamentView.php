@@ -72,6 +72,10 @@
                             <input type="text" class="form-control" id="numPersones" name="numPersones">
                         </div>
                         <div class="form-group">
+                            <label for="numPersones">Extres</label>
+                            <input type="text" class="form-control" id="extres" name="extres">
+                        </div>
+                        <div class="form-group">
                             <label for="imatges">Imatge</label>
                             <input type="file" class="form-control-file" id="imatges" name="imatges">
                         </div>

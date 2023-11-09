@@ -20,18 +20,18 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #3b5998;"
-        href="#!"
+        href="https://facebook.com"
         role="button"
-        ><i class="fab fa-facebook-f"></i
+        ><i class="fab fa-facebook-f">Facebook</i
       ></a>
 
       <!-- Twitter -->
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #55acee;"
-        href="#!"
+        href="https://twitter.com/"
         role="button"
-        ><i class="fab fa-twitter"></i
+        ><i class="fab fa-twitter">Twitter</i
       ></a>
 
       <!-- Google -->
@@ -47,9 +47,9 @@
       <a
         class="btn text-white btn-floating m-1"
         style="background-color: #ac2bac;"
-        href="#!"
+        href="https://www.instagram.com/"
         role="button"
-        ><i class="fab fa-instagram"></i
+        ><i class="fab fa-instagram">Instagram</i
       ></a>
 
       <!-- Linkedin -->

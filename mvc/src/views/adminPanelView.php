@@ -72,7 +72,7 @@
             <a class="btn btn-primary" href="index.php?r=registregestor">Crear Usuari</a>
         <?php endif; ?>
         </h3>
-        <table id="example" class="table table-striped" style="width:100%">
+        <table id="example2" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -108,9 +108,13 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-        
-        <a class="btn btn-primary" href="index.php?r=temporada">temporada</a>
-        <a class="btn btn-primary" href="index.php?r=buscarreserva">buscarReserves</a>
+        <h3>Buscar reserva
+            <a class="btn btn-primary" href="index.php?r=buscarreserva">buscarReserves</a>
+        </h3>
+        <h3>Editar temporada
+            <a class="btn btn-primary" href="index.php?r=temporada">Temporada</a>
+        </h3>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

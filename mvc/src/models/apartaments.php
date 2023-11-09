@@ -9,7 +9,7 @@ class apartaments
     {
         $this->pdo = $pdo;
     }
-    public function uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones)
+    public function uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones,$extres)
     {
 
         //TO DO
@@ -21,8 +21,8 @@ class apartaments
             // Move the uploaded image to a designated folder
             if (move_uploaded_file($_FILES['imatges']['tmp_name'], $imagePath)) {
                 // Image uploaded successfully, proceed to insert apartment data
-                $sql = "INSERT INTO apartament (Titol, Adreca, Longitud, Latitud, Descripcio, MetresQuadrats, NumHabitacions, PreuDiaTemporadaBaixa, PreuDiaTemporadaAlta, NumPersones) 
-                        VALUES (:titol, :adreca, :longitud, :latitud, :descripcio, :metresQuadrats, :numHabitacions, :preuDiaTemporadaBaixa, :preuDiaTemporadaAlta, :numPersones)";
+                $sql = "INSERT INTO apartament (Titol, Adreca, Longitud, Latitud, Descripcio, MetresQuadrats, NumHabitacions, PreuDiaTemporadaBaixa, PreuDiaTemporadaAlta, NumPersones, Extras) 
+                        VALUES (:titol, :adreca, :longitud, :latitud, :descripcio, :metresQuadrats, :numHabitacions, :preuDiaTemporadaBaixa, :preuDiaTemporadaAlta, :numPersones, :Extras)";
                 $stmt = $this->pdo->prepare($sql);
 
                 // Bind the user input to the prepared statement
@@ -36,6 +36,7 @@ class apartaments
                 $stmt->bindParam(':preuDiaTemporadaBaixa', $preuDiaTemporadaBaixa);
                 $stmt->bindParam(':preuDiaTemporadaAlta', $preuDiaTemporadaAlta);
                 $stmt->bindParam(':numPersones', $numPersones);
+                $stmt->bindParam(':Extras', $extres);
 
                 // Execute the INSERT statement for apartment data
                 if ($stmt->execute()) {

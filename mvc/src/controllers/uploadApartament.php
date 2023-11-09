@@ -5,7 +5,7 @@ function ctrlUploadApartament($request, $response, $container){
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        if (isset($_POST['titol']) && isset($_POST['adreca']) && isset($_POST['longitud']) && isset($_POST['latitud']) && isset($_POST['descripcio']) && isset($_POST['metresQuadrats']) && isset($_POST['numHabitacions']) && isset($_POST['preuDiaTemporadaBaixa']) && isset($_POST['preuDiaTemporadaAlta']) && isset($_POST['numPersones'])) {
+        if (isset($_POST['titol']) && isset($_POST['adreca']) && isset($_POST['longitud']) && isset($_POST['latitud']) && isset($_POST['descripcio']) && isset($_POST['metresQuadrats']) && isset($_POST['numHabitacions']) && isset($_POST['preuDiaTemporadaBaixa']) && isset($_POST['preuDiaTemporadaAlta']) && isset($_POST['numPersones']) && isset($_POST['extres'])) {
             $titol = $_POST['titol'];
             $adreca = $_POST['adreca'];
             $longitud = $_POST['longitud'];
@@ -16,6 +16,7 @@ function ctrlUploadApartament($request, $response, $container){
             $preuDiaTemporadaBaixa = $_POST['preuDiaTemporadaBaixa'];
             $preuDiaTemporadaAlta = $_POST['preuDiaTemporadaAlta'];
             $numPersones = $_POST['numPersones'];
+            $extres = $_POST['extres'];
 
             // $rolsAllowed = ['Usuari', 'Gestor', 'Administrador'];
             // if (!in_array($rol, $rolsAllowed)) {
@@ -30,7 +31,7 @@ function ctrlUploadApartament($request, $response, $container){
                 $RegisterModel = $container->apartaments();
 
                     // Proceed with registration
-                    $result = $RegisterModel->uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones);
+                    $result = $RegisterModel->uploadApartament($titol, $adreca, $longitud, $latitud, $descripcio, $metresQuadrats, $numHabitacions, $preuDiaTemporadaBaixa, $preuDiaTemporadaAlta, $numPersones, $extres);
 
                     if ($result) {
                         // Registration successful

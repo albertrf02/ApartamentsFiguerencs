@@ -64,7 +64,6 @@
 
 
       </div>
-      <h3 class="p">Tots els apartaments</h3>
       <hr class="hr3" />
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -136,14 +135,14 @@
                 </div>
                 <div class="col-6">
                   <div class="row">
-                    <div class="col-6"><b>Capacitat:</b></div>
-                    <div class="col-6" id="apartment-people"> </div>
+                    <div class="col-6"><b>Extres:</b></div>
+                    <div class="col-6" id="apartment-extres"> </div>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="row">
-                    <div class="col-6"></div>
-                    <div class="col-6"> </div>
+                    <div class="col-6"><b>Capacitat:</b></div>
+                    <div class="col-6" id="apartment-people"> </div>
                   </div>
                 </div>
               </div>

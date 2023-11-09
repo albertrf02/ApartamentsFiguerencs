@@ -57,15 +57,11 @@
                         <h1 id="apartment-name2"></h1>
                         <p id="apartment-address2"></p>
                         <p id="apartment-description2"></p>
-                        <h2>Características:</h2>
                         <p id="apartment-M42"></p>
                         <p id="apartment-bedrooms2"></p>
-                        <p>Current Season:
-                            <?php echo $currentSeason; ?>
-                        </p>
-                        <p>
-                            <?php echo $apartmentPrice; ?> €
-                        </p>
+                        <p id="apartment-extres2"></p>
+                        <p><b>Temporada: </b><?php echo $currentSeason; ?></p>
+                        <p><?php echo $apartmentPrice; ?> €</p>
                         <div class="dropdown">
                             <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
                             <div class="dropdown-content" id="dropdownContent">

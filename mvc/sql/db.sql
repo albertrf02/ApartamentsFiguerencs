@@ -50,6 +50,7 @@ CREATE TABLE Reserva (
     numUsuaris INT,
     IdUsuari INT,
     IdApartament INT,
+
     FOREIGN KEY (IdUsuari) REFERENCES Usuari(Id),
     FOREIGN KEY (IdApartament) REFERENCES Apartament(Id)
 );
@@ -134,3 +135,8 @@ VALUES
     ('hab10.jpg', 10);
 
     INSERT INTO `temporada` (`Id`, `DataIniciTemporadaAlta`, `DataFinalitzacioTemporadaAlta`, `DataIniciTemporadaBaixa`, `DataFinalitzacioTemporadaBaixa`) VALUES ('1', NULL, NULL, NULL, NULL);
+    ALTER TABLE apartament
+ADD COLUMN Extras VARCHAR(255);
+UPDATE apartament
+SET Extras = 'Wi-Fi, Aire Acondicionado, TV por Cable'
+WHERE Id IN (1, 2, 3);
