@@ -150,7 +150,7 @@
             <div class="modal-footer">
             <form method="POST" action="index.php?r=apartament">
             <input type="hidden" name="idApartament" id="idApartament">
-            <input type="submit" value="Reservar" class="btn btn-primary">Reservar</button>
+            <input type="submit" value="Reservar" class="btn btn-primary"></button>
                 </a>
             </div>
         </div>

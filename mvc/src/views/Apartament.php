@@ -62,9 +62,6 @@
                         <p id="apartment-extres2"></p>
                         <p><b>Temporada: </b><?php echo $currentSeason; ?></p>
                         <p><?php echo $apartmentPrice; ?> €</p>
-                        <div class="dropdown">
-                            <a href="#" class="btn btn-primary" onclick="toggleDropdown()">Reservar</a>
-                            <div class="dropdown-content" id="dropdownContent">
                                 <form action="index.php?r=apartament&action=crearReserva" method="post">
 
                                     <label for="dataInici">Start Date:</label>
@@ -83,10 +80,8 @@
                                         value="<?php echo $idTemporada ?>">
 
 
-                                    <input type="submit" value="Reserva">
+                                    <input class="btn btn-primary" type="submit" value="Reserva">
                                 </form>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <div id="map" style="height: 400px;"></div>
