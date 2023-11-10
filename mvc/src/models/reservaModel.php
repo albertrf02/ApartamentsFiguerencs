@@ -30,9 +30,10 @@ class UploadReserva
 
       $begin = new \DateTime($dataInici);
       $end = new \DateTime($dataFi);
+      $endDate = $end->modify('+1 day');
 
       $interval = \DateInterval::createFromDateString('1 day');
-      $period = new \DatePeriod($begin, $interval, $end, \DatePeriod::INCLUDE_END_DATE);
+      $period = new \DatePeriod($begin, $interval, $endDate);
 
       $idReserva = $this->pdo->lastInsertId();
       foreach ($period as $dt) {

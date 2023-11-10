@@ -1,7 +1,8 @@
 <?php
 
 namespace Daw;
-class LoginUser
+
+class loginUser
 {
     private $pdo;
 

@@ -55,7 +55,7 @@ class Container
 
     public function loginUser()
     {
-        return new \Daw\LoginUser($this->sql);
+        return new \Daw\loginUser($this->sql);
     }
 
     public function uploadUser()

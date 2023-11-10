@@ -49,7 +49,6 @@ if (isset($_REQUEST["r"])) {
 
 if ($r == "login") {
     ctrlLogin($request, $response, $container);
-
 } elseif ($r == "registre") {
     ctrlRegistre($request, $response, $container);
 } elseif ($r == "apartament") {
@@ -59,7 +58,7 @@ if ($r == "login") {
 } elseif ($r == "adminpanel") {
     isGestorAdmin($request, $response, $container, "ctrlAdminPanel");
 } elseif ($r == "userpage") {
-    isLogged($request, $response, $container, "ctrlUserpage");
+    isLogged($request, $response, $container, "ctrlUserPage");
 } elseif ($r == "registreadmin") {
     isAdmin($request, $response, $container, "ctrlRegistreAdmin");
 } elseif ($r == "registregestor") {

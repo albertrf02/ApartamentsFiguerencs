@@ -43,7 +43,7 @@ class Users
 
     public function getById($id)
     {
-        $stm = $this->sql->prepare('select * from usuari where id=:id;');
+        $stm = $this->sql->prepare('select * from Usuari where id=:id;');
         $stm->execute([':id' => $id]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
         if (is_array($result)) {
@@ -56,7 +56,7 @@ class Users
     public function updateUser($id, $nom, $cognoms, $correuelectronic, $contrasenya, $telefon, $numTargetaCredit)
     {
 
-        $stm = $this->sql->prepare('update usuari set Nom=:Nom, Cognoms=:Cognoms, CorreuElectronic=:CorreuElectronic, Contrasenya=:Contrasenya, Telefon=:Telefon, NumTargetaCredit=:NumTargetaCredit where id=:id;');
+        $stm = $this->sql->prepare('update Usuari set Nom=:Nom, Cognoms=:Cognoms, CorreuElectronic=:CorreuElectronic, Contrasenya=:Contrasenya, Telefon=:Telefon, NumTargetaCredit=:NumTargetaCredit where id=:id;');
         $result = $stm->execute([':id' => $id, ':Nom' => $nom, ':Cognoms' => $cognoms, ':CorreuElectronic' => $correuelectronic, ':Contrasenya' => $contrasenya, ':Telefon' => $telefon, ':NumTargetaCredit' => $numTargetaCredit]);
 
 
@@ -71,7 +71,7 @@ class Users
     public function getAllUsers()
     {
         $users = array();
-        $query = "select * from usuari;";
+        $query = "select * from Usuari;";
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user) {
             $users[] = $user;
         }
