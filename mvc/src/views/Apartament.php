@@ -60,28 +60,28 @@
                         <p id="apartment-M42"></p>
                         <p id="apartment-bedrooms2"></p>
                         <p id="apartment-extres2"></p>
-                        <p><b>Temporada: </b><?php echo $currentSeason; ?></p>
-                        <p><?php echo $apartmentPrice; ?> €</p>
-                                <form action="index.php?r=apartament&action=crearReserva" method="post">
+                        <p><b>Preu:</b>
+                            <?php echo $apartmentPrice; ?> €
+                        </p>
+                        <form action="index.php?r=apartament&action=crearReserva" method="post">
 
-                                    <label for="dataInici">Start Date:</label>
-                                    <input type="date" name="dataInici" id="dataInici" required><br><br>
+                            <label for="dataInici">Data Entrada:</label>
+                            <input type="date" name="dataInici" id="dataInici" required><br><br>
 
-                                    <label for="dataFi">End Date:</label>
-                                    <input type="date" name="dataFi" id="dataFi" required><br><br>
+                            <label for="dataFi">Data Sortida:</label>
+                            <input type="date" name="dataFi" id="dataFi" required><br><br>
 
-                                    <label for="numUsuaris">Usuari:</label>
-                                    <input type="number" name="numUsuaris" id="numUsuaris" required><br><br>
+                            <label for="numUsuaris">Persones:</label>
+                            <input type="number" name="numUsuaris" id="numUsuaris" required><br><br>
 
-                                    <input type="hidden" name="idApartament" id="idApartament"
-                                        value="<?php echo $apartmentId ?>">
-                                    <input type="hidden" name="preu" id="preu" value="<?php echo $apartmentPrice ?>">
-                                    <input type="hidden" name="idTemporada" id="idTemporada"
-                                        value="<?php echo $idTemporada ?>">
+                            <input type="hidden" name="idApartament" id="idApartament"
+                                value="<?php echo $apartmentId ?>">
+                            <input type="hidden" name="preu" id="preu" value="<?php echo $apartmentPrice ?>">
+                            <input type="hidden" name="idTemporada" id="idTemporada" value="<?php echo $idTemporada ?>">
 
 
-                                    <input class="btn btn-primary" type="submit" value="Reserva">
-                                </form>
+                            <input class="btn btn-primary" type="submit" value="Reserva">
+                        </form>
                     </div>
                     <div class="col-md-6">
                         <div id="map" style="height: 400px;"></div>
