@@ -104,7 +104,7 @@
 <body>
     <form method="POST" action="index.php?r=buscarreserva">
         <div class="form-group">
-            <label for="data">Date</label>
+            <label for="data">Data</label>
             <input type="date" id="data" name="data">
         </div>
         <div class="text-center">

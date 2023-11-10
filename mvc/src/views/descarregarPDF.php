@@ -15,10 +15,6 @@ $pdf->Ln();
 $pdf->Cell(40, 10, 'Apellido: ' . $cognom);
 $pdf->Ln();
 $pdf->Cell(40, 10, 'Email: ' . $email);
-$pdf->Ln();
-$pdf->Cell(40, 10, 'Apartament: ' . $apartament);
-$pdf->Ln();
-$pdf->Cell(40, 10, 'Precio: ' . $preu);
 
 $pdf->Output();
 ?>
