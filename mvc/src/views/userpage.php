@@ -119,7 +119,7 @@
                                     <input type="checkbox" name="delete"> Delete user
                                 <?php endif; ?>
 
-                                <?php if ($botoGuardar): ?>
+                                <?php if ($botoEditar): ?>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 <?php endif; ?>
                             </form>
