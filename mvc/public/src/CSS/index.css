@@ -16,7 +16,7 @@
     transition: top 0.3s; /* Agrega una transición suave */
   }
   .logo{
-    max-width: 5%;
+    max-width: 45px;
     padding: 0;
     margin-left: 2%;
   }
@@ -297,4 +297,141 @@ h3{
 /* Footer */
 .img-footer{
   width: 5% !important;
+}
+
+/* datepicker */
+.ui-datepicker {
+  width: 300px;
+  height: 300px;
+  margin: 5px auto 0;
+  border-radius: 15px;
+  /*-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);*/
+}
+
+  .ui-datepicker table {
+      width: 100%;
+
+  }
+
+.ui-datepicker-header {
+  background: transparent;
+  color: black;
+
+  border-radius: 15px;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.ui-datepicker-prev {
+  float: left;
+  cursor: pointer;
+  background-position: center -30px;
+}
+
+.ui-datepicker-next {
+  float: right;
+  cursor: pointer;
+  background-position: center 0px;
+}
+
+.ui-datepicker thead {
+  background-color: #f7f7f7;
+
+  /*border-bottom: 1px solid #bbb;*/
+}
+
+.ui-datepicker th {
+  background-color:white;
+  text-transform: uppercase;
+  font-size: 8pt;
+  color: black;
+  /*text-shadow: 1px 0px 0px #fff;*/
+  /*filter: dropshadow(color=#fff, offx=1, offy=0);*/
+}
+
+.ui-datepicker tbody td {
+  padding: 0;
+  /*border-right: 1px solid #808080;*/
+}
+
+  .ui-datepicker tbody td:last-child {
+      border-right: 0px;
+  }
+
+.ui-datepicker tbody tr {
+  border-bottom: 1px solid black;
+}
+
+  .ui-datepicker tbody tr:last-child {
+      border-bottom: 0px;
+  }
+
+.ui-datepicker a {
+  text-decoration: none;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+  display: inline-block;
+  /*font-weight: bold;*/
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #ffffff;
+  /*text-shadow: 1px 1px 0px #fff;*/
+  /*filter: dropshadow(color=#fff, offx=1, offy=1);*/
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    background: transparent;
+    color:black;
+    height:40px;
+    width:40px;
+    border: none;
+
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+  background: #3F7CAC;
+  color: white;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+  background: #3F7CAC;
+
+  color: #e0e0e0;
+  text-shadow: 0px 1px 0px #4d7a85;
+  position: relative;
+  margin: -1px;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+  background: #D6E4BE;
+  color: #000;
+}
+
+
+/*  Do a media screen to 1200px */
+@media screen and (max-width: 1200px) {
+  .buscador{
+    display: block;
+  }
+  .bus-div{
+    display: flex;
+
+  }
+  .cercar{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .bus-p{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
