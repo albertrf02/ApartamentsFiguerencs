@@ -136,13 +136,12 @@
                                 <?php foreach ($userReserves as $userReserva): ?>
                                     <a href="index.php?r=reserva&Id=<?php echo $userReserva["Id"]; ?>">
                                     </a>
-                                    <?php var_dump($userReserva); ?>
                                     <?php echo $userReserva["Titol"]; ?>
                                     <br>
                                     <?php echo $userReserva["StartDate"]; ?> --
                                     <?php echo $userReserva["EndDate"]; ?>
                                     <br>
-                                    <?php echo $userReserva["preu"]; ?>€
+                                    <?php echo $userReserva["Preu"]; ?>€
                                     <?php if ($potBorrarReserva): ?>
                                         <form method="POST" action="index.php?r=userpage&action=deletereserva">
                                             <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">

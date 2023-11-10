@@ -71,7 +71,8 @@ class UploadReserva
         r.IdApartament,
         a.Titol,
         MIN(d.Data) as StartDate,
-        MAX(d.Data) as EndDate
+        MAX(d.Data) as EndDate,
+        r.Preu
       FROM 
         Reserva r
       JOIN 
