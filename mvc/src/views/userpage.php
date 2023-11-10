@@ -143,12 +143,24 @@
                                     <br>
                                     <?php echo $userReserva["Preu"]; ?>€
                                     <?php if ($potBorrarReserva): ?>
-                                        <form method="POST" action="index.php?r=userpage&action=deletereserva">
-                                            <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
-                                            <button type="submit" class="btn btn-danger">Borrar</button>
-                                        </form>
-                                        <a
-                                            href="index.php?r=reserva&action=descarregarPDF&Id=<?php echo $userReserva["Id"]; ?>">PDF</a>
+                                        <div style="display: flex; gap: 230px;">
+                                            <form method="POST" action="index.php?r=userpage&action=deletereserva">
+                                                <input type="hidden" name="Id" value="<?php echo $userReserva['Id']; ?>">
+                                                <button type="submit" class="btn btn-danger">Borrar</button>
+                                            </form>
+                                            <a href="index.php?r=reserva&action=descarregarPDF&Id=<?php echo $userReserva["Id"]; ?>"
+                                                style="display: inline-block;
+                                            padding: 8px 10px;
+                                            font-size: 16px;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            background-color: #3F7CAC;
+                                            color: #ffffff;
+                                            border-radius: 5px;
+                                            transition: background-color 0.3s;">
+                                                Descarregar PDF
+                                            </a>
+                                        </div>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
